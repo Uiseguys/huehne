@@ -1,0 +1,32 @@
+html,
+body {
+    height: 100%;
+}
+
+#mainNav {
+    background: rgba(0, 0, 0, 0);
+}
+
+@mixin bg-image() {
+	padding: 0;
+  	background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+p {
+	color: #5b5d5e;
+	font-size: 2rem;
+}
+
+.landing-image {
+    background: url(../img/1.jpg);
+    @include bg-image;
+  
+}
+
+.second-image {
+	background: url(../img/1_1.jpg);
+    @include bg-image;
+}

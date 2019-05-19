@@ -1,0 +1,78 @@
+{
+  "name": "huehne-website-redisgn",
+  "version": "0.2.0",
+  "description": "Huehne Website Redesign Bootstrap Template",
+  "main": "index.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "redux": "^4.0.1",
+    "svg-url-loader": "^2.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.5.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "htmlhint": "^0.10.3",
+    "imagemin": "^5.3.1",
+    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^6.0.1",
+    "imagemin-svgo": "^7.0.0",
+    "img-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.4.5",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "prettier-eslint": "^8.8.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.3.0",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development",
+    "served": "webpack-dev-server --mode development --open",
+    "servep": "webpack-dev-server --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uiseguys/unicorn-bootstrap-theme.git"
+  },
+  "keywords": [
+    "ui",
+    "bootstrap",
+    "social-media"
+  ],
+  "author": "Cris Shaki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uiseguys/unicorn-bootstrap-theme/issues"
+  },
+  "homepage": "https://github.com/uiseguys/unicorn-bootstrap-theme#readme"
+}

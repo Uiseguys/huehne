@@ -1,0 +1,8 @@
+@mixin body-font() {
+  font-family: 'Source Sans Pro';
+}
+
+@mixin heading-font() {
+  font-weight: 700;
+  font-family: 'Source Sans Pro';
+}

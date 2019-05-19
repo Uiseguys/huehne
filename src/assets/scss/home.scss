@@ -12,21 +12,50 @@ body {
   	background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 100%;
 }
 
-p {
-	color: #5b5d5e;
-	font-size: 2rem;
-}
 
 .landing-image {
     background: url(../img/1.jpg);
+    height: 100%;
     @include bg-image;
-  
+
+  	svg {
+  		position: absolute;
+  	}
+    
+    .landing-head{
+        padding-top: 14%;
+        color: #fff;
+        line-height: 1em;
+        font-size: 5em;
+    }
 }
 
-.second-image {
-	background: url(../img/1_1.jpg);
-    @include bg-image;
+.mission {
+    p {
+        color: #5b5d5e;
+        font-size: 2rem;
+    }
 }
+
+#projekte {
+    height: 100%;
+    padding: 0;
+    svg {
+        position: absolute;
+        z-index:10;
+    }
+    
+    .row {
+        height: 100%;
+
+        #projekte-slide-1 {
+            background: url(../img/1_3.jpg); 
+            height: 70%;
+
+            @include bg-image;
+        }
+    }
+}
+

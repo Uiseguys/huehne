@@ -24,7 +24,14 @@
 
     const svgProjekteDrawer = () => {
         try {
-            const wh = [($("body").width() * 0.5), ($("body").height() * 0.7)]; // An array of both width and height of the body
+            let wh;
+
+            // Check viewport and use half the width or the full width 
+            if ($("body").width() >= 992) {
+                wh = [($("body").width() * 0.5), ($("body").height() * 0.7)]; // An array of both width and height of the body
+            } else {
+                wh = [$("body").width(), ($("body").height() * 0.7)]; // An array of both width and height of the body
+            }
 
             // height of the slant 12% of total height
             const ch = 0.12 * wh[1];

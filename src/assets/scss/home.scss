@@ -10,20 +10,22 @@ body {
 @mixin bg-image() {
 	padding: 0;
   	background-position: center;
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
+svg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
 .landing-image {
     background: url(../img/1.jpg);
     height: 100%;
     @include bg-image;
 
-  	svg {
-  		position: absolute;
-  	}
-    
     .landing-head{
         padding-top: 14%;
         color: #fff;
@@ -60,12 +62,20 @@ body {
     }
 
     .row {
-        height: 100%;
+        height: 70%;
         margin: 0;
 
         .col-lg-6 {
-            height: 70%;
-            padding: 0;
+            height: 100%;
+            padding: 10% 5%;
+
+            p {
+                font-size: 3em;
+                
+                small {
+                    font-size: 0.5em;
+                }
+            }
 
             &#projekte-slide-1 {
                 background: url(../img/1_3.jpg); 
@@ -88,31 +98,36 @@ body {
             }
 
             &#projekte-slide-5 {
-                //background: url(../img/5_3.jpg);
+                background: url(../img/5_3.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-6 {
-                background: url(../img/6_3.jpg);
+                //background: url(../img/6_3.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-7 {
-                background: url(../img/7_2.jpg);
+                background: url(../img/6_3.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-8 {
-                background: url(../img/8_2.jpg);
+                background: url(../img/7_2.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-9 {
-                background: url(../img/9_3.jpg);
+                background: url(../img/8_2.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-10 {
+                background: url(../img/9_3.jpg);
+                @include bg-image;
+            }
+
+            &#projekte-slide-11 {
                 //background: url(../img/9_3.jpg);
                 @include bg-image;
             }

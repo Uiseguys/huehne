@@ -12,18 +12,42 @@
             const ch = 0.12 * wh[1];
 
             const svgBottom = `<path d="M0 ${wh[1] - ch} L0 ${wh[1]} L${wh[0]} ${wh[1]}Z" fill="white" />`;
-            const svgTop = `<path d="M0 0 L0 ${ch} L${wh[0]} 0Z" fill="white" />`;
+            const svgTopLeft = `<path d="M0 0 L0 ${ch} L${wh[0]} 0Z" fill="white" />`;
+            const svgTopRight = `<path d="M0 0 L${wh[0]} ${ch} L${wh[0]} 0Z" fill="white" />`;
             $(".bottom-slide").html(svgBottom);
-            $(".top-slide").html(svgTop);
+            $(".top-left-slide").html(svgTopLeft);
+            $(".top-right-slide").html(svgTopRight);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const svgProjekteDrawer = () => {
+        try {
+            const wh = [($("body").width() * 0.5), ($("body").height() * 0.7)]; // An array of both width and height of the body
+
+            // height of the slant 12% of total height
+            const ch = 0.12 * wh[1];
+
+            const svgBottom = `<path d="M0 ${wh[1] - ch} L0 ${wh[1]} L${wh[0]} ${wh[1]}Z" fill="#f5f5f5" />`;
+            const svgBottomRight = `<path d="M0 ${wh[1]} L${wh[0]} ${wh[1]} L${wh[0]} ${wh[1] - ch}Z" fill="#f5f5f5" />`;
+            const svgTopLeft = `<path d="M0 0 L0 ${ch} L${wh[0]} 0Z" fill="#f5f5f5" />`;
+            const svgTopRight = `<path d="M0 0 L${wh[0]} ${ch} L${wh[0]} 0Z" fill="#f5f5f5" />`;
+            $(".projekte-bottom").html(svgBottom);
+            $(".projekte-bottom-right").html(svgBottomRight);
+            $(".projekte-top-left").html(svgTopLeft);
+            $(".projekte-top-right").html(svgTopRight);
         } catch (err) {
             console.log(err);
         }
     };
 
     svgDrawer();
+    svgProjekteDrawer();
     $(window).resize(() => {
         try {
             svgDrawer();
+            svgProjekteDrawer();
         } catch (err) {
             console.log(err);
         }

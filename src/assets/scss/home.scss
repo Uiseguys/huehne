@@ -7,6 +7,19 @@ body {
     background: rgba(0, 0, 0, 0);
 }
 
+@media screen and (max-width: 991px) {
+    #projekte > .row {
+        .col-lg-6 {
+            &:nth-child(4) {
+                order: 5;
+            }
+            &:nth-child(5) {
+                order: 4;
+            }
+        }
+    } 
+}
+
 @mixin bg-image() {
 	padding: 0;
   	background-position: center;
@@ -14,17 +27,18 @@ body {
     background-repeat: no-repeat;
 }
 
-svg {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.landing-image {
+#landing-image {
     background: url(../img/1.jpg);
     height: 100%;
+
     @include bg-image;
+
+    svg {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
 
     .landing-head{
         padding-top: 14%;
@@ -46,12 +60,17 @@ svg {
 }
 
 #projekte {
-    height: 100%;
+    height: 70%;
+    position: relative;
+    outline: 0;
+    margin: 0;
     padding: 0;
+
     svg {
-        float: left;
         position: absolute;
         z-index: 10;
+        width: 100%;
+        height: 100%;
     }
 
     & > .container {
@@ -62,18 +81,22 @@ svg {
     }
 
     .row {
-        height: 70%;
-        margin: 0;
+        height: 100%;
 
         .col-lg-6 {
+            position: relative;
             height: 100%;
-            padding: 10% 5%;
 
-            p {
-                font-size: 3em;
-                
-                small {
-                    font-size: 0.5em;
+            
+            &.custom-gray-bg {
+                padding: 10% 5%;
+
+                p {
+                    font-size: 3em;
+                    
+                    small {
+                        font-size: 0.5em;
+                    }
                 }
             }
 

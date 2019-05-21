@@ -3,63 +3,6 @@
 
     // Start of use strict
 
-    // Create svg files that dynamically change with the image size
-    const svgDrawer = () => {
-        try {
-            const wh = [$("body").width(), $("body").height()]; // An array of both width and height of the body
-
-            // height of the slant 12% of total height
-            const ch = 0.12 * wh[1];
-
-            const svgBottom = `<path d="M0 ${wh[1] - ch} L0 ${wh[1]} L${wh[0]} ${wh[1]}Z" fill="white" />`;
-            const svgTopLeft = `<path d="M0 0 L0 ${ch} L${wh[0]} 0Z" fill="white" />`;
-            const svgTopRight = `<path d="M0 0 L${wh[0]} ${ch} L${wh[0]} 0Z" fill="white" />`;
-            $(".bottom-slide").html(svgBottom);
-            $(".top-left-slide").html(svgTopLeft);
-            $(".top-right-slide").html(svgTopRight);
-        } catch (err) {
-            console.log(err);
-        }
-    };
-
-    const svgProjekteDrawer = () => {
-        try {
-            let wh;
-
-            // Check viewport and use half the width or the full width 
-            if ($("body").width() >= 992) {
-                wh = [($("body").width() * 0.5), ($("body").height() * 0.7)]; // An array of both width and height of the body
-            } else {
-                wh = [$("body").width(), ($("body").height() * 0.7)]; // An array of both width and height of the body
-            }
-
-            // height of the slant 12% of total height
-            const ch = 0.12 * wh[1];
-
-            const svgBottom = `<path d="M0 ${wh[1] - ch} L0 ${wh[1]} L${wh[0]} ${wh[1]}Z" fill="#f5f5f5" />`;
-            const svgBottomRight = `<path d="M0 ${wh[1]} L${wh[0]} ${wh[1]} L${wh[0]} ${wh[1] - ch}Z" fill="#f5f5f5" />`;
-            const svgTopLeft = `<path d="M0 0 L0 ${ch} L${wh[0]} 0Z" fill="#f5f5f5" />`;
-            const svgTopRight = `<path d="M0 0 L${wh[0]} ${ch} L${wh[0]} 0Z" fill="#f5f5f5" />`;
-            $(".projekte-bottom").html(svgBottom);
-            $(".projekte-bottom-right").html(svgBottomRight);
-            $(".projekte-top-left").html(svgTopLeft);
-            $(".projekte-top-right").html(svgTopRight);
-        } catch (err) {
-            console.log(err);
-        }
-    };
-
-    svgDrawer();
-    svgProjekteDrawer();
-    $(window).resize(() => {
-        try {
-            svgDrawer();
-            svgProjekteDrawer();
-        } catch (err) {
-            console.log(err);
-        }
-    });
-
     // Smooth scrolling using jQuery easing
     $("a.js-scroll-trigger[href*=\"#\"]:not([href=\"#\"])").click(function () {
         if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {

@@ -5,6 +5,10 @@
   background: transparent;
   @include heading-font;
   .navbar-brand {
+    #logo.hide,
+    #logo-white.hide {
+        display: none;
+    }
     color: $white;
   }
   .navbar-nav {
@@ -48,7 +52,7 @@
       margin-top: 0;
     }
     .navbar-nav > li.nav-item > a.nav-link.active {
-      color: $white;
+      color: white;
       background: $primary;
       &:active,
       &:focus,
@@ -72,4 +76,9 @@
       }
     }
   }
+}
+@media(max-width: 991) {
+    #mainNav {
+        background: white !important;
+    }
 }

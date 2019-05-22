@@ -5,3 +5,4 @@ import "./assets/scss/startbootsrap/freelancer.scss";
 import "./assets/scss/home.scss";
 import "./assets/js/skews";
 import "./assets/js/freelancer";
+import "./assets/img/logo.svg"

@@ -42,12 +42,50 @@
     const navbarCollapse = function () {
         if ($("#mainNav").offset().top > 100) {
             $("#mainNav").addClass("navbar-shrink");
+            $("#logo-white").addClass("hide");
+            if ($("#logo").hasClass("hide")) {
+                $("#logo").removeClass("hide");
+            }
         } else {
+            $("#logo").addClass("hide");
+            if ($("#logo-white").hasClass("hide")) {
+                $("#logo-white").removeClass("hide");
+            }
             $("#mainNav").removeClass("navbar-shrink");
         }
     };
+
     // Collapse now if page is not at top
-    navbarCollapse();
+    // Check window width and render the navbar accordingly 
+    const collapseNow = () => {
+        if ($("body").width >= 992) {
+            navbarCollapse();
+        } else { // Style for mobile screen
+            $("#logo-white").addClass("hide");
+            $("#mainNav").addClass("navbar-shrink");
+            $(".navbar-nav").addClass("text-grey");
+        }
+    };
+    collapseNow();
+
+    // Get the footer to seat at the bottom of landing page
+    const getBottom = () => {
+        let h = $("#projekte").height();
+        if ($("body").width() >= 992) {
+            h *= 10;
+        } else {
+            h *= 21;
+        }
+        $("footer").css("margin-top", h);
+    };
+    getBottom();
+
+    // A couple of functions for when the window resizes
+    $(window).resize(() => {
+        collapseNow();
+        getBottom();
+    })
+
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 

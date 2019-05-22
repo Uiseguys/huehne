@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
+//window.addEventListener("DOMContentLoaded", () => {
     // Create svg files that dynamically change with the image size
     const svgDrawer = () => {
         try {
@@ -55,4 +55,4 @@ window.addEventListener("DOMContentLoaded", () => {
             console.log(err);
         }
     });
-});
+//});

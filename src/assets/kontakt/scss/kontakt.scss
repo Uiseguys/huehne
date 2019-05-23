@@ -1,0 +1,8 @@
+@import "../../shared/scss/mixins";
+@import "../../shared/scss/main-section";
+@import "../../shared/scss/footer";
+
+.main-section {
+    background: url(../img/kontakt.jpg);
+    background-position: 50% 10% !important;
+}

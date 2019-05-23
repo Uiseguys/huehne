@@ -7,6 +7,9 @@ const webpack = require("webpack");
 module.exports = {
     entry: {
         index: "./src/index.js",
+        unser: "./src/unser/index.js",
+        der: "./src/der/index.js",
+        kontakt: "./src/kontakt/index.js",
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -114,6 +117,21 @@ module.exports = {
             template: "src/index.html",
             filename: "index.html",
             chunks: ["index"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/unser/unser.html",
+            filename: "unser/index.html",
+            chunks: ["unser"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/der/der.html",
+            filename: "der/index.html",
+            chunks: ["der"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/kontakt/kontakt.html",
+            filename: "kontakt/index.html",
+            chunks: ["unser"],
         }),
         new MiniCssExtractPlugin({
             filename: "assets/css/[chunkhash].css",

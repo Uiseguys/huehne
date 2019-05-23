@@ -1,0 +1,15 @@
+@mixin bg-image {
+    height: 100%;
+	padding: 0;
+  	background-position: center !important; 
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+@mixin svg-skews() {
+    display: block;
+    position: absolute;
+    height: 100% !important;
+    width: 100% !important;
+    z-index: 10;
+}

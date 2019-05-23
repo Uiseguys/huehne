@@ -1,8 +1,7 @@
 import "bootstrap";
 import "@fortawesome/fontawesome-free/js/all";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./assets/scss/startbootsrap/freelancer.scss";
-import "./assets/scss/home.scss";
-import "./assets/js/skews";
-import "./assets/js/freelancer";
-import "./assets/img/logo.svg"
+import "./assets/shared/scss/startbootsrap/freelancer.scss";
+import "./assets/home/scss/home.scss";
+import "./assets/shared/js/skews";
+import "./assets/shared/js/freelancer";

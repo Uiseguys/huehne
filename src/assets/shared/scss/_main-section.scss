@@ -1,0 +1,14 @@
+.main-section {
+    @include bg-image;
+
+    svg {
+        @include svg-skews;
+    }
+
+    .main-head {
+        padding-top: 14%;
+        color: #fff;
+        line-height: 1em;
+        font-size: 5em;
+    }
+}

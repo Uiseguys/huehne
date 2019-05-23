@@ -2,8 +2,11 @@
 @import "../../shared/scss/global";
 @import "../../shared/scss/main-section";
 @import "../../shared/scss/footer";
+@import "../../shared/scss/_text-section.scss";
 
+// Landing Image
 .main-section {
     background: url(../img/long.jpg);
     background-position: 50% 10% !important;
 }
+

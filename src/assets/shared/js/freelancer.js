@@ -53,14 +53,10 @@
 
     // Collapse now if page is not at top
     // Check window width and render the navbar accordingly
+    // Collapse the navbar when page is scrolled
     const collapseNow = () => {
-        if ($("body").width >= 992) {
-            navbarCollapse();
-        } else { // Style for mobile screen
-            $("#logo-white").addClass("hide");
-            $("#logo").removeClass("hide");
-            $("#mainNav").addClass("navbar-shrink");
-            $(".navbar-nav").addClass("text-gray");
+        if ($(window).width() >= 992) {
+            $(window).scroll(navbarCollapse);
         }
     };
     collapseNow();
@@ -70,8 +66,6 @@
         collapseNow();
     });
 
-    // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse);
 
     // Modal popup$(function () {
     $(".portfolio-item").magnificPopup({

@@ -136,12 +136,12 @@
 }
 
 // Order for projekte slides after screen is minimized
-@media(max-width: 991px) {
+@media (max-width: 991px) {
     // Ensuring each projekte image is at
     // 70% height of the viewport, also accounting
     // for the extra height provided by the collapsed row
     .projekte {
-        height: 140%;
+        height: 60rem;
 
         .row {
             height: 100%;
@@ -164,15 +164,6 @@
                 &:last-child {
                     order: 1;
                 }
-            }
-        }
-    }
-
-    #mainNav {
-        background: white;
-        .navbar-nav {
-            .nav-link {
-                color: !important #f5f5f5;
             }
         }
     }

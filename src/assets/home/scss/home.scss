@@ -80,6 +80,13 @@
             &#projekte-slide-1 {
                 background: url(../img/1_3.jpg); 
                 @include bg-image;
+
+                & + .custom-gray-bg {
+                    a {
+                        position: absolute;
+                        z-index: 20;
+                    }
+                }
             }
 
             &#projekte-slide-2 {
@@ -148,6 +155,15 @@
             
             .col-lg-6 {
                 height: 50% !important;
+            }
+        }
+
+        #projekte-slide-1 {
+            & + .custom-gray-bg {
+                a {
+                    position: relative;
+                    z-index: 1;
+                }
             }
         }
 

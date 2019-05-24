@@ -10,6 +10,8 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
+    "lozad": "^1.9.0",
+    "owl.carousel": "^2.3.4",
     "popper.js": "^1.15.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

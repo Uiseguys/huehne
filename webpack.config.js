@@ -12,6 +12,7 @@ module.exports = {
         kontakt: "./src/kontakt/index.js",
         datenschutz: "./src/datenschutz/index.js",
         impressum: "./src/impressum/index.js",
+        dorotheenhofe: "./src/projekte/dorotheenhofe/index.js",
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -144,6 +145,11 @@ module.exports = {
             template: "src/impressum/impressum.html",
             filename: "impressum/index.html",
             chunks: ["impressum"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/dorotheenhofe/dorotheenhofe.html",
+            filename: "projekte/dorotheenhofe/index.html",
+            chunks: ["dorotheenhofe"],
         }),
         new MiniCssExtractPlugin({
             filename: "assets/css/[chunkhash].css",

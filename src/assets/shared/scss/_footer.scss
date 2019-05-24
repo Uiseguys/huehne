@@ -27,3 +27,14 @@ footer {
         }
     }
 }
+
+@media (max-width: 991px) {
+    footer {
+        .container {
+            b,
+            p {
+                text-align: left !important;
+            }
+        }
+    }
+}

@@ -131,7 +131,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "src/kontakt/kontakt.html",
             filename: "kontakt/index.html",
-            chunks: ["unser"],
+            chunks: ["kontakt"],
         }),
         new MiniCssExtractPlugin({
             filename: "assets/css/[chunkhash].css",

@@ -1,14 +1,29 @@
 footer {
     color: #ebebeb;
     background: #6A7171;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     .container {
         margin-bottom: 0;
 
         p {
             margin-bottom: 0;
+
+            a {
+                &:link {
+                    color: #ebebeb;
+                }
+
+                &:visited {
+                    color: #ebebeb;
+                }
+
+                &:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
         }
     }
 }

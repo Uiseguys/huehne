@@ -10,6 +10,8 @@ module.exports = {
         unser: "./src/unser/index.js",
         der: "./src/der/index.js",
         kontakt: "./src/kontakt/index.js",
+        datenschutz: "./src/datenschutz/index.js",
+        impressum: "./src/impressum/index.js",
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -132,6 +134,16 @@ module.exports = {
             template: "src/kontakt/kontakt.html",
             filename: "kontakt/index.html",
             chunks: ["kontakt"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/datenschutz/datenschutz.html",
+            filename: "datenschutz/index.html",
+            chunks: ["datenschutz"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/impressum/impressum.html",
+            filename: "impressum/index.html",
+            chunks: ["impressum"],
         }),
         new MiniCssExtractPlugin({
             filename: "assets/css/[chunkhash].css",

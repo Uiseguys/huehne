@@ -1,0 +1,27 @@
+@import "../../../shared/scss/mixins";
+@import "../../../shared/scss/global";
+@import "../../../shared/scss/text-column";
+@import "../../../shared/scss/main-section";
+@import "../../../shared/scss/footer";
+
+.main-section {
+    background: url("../img/6_2.jpg");
+}
+
+.section-slide-1 {
+	@include bg-image;
+	background: url("../img/6_4.jpg");
+
+	svg {
+		@include svg-skews;
+	}
+}
+
+.section-slide-2 {
+	@include bg-image;
+	background: url("../img/6_3.jpg");
+    
+	svg {
+		@include svg-skews;
+	}
+}

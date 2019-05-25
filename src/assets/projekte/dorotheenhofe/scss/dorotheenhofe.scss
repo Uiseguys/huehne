@@ -1,38 +1,27 @@
 @import "../../../shared/scss/mixins";
 @import "../../../shared/scss/global";
 @import "../../../shared/scss/text-column";
+@import "../../../shared/scss/main-section";
 @import "../../../shared/scss/footer";
 
-// Landing Image
-.projekte-slide {
-    height: 100%;
-
-    svg {
-        @include svg-skews;
-    }
-
-    .projekte-carousel {
-        height: 100%;
-
-        .item:nth-child(1) {
-            height: 100%;
-
-            .slide1 {
-                height: 100%;
-                background: url(../img/1_3.jpg);
-                background-position: 50% 10% !important;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-
-            .slide2 {
-            
-            }
-
-            .slide3 {
-            
-            }
-        }
-    }
+.main-section {
+    background: url("../img/1_3.jpg");
 }
 
+.section-slide-1 {
+	@include bg-image;
+	background: url("../img/1_2.jpg");
+
+	svg {
+		@include svg-skews;
+	}
+}
+
+.section-slide-2 {
+	@include bg-image;
+	background: url("../img/1_1.jpg");
+    
+	svg {
+		@include svg-skews;
+	}
+}

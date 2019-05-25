@@ -6,10 +6,18 @@
     }
 
     .main-head {
-        padding-top: 14%;
+        padding-top: 23%;
+        padding-bottom: 23%;
         color: #fff;
-        line-height: 1em;
-        font-size: 5em;
+
+        p {
+            line-height: 1em;
+            font-size: 5em;
+        }
+
+        b {
+            font-size: 1em;
+        }
     }
 }
 

@@ -13,6 +13,16 @@ module.exports = {
         datenschutz: "./src/datenschutz/index.js",
         impressum: "./src/impressum/index.js",
         dorotheenhofe: "./src/projekte/dorotheenhofe/index.js",
+        hardenberg: "./src/projekte/hardenberg/index.js",
+        knesebeckstrabe: "./src/projekte/knesebeckstrabe/index.js",
+        city: "./src/projekte/city/index.js",
+        tower: "./src/projekte/tower/index.js",
+        kaiser: "./src/projekte/kaiser/index.js",
+        bellevue: "./src/projekte/bellevue/index.js",
+        lehrter: "./src/projekte/lehrter/index.js",
+        shopping: "./src/projekte/shopping/index.js",
+        historisches: "./src/projekte/historisches/index.js",
+        sophienstrabe: "./src/projekte/sophienstrabe/index.js",
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -150,6 +160,56 @@ module.exports = {
             template: "src/projekte/dorotheenhofe/dorotheenhofe.html",
             filename: "projekte/dorotheenhofe/index.html",
             chunks: ["dorotheenhofe"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/hardenberg/hardenberg.html",
+            filename: "projekte/hardenberg/index.html",
+            chunks: ["hardenberg"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/knesebeckstrabe/knesebeckstrabe.html",
+            filename: "projekte/knesebeckstrabe/index.html",
+            chunks: ["knesebeckstrabe"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/city/city.html",
+            filename: "projekte/city/index.html",
+            chunks: ["city"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/tower/tower.html",
+            filename: "projekte/tower/index.html",
+            chunks: ["tower"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/kaiser/kaiser.html",
+            filename: "projekte/kaiser/index.html",
+            chunks: ["kaiser"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/bellevue/bellevue.html",
+            filename: "projekte/bellevue/index.html",
+            chunks: ["bellevue"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/lehrter/lehrter.html",
+            filename: "projekte/lehrter/index.html",
+            chunks: ["lehrter"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/shopping/shopping.html",
+            filename: "projekte/shopping/index.html",
+            chunks: ["shopping"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/historisches/historisches.html",
+            filename: "projekte/historisches/index.html",
+            chunks: ["historisches"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/projekte/sophienstrabe/sophienstrabe.html",
+            filename: "projekte/sophienstrabe/index.html",
+            chunks: ["sophienstrabe"],
         }),
         new MiniCssExtractPlugin({
             filename: "assets/css/[chunkhash].css",

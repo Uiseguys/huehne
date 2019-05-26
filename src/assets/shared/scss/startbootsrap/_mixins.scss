@@ -1,10 +1,16 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap);
+  font-weight: normal;
+}
+
 @mixin body-font() {
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans Pro', sans-serif;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
 }
 
 @mixin heading-font() {
   font-weight: 400;
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans Pro', sans-serif;
 }

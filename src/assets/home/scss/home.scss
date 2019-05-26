@@ -5,6 +5,11 @@
 
 .main-section {
     background: url(../img/1.jpg);
+
+    .main-head {
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
 }
 
 .mission {
@@ -167,6 +172,10 @@
             }
         }
 
+        .custom-gray-bg {
+            
+        }
+
         // Manual reordering of projektes
         &:nth-child(5), 
         &:nth-child(7),
@@ -179,6 +188,14 @@
                 }
                 &:last-child {
                     order: 1;
+                }
+            }
+        }
+
+        &:nth-child(13) {
+            .custom-gray-bg {
+                span {
+                    font-size: 2.8rem !important;
                 }
             }
         }

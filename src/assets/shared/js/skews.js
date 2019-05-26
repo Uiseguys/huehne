@@ -52,8 +52,24 @@ const svgProjekteDrawer = () => {
         const svgTopLeft = `<path d="M0 0 L0 ${ch} L${wh[0]} 0Z" fill="#f5f5f5" />`;
         const svgTopRight = `<path d="M0 0 L${wh[0]} 0 L${wh[0]} ${ch}Z" fill="#f5f5f5" />`;
 
+        // Change the last projekte skew to have the proper
+        // screen sizes
+        const q = document.querySelector(".projekte #projekte-slide-11 svg"); // Fetch svg element to be changed
+        if (body.getBoundingClientRect().width < 992) {
+            if (q.getAttribute("class") == "projekte-top-left-skew") {
+                q.setAttribute("class", "projekte-left-skews");
+            }
+            console.log("Width is lesser than 992");
+        } else {
+            if (q.getAttribute("class") == "projekte-left-skews") {
+                q.setAttribute("class", "projekte-top-left-skew");              
+            }
+            console.log("Width is higher than 992");
+        }
+        if (body.querySelector(".projekte-top-left-skew") != null) {
+            body.querySelector(".projekte-top-left-skew").innerHTML = svgTopLeft;
+        }
         body.querySelector(".projekte-bottom-left-skew").innerHTML = svgBottomLeft;
-        body.querySelector(".projekte-top-left-skew").innerHTML = svgTopLeft;
         body.querySelectorAll(".projekte-left-skews").forEach((item) => { item.innerHTML = svgTopRight + svgBottomRight; });
         body.querySelectorAll(".projekte-right-skews").forEach((item) => { item.innerHTML = svgTopLeft + svgBottomLeft; });
     } catch (err) {
@@ -71,7 +87,7 @@ if (document.querySelector(".projekte") != null) {
 window.addEventListener("resize", () => {
     try {
         svgDrawer();
-        if (document.querySelector("projekte") != null) {
+        if (document.querySelector(".projekte") != null) {
             svgProjekteDrawer();
         }
     } catch (err) {

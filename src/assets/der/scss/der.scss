@@ -8,3 +8,9 @@
     background: url(../img/huehne.jpg);
     background-position: 50% 10% !important;
 }
+
+@media (max-width: 991px){
+	.main-section {
+		background-position: 85% 10% !important;
+	}
+}

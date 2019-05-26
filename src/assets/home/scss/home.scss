@@ -83,7 +83,7 @@
             }
 
             &#projekte-slide-1 {
-                background: url(../img/1_3.jpg); 
+                background: url(../img/1_1.jpg); 
                 @include bg-image;
 
                 & + .custom-gray-bg {
@@ -95,52 +95,52 @@
             }
 
             &#projekte-slide-2 {
-                background: url(../img/2_3.jpg);
+                background: url(../img/2_1.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-3 {
-                background: url(../img/3_2.jpg);
+                background: url(../img/3_1.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-4 {
-                background: url(../img/4_2.jpg);
+                background: url(../img/4_1.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-5 {
-                background: url(../img/5_3.jpg);
+                background: url(../img/5_1.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-6 {
-                //background: url(../img/6_3.jpg);
+                background: url(../img/6_1.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-7 {
-                background: url(../img/6_3.jpg);
+                background: url(../img/7_1.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-8 {
-                background: url(../img/7_2.jpg);
+                background: url(../img/8_1.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-9 {
-                background: url(../img/8_2.jpg);
+                background: url(../img/9_1.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-10 {
-                background: url(../img/9_3.jpg);
+                background: url(../img/10_1.jpg);
                 @include bg-image;
             }
 
             &#projekte-slide-11 {
-                //background: url(../img/9_3.jpg);
+                background: url(../img/11_1.jpg);
                 @include bg-image;
             }
         }
@@ -182,12 +182,8 @@
             }
         }
 
-        .custom-gray-bg {
-            
-        }
-
         // Manual reordering of projektes
-        &:nth-child(5), 
+        &:nth-child(5),
         &:nth-child(7),
         &:nth-child(9),
         &:nth-child(11),
@@ -206,6 +202,66 @@
             .custom-gray-bg {
                 span {
                     font-size: 2.8rem !important;
+                }
+            }
+        }
+    }
+}
+
+// iPhone 6/7/8 Viewport Settings
+@media (max-width: 375px) {
+    .projekte {
+        &:nth-child(9) {
+            .row {
+                .custom-gray-bg {
+                    span {
+                        font-size: 2.5rem !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Galaxy S5 viewport Settings
+@media (max-width: 360px) {
+    .projekte {
+
+        #projekte-slide-3 {
+            & + .custom-gray-bg {
+                span {
+                    font-size: 2.6rem;
+                }
+            }
+        }
+        &:nth-child(9) {
+            .custom-gray-bg {
+                span {
+                    font-size: 2.6rem;
+                }
+            }
+        }
+    }
+}
+
+// iPhone 5 SE viewport settings
+@media (max-width: 320px) {
+    .projekte {
+        #projekte-slide-3 {
+            & + .custom-gray-bg {
+                span {
+                    font-size: 2.5rem !important;
+                }
+            }
+        }
+
+        &:nth-child(9),
+        &:nth-child(13) {
+            .row {
+                .custom-gray-bg {
+                    span {
+                        font-size: 2.4rem !important;
+                    }
                 }
             }
         }

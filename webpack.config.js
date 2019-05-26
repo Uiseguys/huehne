@@ -41,7 +41,7 @@ module.exports = {
                     options: {
                         limit: 10000,
                         fallback: "file-loader",
-                        name: "assets/img/[name].[ext]",
+                        name: "assets/img/[hash].[ext]",
                         publicPath: "/",
                     },
                 },
@@ -72,7 +72,7 @@ module.exports = {
                     options: {
                         limit: 10000,
                         fallback: "file-loader",
-                        name: "assets/img/[name].[ext]",
+                        name: "assets/img/[hash].svg",
                         publicPath: "/",
                     },
                 },

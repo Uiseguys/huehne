@@ -59,12 +59,10 @@ const svgProjekteDrawer = () => {
             if (q.getAttribute("class") == "projekte-top-left-skew") {
                 q.setAttribute("class", "projekte-left-skews");
             }
-            console.log("Width is lesser than 992");
         } else {
             if (q.getAttribute("class") == "projekte-left-skews") {
                 q.setAttribute("class", "projekte-top-left-skew");              
             }
-            console.log("Width is higher than 992");
         }
         if (body.querySelector(".projekte-top-left-skew") != null) {
             body.querySelector(".projekte-top-left-skew").innerHTML = svgTopLeft;

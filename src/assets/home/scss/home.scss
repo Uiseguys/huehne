@@ -149,6 +149,16 @@
 
 // Order for projekte slides after screen is minimized
 @media (max-width: 991px) {
+    .main-section {
+        .main-head {
+            p {
+                padding-top:35%;
+                padding-bottom:35%;
+            }
+        }
+    }
+
+
     // Ensuring each projekte image is at
     // 70% height of the viewport, also accounting
     // for the extra height provided by the collapsed row

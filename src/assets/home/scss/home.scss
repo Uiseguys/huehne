@@ -142,6 +142,13 @@
             &#projekte-slide-11 {
                 background: url(../img/11_1.jpg);
                 @include bg-image;
+
+                & + .custom-gray-bg {
+                    small {
+                        position: absolute;
+                        z-index: 20;
+                    }
+                }
             }
         }
     }
@@ -159,6 +166,8 @@
     }
 
 
+
+
     // Ensuring each projekte image is at
     // 70% height of the viewport, also accounting
     // for the extra height provided by the collapsed row
@@ -170,6 +179,10 @@
             
             .col-lg-6 {
                 height: 50% !important;
+
+                &.custom-gray-bg {
+                    padding: 4rem 3rem;
+                }
             }
         }
 
@@ -207,6 +220,19 @@
         }
     }
 }
+
+@media (max-width: 411px) {
+    .projekte{
+        &:nth-child(9) {
+            .row {
+                span {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
+
 
 // iPhone 6/7/8 Viewport Settings
 @media (max-width: 375px) {

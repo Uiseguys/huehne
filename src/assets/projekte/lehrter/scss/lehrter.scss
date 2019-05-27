@@ -5,12 +5,12 @@
 @import "../../../shared/scss/footer";
 
 .main-section {
-    background: url("../img/7_1.jpg");
+    background: url("../img/8_1_lg.jpg");
 }
 
 .section-slide-1 {
 	@include bg-image;
-	background: url("../img/7_4.jpg");
+	background: url("../img/8_3_lg.jpg");
 
 	svg {
 		@include svg-skews;
@@ -19,7 +19,8 @@
 
 .section-slide-2 {
 	@include bg-image;
-	background: url("../img/7_2.jpg");
+	background: url("../img/8_2_lg.jpg");
+	background-size: 110% !important;
     
 	svg {
 		@include svg-skews;

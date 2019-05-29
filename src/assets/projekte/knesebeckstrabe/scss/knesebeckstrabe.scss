@@ -13,6 +13,7 @@
 	background: url("../img/3_1_lg.jpg");
 
 	svg {
+        margin-top: -1px;
 		@include svg-skews;
 	}
 }

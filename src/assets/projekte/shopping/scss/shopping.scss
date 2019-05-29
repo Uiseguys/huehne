@@ -16,6 +16,7 @@
 
 	svg {
 		@include svg-skews;
+        margin-top: -1px;
 	}
 }
 

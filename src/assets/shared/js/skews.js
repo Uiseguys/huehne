@@ -15,7 +15,7 @@ const svgDrawer = () => {
         const svgTopLeft = `<path d="M0 0 L0 ${ch} L${wh[0]} 0Z" fill="white" />`;
         // const svgTopRight = `<path d="M0 0 L${wh[0]} ${ch} L${wh[0]} 0Z" fill="white" />`;
 
-
+        // Change svg elements inner HTML with Path Strings
         main.querySelector(".bottom-left-skew").innerHTML = svgBottomLeft;
         if (projekte != null) {
             // Rendering for bottom left skew on last projekte section
@@ -52,7 +52,7 @@ const svgProjekteDrawer = () => {
         const svgTopRight = `<path d="M0 0 L${wh[0]} 0 L${wh[0]} ${ch / 2}Z" fill="#f5f5f5" />`;
 
         // Change the last projekte skew to have the proper
-        // screen sizes
+        // class depending on screen size
         const q = document.querySelector(".projekte #projekte-slide-11 svg"); // Fetch svg element to be changed
         if (body.getBoundingClientRect().width < 992) {
             if (q.getAttribute("class") == "projekte-top-left-skew") {
@@ -63,6 +63,8 @@ const svgProjekteDrawer = () => {
                 q.setAttribute("class", "projekte-top-left-skew");              
             }
         }
+
+        // Render top left skew only if the last projekte skew has the respective class
         if (body.querySelector(".projekte-top-left-skew") != null) {
             body.querySelector(".projekte-top-left-skew").innerHTML = svgTopLeft;
         }

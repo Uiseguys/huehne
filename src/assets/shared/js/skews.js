@@ -54,22 +54,12 @@ const svgProjekteDrawer = () => {
         // Change the last projekte skew to have the proper
         // class depending on screen size
         const q = document.querySelector(".projekte #projekte-slide-11 svg"); // Fetch svg element to be changed
-        if (body.getBoundingClientRect().width < 992) {
-            if (q.getAttribute("class") == "projekte-top-left-skew") {
-                q.setAttribute("class", "projekte-left-skews");
-            }
-        } else {
-            if (q.getAttribute("class") == "projekte-left-skews") {
-                q.setAttribute("class", "projekte-top-left-skew");              
-            }
-        }
 
         // Render top left skew only if the last projekte skew has the respective class
-        if (body.querySelector(".projekte-top-left-skew") != null) {
-            body.querySelector(".projekte-top-left-skew").innerHTML = svgTopLeft;
-        }
-        body.querySelector(".projekte-bottom-left-skew").innerHTML = svgBottomLeft;
-        body.querySelectorAll(".projekte-left-skews").forEach((item) => { item.innerHTML = svgTopRight + svgBottomRight; });
+        body.querySelectorAll(".projekte-top-left-skew").forEach((item) => { item.innerHTML = svgTopLeft; });
+        body.querySelectorAll(".projekte-bottom-left-skew").forEach((item) => { item.innerHTML = svgBottomLeft; });
+        body.querySelectorAll(".projekte-top-right-skew").forEach((item) => { item.innerHTML = svgTopRight; });
+        body.querySelectorAll(".projekte-bottom-right-skew").forEach((item) => { item.innerHTML = svgBottomRight; });
         body.querySelectorAll(".projekte-right-skews").forEach((item) => { item.innerHTML = svgTopLeft + svgBottomLeft; });
     } catch (err) {
         console.log(err);

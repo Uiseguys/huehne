@@ -26,3 +26,19 @@
 		@include svg-skews;
 	}
 }
+
+@media (max-width: 411px) {
+    .section-slide-1 {
+        .top-left-skew {
+            margin-top: -1px;
+        }
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 1024px) and (max-height: 1366px) and (min-height: 1366px) {
+    .section-slide-1 {
+        .top-left-skew {
+            margin-top: -2px;
+        }
+    }
+}

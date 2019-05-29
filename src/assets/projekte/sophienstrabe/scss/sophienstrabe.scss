@@ -10,7 +10,7 @@
 
 .section-slide-1 {
 	@include bg-image;
-	background: url("../img/11_2_lg.jpg");
+	background: url("../img/11_1_lg.jpg");
 
 	svg {
 		@include svg-skews;
@@ -20,7 +20,7 @@
 
 .section-slide-2 {
 	@include bg-image;
-	background: url("../img/11_1_lg.jpg");
+	background: url("../img/11_2_lg.jpg");
     
 	svg {
 		@include svg-skews;

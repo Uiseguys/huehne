@@ -3,6 +3,9 @@
 
     svg {
         @include svg-skews;
+        &.bottom-left-skew {
+            margin-top: 1px;
+        }
     }
 
     .main-head {
@@ -34,6 +37,7 @@
     }
 }
 
+// Galaxy S5 viewport Settings
 @media (max-width: 320px) {
     .main-section {
         .main-head {

@@ -10,8 +10,8 @@ const svgDrawer = () => {
         const wh = [body.getBoundingClientRect().width, body.getBoundingClientRect().height]; // An array of both width and height of the body
         // height of the slant 12% of total height
         const ch = 0.12 * wh[1];
-        const svgBottomLeft = `<path d="M0 ${wh[1] - ch} L0 ${wh[1]} L${wh[0]} ${wh[1]}Z" fill="white" />`;
-        const svgBottomRight = `<path d="M0 ${wh[1]} L${wh[0]} ${wh[1]} L${wh[0]} ${wh[1] - ch}Z" fill="white" />`;
+        const svgBottomLeft = `<path d="M0 ${wh[1] - (ch / 2)} L0 ${wh[1]} L${wh[0]} ${wh[1]}Z" fill="white" />`;
+        const svgBottomRight = `<path d="M0 ${wh[1]} L${wh[0]} ${wh[1]} L${wh[0]} ${wh[1] - (ch / 2)}Z" fill="white" />`;
         const svgTopLeft = `<path d="M0 0 L0 ${ch} L${wh[0]} 0Z" fill="white" />`;
         // const svgTopRight = `<path d="M0 0 L${wh[0]} ${ch} L${wh[0]} 0Z" fill="white" />`;
 
@@ -21,7 +21,7 @@ const svgDrawer = () => {
             // Rendering for bottom left skew on last projekte section
             // Height needs to be changed to accomodate the smaller projekte sections
             const prWh = projekte.getBoundingClientRect().height; // Projekte section height
-            const svgBtmLeft = `<path d="M0 ${prWh - ch} L0 ${prWh} L${wh[0]} ${prWh}Z" fill="white" />`; 
+            const svgBtmLeft = `<path d="M0 ${prWh - (ch / 2)} L0 ${prWh} L${wh[0]} ${prWh}Z" fill="white" />`; 
             projekteBtmLeft.innerHTML = svgBtmLeft;
         }
         if (body.querySelector(".bottom-right-skew") != null) {
@@ -41,16 +41,15 @@ const svgProjekteDrawer = () => {
     try {
         const col = document.getElementById("projekte-slide-1").getBoundingClientRect();
         const body = document.querySelector("body");
-
-        const wh = [col.width, col.height]; // An array of both width and height of the body
-
+        const wh = [col.width, col.height]; // An array of both width and height of the projekte elements
         // height of the slant 12% of total height
         const ch = Math.round(0.12 * body.getBoundingClientRect().height);
 
-        const svgBottomLeft = `<path d="M0 ${wh[1] - ch} L0 ${wh[1]} L${wh[0]} ${wh[1]}Z" fill="#f5f5f5" />`;
+        // Svg Path Strings
+        const svgBottomLeft = `<path d="M0 ${wh[1] - (ch / 2)} L0 ${wh[1]} L${wh[0]} ${wh[1]}Z" fill="#f5f5f5" />`;
         const svgBottomRight = `<path d="M0 ${wh[1]} L${wh[0]} ${wh[1]} L${wh[0]} ${wh[1] - ch}Z" fill="#f5f5f5" />`;
         const svgTopLeft = `<path d="M0 0 L0 ${ch} L${wh[0]} 0Z" fill="#f5f5f5" />`;
-        const svgTopRight = `<path d="M0 0 L${wh[0]} 0 L${wh[0]} ${ch}Z" fill="#f5f5f5" />`;
+        const svgTopRight = `<path d="M0 0 L${wh[0]} 0 L${wh[0]} ${ch / 2}Z" fill="#f5f5f5" />`;
 
         // Change the last projekte skew to have the proper
         // screen sizes

@@ -9,7 +9,7 @@
 @mixin svg-skews() {
     display: block;
     position: absolute;
-    height: 100% !important;
+    height: 101% !important;
     width: 100% !important;
     z-index: 10;
 }

@@ -160,19 +160,20 @@
     .projekte {
         height: 60rem;
 
-        //svg.top-left-skew {
-            //margin-top: -1px;
-        //}
+        svg.top-left-skew {
+            margin-top: -1px;
+        }
 
-        //.projekte-top-right-skew,
-        //.projekte-top-left-skew {
-            //margin-top: -1px;
-        //}
+        .projekte-top-right-skew,
+        .projekte-top-left-skew {
+            margin-top: -1px;
+        }
 
-        //.projekte-bottom-right-skew,
-        //.projekte-bottom-left-skew {
-            //margin-top: 1px;
-        //}
+        .projekte-bottom-right-skew,
+        .projekte-bottom-left-skew {
+            margin-top: 1px;
+        }
+
         .row {
             height: 100%;
             
@@ -352,6 +353,20 @@
     .projekte {
         & > .container {
             margin-top: 7%;
+        }
+
+        svg.top-left-skew {
+            margin-top: -1px;
+        }
+
+        .projekte-top-right-skew,
+        .projekte-top-left-skew {
+            margin-top: -1px;
+        }
+
+        .projekte-bottom-right-skew,
+        .projekte-bottom-left-skew {
+            margin-top: 1px;
         }
 
         .row {

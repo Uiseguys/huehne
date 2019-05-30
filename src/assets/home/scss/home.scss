@@ -279,7 +279,7 @@
     }
 }
 
-//// Galaxy S5 viewport Settings
+// Galaxy S5 viewport Settings
 @media (max-width: 360px) {
     .projekte {
 
@@ -335,9 +335,26 @@
     }
 }
 
-//// iPad Viewport Settings
-@media (max-width: 768px) and (min-height: 1024px) {
+// iPad Viewport Settings
+@media (max-width: 1024px) and (min-width: 1024px) and (max-height: 768px) and (min-height: 768px) {
     .projekte {
+        &:nth-child(4) {
+            .row {
+                .col-lg-6.custom-gray-bg {
+                }
+            }
+        }
+        
+        &:nth-child(9) {
+            .row {
+                .col-lg-6.custom-gray-bg {
+                    span {
+                        font-size: 2.8rem !important;
+                    }
+                }
+            }
+        }
+
         .row {
             .col-lg-6 {
                 &.custom-gray-bg {
@@ -374,6 +391,25 @@
                 &.custom-gray-bg {
                     padding: 4.8rem 3rem !important;
                 }
+            }
+        }
+
+        &:nth-child(6) {
+            .projekte-top-left-skew {
+                margin-top: -2px;
+            }
+        }
+
+
+        &:nth-child(7) {
+            .projekte-top-right-skew {
+                margin-top: -2px;
+            }
+        }
+
+        &:nth-child(9) {
+            .projekte-bottom-right-skew {
+                margin-top: 2px;
             }
         }
     }

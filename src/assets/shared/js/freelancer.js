@@ -18,14 +18,14 @@
     });
 
     // Scroll to top button appear
-    $(document).scroll(function () {
-        const scrollDistance = $(this).scrollTop();
-        if (scrollDistance > 100) {
-            $(".scroll-to-top").fadeIn();
-        } else {
-            $(".scroll-to-top").fadeOut();
-        }
-    });
+    //$(document).scroll(function () {
+        //const scrollDistance = $(this).scrollTop();
+        //if (scrollDistance > 100) {
+            //$(".scroll-to-top").fadeIn();
+        //} else {
+            //$(".scroll-to-top").fadeOut();
+        //}
+    //});
 
     // Closes responsive menu when a scroll trigger link is clicked
     $(".js-scroll-trigger").click(() => {
@@ -40,6 +40,7 @@
 
     // Collapse Navbar
     const navbarCollapse = () => {
+        //if ($("#mainNav").offset().top > 100) {
         if ($("#mainNav").offset().top > 100) {
             $("#mainNav").addClass("navbar-shrink");
             $("#logo-white").addClass("hide");

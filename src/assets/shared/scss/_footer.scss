@@ -11,6 +11,9 @@ footer {
             margin-bottom: 0;
 
             a {
+                &:nth-child(2) {
+                    margin-left: 20rem;
+                }
                 &:link {
                     color: #ebebeb;
                 }
@@ -34,6 +37,9 @@ footer {
             b,
             p {
                 text-align: left !important;
+                a:nth-child(2) {
+                    margin-left: 0;
+                }
             }
         }
     }

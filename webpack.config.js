@@ -2,10 +2,13 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserJSPlugin = require("terser-webpack-plugin");
 // const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
     entry: {
+        commons: "./src/commons.js",
         index: "./src/index.js",
         unser: "./src/unser/index.js",
         der: "./src/der/index.js",
@@ -129,91 +132,91 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "src/index.html",
             filename: "index.html",
-            chunks: ["index"],
+            chunks: ["index", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/unser/unser.html",
             filename: "unser/index.html",
-            chunks: ["unser"],
+            chunks: ["unser", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/der/der.html",
             filename: "der/index.html",
-            chunks: ["der"],
+            chunks: ["der", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/kontakt/kontakt.html",
             filename: "kontakt/index.html",
-            chunks: ["kontakt"],
+            chunks: ["kontakt", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/datenschutz/datenschutz.html",
             filename: "datenschutz/index.html",
-            chunks: ["datenschutz"],
+            chunks: ["datenschutz", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/impressum/impressum.html",
             filename: "impressum/index.html",
-            chunks: ["impressum"],
+            chunks: ["impressum", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/dorotheenhofe/dorotheenhofe.html",
             filename: "projekte/dorotheenhofe/index.html",
-            chunks: ["dorotheenhofe"],
+            chunks: ["dorotheenhofe", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/hardenberg/hardenberg.html",
             filename: "projekte/hardenberg/index.html",
-            chunks: ["hardenberg"],
+            chunks: ["hardenberg", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/knesebeckstrabe/knesebeckstrabe.html",
             filename: "projekte/knesebeckstrabe/index.html",
-            chunks: ["knesebeckstrabe"],
+            chunks: ["knesebeckstrabe", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/city/city.html",
             filename: "projekte/city/index.html",
-            chunks: ["city"],
+            chunks: ["city", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/tower/tower.html",
             filename: "projekte/tower/index.html",
-            chunks: ["tower"],
+            chunks: ["tower", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/kaiser/kaiser.html",
             filename: "projekte/kaiser/index.html",
-            chunks: ["kaiser"],
+            chunks: ["kaiser", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/bellevue/bellevue.html",
             filename: "projekte/bellevue/index.html",
-            chunks: ["bellevue"],
+            chunks: ["bellevue", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/lehrter/lehrter.html",
             filename: "projekte/lehrter/index.html",
-            chunks: ["lehrter"],
+            chunks: ["lehrter", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/shopping/shopping.html",
             filename: "projekte/shopping/index.html",
-            chunks: ["shopping"],
+            chunks: ["shopping", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/historisches/historisches.html",
             filename: "projekte/historisches/index.html",
-            chunks: ["historisches"],
+            chunks: ["historisches", "commons"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/sophienstrabe/sophienstrabe.html",
             filename: "projekte/sophienstrabe/index.html",
-            chunks: ["sophienstrabe"],
+            chunks: ["sophienstrabe", "commons"],
         }),
         new MiniCssExtractPlugin({
-            filename: "assets/css/[chunkhash].css",
-            chunkFilename: "assets/css/[chunkhash].css",
+            filename: "assets/css/[contenthash].css",
+            chunkFilename: "assets/css/[contenthash].css",
         }),
         new webpack.ProvidePlugin({
             $: "jquery",
@@ -227,15 +230,18 @@ module.exports = {
     ],
     optimization: {
         splitChunks: {
-        // cacheGroups: {
-        //             commons: {
-        //                     name: "commons",
-        //                     chunks: "initial",
-        //                     minChunks: 2,
-        //                     minSize: 0
-        //             }
-        // }
+            chunks: "async",
         },
+        minimizer: [new TerserJSPlugin({}),
+            new OptimizeCssAssetsPlugin({
+                assetNameRegExp: /\.optimize\.css$/g,
+                cssProcessor: require("cssnano"),
+                cssProcessorPluginOptions: {
+                    preset: ["default", { discardComments: { removeAll: true } }],
+                },
+                canPrint: true,
+            }),
+        ],
     },
     resolve: {
         extensions: [".js", ".jsx"],

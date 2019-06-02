@@ -34,6 +34,17 @@
                     color: $primary;
                 }
             }
+
+            .btn-group {
+                a.nav-link.active {
+                    background: #000;
+                    color: $white;
+                }
+            }
+        }
+
+        .btn-group {
+            margin-top: 7px;
         }
     }
 
@@ -104,6 +115,20 @@
                     background-color: #fae800 !important;
                 }
             }
+
+            .btn-group {
+                a {
+                    &.nav-link.active {
+                        background: #000 !important;
+                        color: white !important;
+                        border-color: #000;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -138,6 +163,16 @@
 
                     &.active {
                         color: $black;
+                    }
+                }
+
+
+                .btn-group {
+                    border-radius: 10px !important;
+
+                    a.nav-link.active {
+                        color: $white !important;
+                        background: #000 !important;
                     }
                 }
             }

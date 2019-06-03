@@ -3,6 +3,7 @@
 // svgDrawer Draws using body width
 const svgDrawer = () => {
     try {
+        // Retrieving DOM elements that will have skews added
         const main = document.querySelector(".main-section");
         const projekte = document.querySelector(".projekte");
         const projekteBtmLeft = document.querySelector(".projekte > .bottom-left-skew");
@@ -13,7 +14,6 @@ const svgDrawer = () => {
         const svgBottomLeft = `<path d="M0 ${wh[1] - (ch / 2)} L0 ${wh[1] + 2} L${wh[0]} ${wh[1] + 2} L${wh[0]} ${wh[1] - 1}Z" fill="white" />`;
         const svgBottomRight = `<path d="M0 ${wh[1]} L0 ${wh[1] + 2} L${wh[0]} ${wh[1] + 2} L${wh[0]} ${wh[1] - (ch / 2)}Z" fill="white" />`;
         const svgTopLeft = `<path d="M0 0 L0 ${ch + 2} L${wh[0]} 2 L${wh[0]} 0Z" fill="white" />`;
-        // const svgTopRight = `<path d="M0 0 L${wh[0]} ${ch} L${wh[0]} 0Z" fill="white" />`;
 
         // Change svg elements inner HTML with Path Strings
         main.querySelector(".bottom-left-skew").innerHTML = svgBottomLeft;
@@ -51,11 +51,7 @@ const svgProjekteDrawer = () => {
         const svgTopLeft = `<path d="M0 0 L0 ${ch + 2} L${wh[0]} 2 L${wh[0]} 0Z" fill="#f5f5f5" />`;
         const svgTopRight = `<path d="M0 0 L0 2 L${wh[0]} ${ch / 2} L${wh[0]} 0Z" fill="#f5f5f5" />`;
 
-        // Change the last projekte skew to have the proper
         // class depending on screen size
-        const q = document.querySelector(".projekte #projekte-slide-11 svg"); // Fetch svg element to be changed
-
-        // Render top left skew only if the last projekte skew has the respective class
         body.querySelectorAll(".projekte-top-left-skew").forEach((item) => { item.innerHTML = svgTopLeft; });
         body.querySelectorAll(".projekte-bottom-left-skew").forEach((item) => { item.innerHTML = svgBottomLeft; });
         body.querySelectorAll(".projekte-top-right-skew").forEach((item) => { item.innerHTML = svgTopRight; });
@@ -66,8 +62,9 @@ const svgProjekteDrawer = () => {
     }
 };
 
-// Run the apps at first launch
+// Run the functions at first launch
 svgDrawer();
+// Check to see if the projekte sections are present in the current viewed page
 if (document.querySelector(".projekte") != null) {
     svgProjekteDrawer();
 }

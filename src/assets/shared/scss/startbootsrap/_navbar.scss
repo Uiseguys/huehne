@@ -27,19 +27,11 @@
 
         li.nav-item {
             a.nav-link {
-                color: $white;
+                color: #EBEBEB;
 
-                &:hover {
-                    color: $primary;
-                }
-
-                &:active,
-                &:focus {
+                &:hover,
+                &:active {
                     color: $white;
-                }
-
-                &.active {
-                    color: $primary;
                 }
             }
 

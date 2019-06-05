@@ -1,6 +1,5 @@
 @import "../../shared/scss/mixins";
 @import "../../shared/scss/global";
-@import "../../shared/scss/skews";
 @import "../../shared/scss/main-section";
 @import "../../shared/scss/footer";
 
@@ -38,12 +37,29 @@
 }
 
 .projekte {
-    height: 30rem; 
+    height: 70%; 
     position: relative;
     padding: 0;
+    background-color: #f5f5f5;
 
-    svg {
-        @include svg-skews;
+    &:nth-child(4) {
+        background: #fff;
+        .projekte-wrapper {
+            background: #f5f5f5;
+            height: 100%;
+            width: 100%;
+            clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%);
+
+           #projekte-slide-1 {
+                background: url(../img/1_1.jpg); 
+                @include bg-image;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+            }
+        }
+    }
+
+    &:nth-child(14) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
     }
 
     & > .container {
@@ -51,8 +67,13 @@
         left: 0;
         right: 0;
         position: absolute;
-        z-index: 20;
+
+        b {
+            position: absolute;
+            z-index: 50;
+        }
     }
+
 
     .row {
         height: 100%;
@@ -79,56 +100,53 @@
                 }
             }
 
-            &#projekte-slide-1 {
-                background: url(../img/1_1.jpg); 
-                @include bg-image;
-
-                & + .custom-gray-bg {
-                    a {
-                        position: absolute;
-                        z-index: 20;
-                    }
-                }
-            }
 
             &#projekte-slide-2 {
                 background: url(../img/2_1.jpg);
                 @include bg-image;
+                @include projekte-right-clip;
             }
 
             &#projekte-slide-3 {
                 background: url(../img/3_1.jpg);
                 @include bg-image;
+                @include projekte-left-clip;
             }
 
             &#projekte-slide-4 {
                 background: url(../img/4_1.jpg);
                 @include bg-image;
+                @include projekte-right-clip;
             }
 
             &#projekte-slide-5 {
                 background: url(../img/5_1.jpg);
                 @include bg-image;
+                @include projekte-left-clip;
             }
 
             &#projekte-slide-6 {
                 background: url(../img/6_1.jpg);
                 @include bg-image;
+                @include projekte-right-clip;
             }
 
             &#projekte-slide-7 {
                 background: url(../img/7_1.jpg);
                 @include bg-image;
+                @include projekte-left-clip;
             }
 
             &#projekte-slide-8 {
                 background: url(../img/8_1.jpg);
                 @include bg-image;
+                @include projekte-right-clip;
             }
 
             &#projekte-slide-9 {
                 background: url(../img/9_1.jpg);
                 @include bg-image;
+                @include projekte-left-clip;
 
                 background-size: 125% !important;
             }
@@ -136,23 +154,13 @@
             &#projekte-slide-10 {
                 background: url(../img/10_1.jpg);
                 @include bg-image;
+                @include projekte-right-clip;
             }
 
             &#projekte-slide-11 {
                 background: url(../img/11_1.jpg);
                 @include bg-image;
-                
-                .projekte-bottom-left-skew {
-                    visibility: hidden;
-                    opacity: 0;
-                }
-
-                & + .custom-gray-bg {
-                    small {
-                        position: absolute;
-                        z-index: 20;
-                    }
-                }
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
             }
         }
     }
@@ -185,13 +193,6 @@
     }
 
     .projekte {
-        .custom-gray-bg {
-            padding-top: 4.5rem;
-            padding-bottom: 4.5rem;
-            p {
-                font-size: 50px;
-            }
-        }
     }
     // Ensuring each projekte image is at
     // 70% height of the viewport, also accounting
@@ -207,6 +208,9 @@
 
                 &.custom-gray-bg {
                     padding: 4rem 3rem;
+                    p {
+                        font-size: 50px;
+                    }
                 }
             }
         }
@@ -221,10 +225,7 @@
         }
 
         #projekte-slide-11 {
-            .projekte-bottom-left-skew {
-                visibility: visible !important;
-                opacity: 1 !important;
-            }
+            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 90%) !important;
         }
 
         // Manual reordering of projektes
@@ -400,25 +401,6 @@
                 &.custom-gray-bg {
                     padding: 4.8rem 3rem !important;
                 }
-            }
-        }
-
-        &:nth-child(6) {
-            .projekte-top-left-skew {
-                margin-top: -2px;
-            }
-        }
-
-
-        &:nth-child(7) {
-            .projekte-top-right-skew {
-                margin-top: -2px;
-            }
-        }
-
-        &:nth-child(9) {
-            .projekte-bottom-right-skew {
-                margin-top: 2px;
             }
         }
     }

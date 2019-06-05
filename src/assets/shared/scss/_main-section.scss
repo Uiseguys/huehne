@@ -3,30 +3,33 @@
 .main-section {
     @include bg-image;
     font-family: "Fira Sans", sans-serif;
+    clip-path: polygon(0 0, 0 95%, 100% 100%, 100% 0);
+
 
     svg {
+        display:none;
         @include svg-skews;
+        z-index: 5 !important;
         &.bottom-left-skew {
             margin-top: 1px;
         }
     }
 
     .main-head {
-        padding-top: 23%;
+        padding-top: 22%;
         padding-bottom: 23%;
         color: #EBEBEB;
-
         p {
-            line-height: 1em;
-            font-size: 5em;
+            line-height: 1.275;
+            font-size: 60px;
         }
 
         b {
-            font-size: 1em;
+            font-size: 20px; 
         }
+
         p,
         b {
-            position: absolute;
             z-index: 30;
 
             &:hover,

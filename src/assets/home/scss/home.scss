@@ -180,6 +180,21 @@
         }
     }
 
+    .mission {
+        p {
+            font-size: 2.1rem;
+        }
+    }
+
+    .projekte {
+        .custom-gray-bg {
+            padding-top: 4.5rem;
+            padding-bottom: 4.5rem;
+            p {
+                font-size: 50px;
+            }
+        }
+    }
     // Ensuring each projekte image is at
     // 70% height of the viewport, also accounting
     // for the extra height provided by the collapsed row
@@ -272,19 +287,17 @@
 // iPhone 6/7/8 Viewport Settings
 @media (max-width: 375px) {
     .projekte {
-        #projekte-slide-3 {
-            & + .custom-gray-bg {
-                span {
-                    font-size: 2.5rem;
-                }
+        .col-lg-6.custom-gray-bg {
+            p {
+                font-size: 2.8rem !important;
             }
         }
-
-        &:nth-child(9),
-        &:nth-child(13) {
+        
+        &:nth-child(13),
+        &:nth-child(9) {
             .col-lg-6.custom-gray-bg {
                 span {
-                    font-size: 2.5rem !important;
+                    font-size: 2.6rem !important;
                 }
             }
         }
@@ -324,7 +337,7 @@
     .projekte {
         .row {
             .custom-gray-bg {
-                font-size: 0.85em !important;
+                font-size: 0.85rem !important;
             }
         }
 

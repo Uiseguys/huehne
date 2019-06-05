@@ -43,7 +43,7 @@ const svgProjekteDrawer = () => {
         const body = document.querySelector("body");
         const wh = [col.width, col.height]; // An array of both width and height of the projekte elements
         // height of the slant 12% of total height
-        const ch = (0.12 * body.getBoundingClientRect().height) + 2;
+        const ch = (0.08* body.getBoundingClientRect().height) + 2;
 
         // Svg Path Strings
         const svgBottomLeft = `<path d="M0 ${wh[1] - (ch / 2)} L0 ${wh[1] + 2} L${wh[0]} ${wh[1] + 2} L${wh[0]} ${wh[1]}Z" fill="#f5f5f5" />`;

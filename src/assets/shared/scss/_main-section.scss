@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans+Pro&display=swap);
+
 .main-section {
     @include bg-image;
+    font-family: "Fira Sans", sans-serif;
 
     svg {
         @include svg-skews;
@@ -11,7 +14,7 @@
     .main-head {
         padding-top: 23%;
         padding-bottom: 23%;
-        color: #fff;
+        color: #EBEBEB;
 
         p {
             line-height: 1em;
@@ -20,6 +23,16 @@
 
         b {
             font-size: 1em;
+        }
+        p,
+        b {
+            position: absolute;
+            z-index: 30;
+
+            &:hover,
+            &:active {
+                color: #fff;
+            }
         }
     }
 }

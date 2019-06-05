@@ -7,9 +7,17 @@
     @include heading-font;
 
     .navbar-brand {
-        img#logo.hide,
-        img#logo-white.hide {
-            display: none;
+        svg {
+            &#logo:hover,
+            &#logo:active {
+                polygon {
+                    fill: #fff;
+                }
+
+                path {
+                    fill: #fff;
+                }
+            }
         }
     }
 
@@ -36,9 +44,25 @@
             }
 
             .btn-group {
-                a.nav-link.active {
-                    background: #000;
-                    color: $white;
+                margin-top: 14px;
+
+                a.nav-link {
+                    &:hover,
+                    &:active {
+                        color: #fff;
+                    }
+
+                    &:last-child {
+                        margin-left: 2px;
+                    }
+                    color: #B4B4B4;
+                }
+                div {
+                    display: inline-flex;
+                    background: #B4B4B4;
+                    margin-top: 8px;
+                    height: 20px;
+                    width: 1px;
                 }
             }
         }
@@ -95,6 +119,17 @@
 
         .navbar-brand {
             font-size: 1.5em;
+            svg#logo {
+                polygon {
+                    fill: #BC0D3B;
+                }
+                path {
+                    fill: #BC0D3B;
+                    &:last-child {
+                        fill: #6A7171;
+                    }
+                }
+            }
         }
 
         .nav-item {
@@ -138,14 +173,33 @@
         background: white !important;
 
         .navbar-brand {
-            #logo {
-                display: block !important;
-            }
+            font-size: 1.5em;
+            svg#logo {
+                polygon {
+                    fill: #BC0D3B;
+                }
 
-            #logo-white {
-                display: none !important;
+                path {
+                    fill: #BC0D3B;
+                    &:last-child {
+                        fill: #6A7171;
+                    }
+                }
+
+                &:hover,
+                &:active {
+                    polygon {
+                        fill: #BC0D3B;
+                    }
+                    path {
+                        fill: #BC0D3B;
+                        &:last-child {
+                            fill: #6A7171;
+                        }
+                    }
+                }
             }
-        } 
+        }
 
         .navbar-nav {
             li.nav-item {

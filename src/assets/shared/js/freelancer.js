@@ -40,14 +40,9 @@
 
     // Collapse Navbar
     const navbarCollapse = () => {
-        //if ($("#mainNav").offset().top > 100) {
         if ($("#mainNav").offset().top > 100) {
             $("#mainNav").addClass("navbar-shrink");
-            $("#logo-white").addClass("hide");
-            $("#logo").removeClass("hide");
         } else {
-            $("#logo").addClass("hide");
-            $("#logo-white").removeClass("hide");
             $("#mainNav").removeClass("navbar-shrink");
         }
     };
@@ -75,19 +70,19 @@
         //focus: "#username",
         //modal: true,
     //});
-    $(document).on("click", ".portfolio-modal-dismiss", (e) => {
-        e.preventDefault();
-        $.magnificPopup.close();
-    });
+    //$(document).on("click", ".portfolio-modal-dismiss", (e) => {
+        //e.preventDefault();
+        //$.magnificPopup.close();
+    //});
 
     // Floating label headings for the contact form
-    $(() => {
-        $("body").on("input propertychange", ".floating-label-form-group", function (e) {
-            $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
-        }).on("focus", ".floating-label-form-group", function () {
-            $(this).addClass("floating-label-form-group-with-focus");
-        }).on("blur", ".floating-label-form-group", function () {
-            $(this).removeClass("floating-label-form-group-with-focus");
-        });
-    });
+    //$(() => {
+        //$("body").on("input propertychange", ".floating-label-form-group", function (e) {
+            //$(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
+        //}).on("focus", ".floating-label-form-group", function () {
+            //$(this).addClass("floating-label-form-group-with-focus");
+        //}).on("blur", ".floating-label-form-group", function () {
+            //$(this).removeClass("floating-label-form-group-with-focus");
+        //});
+    //});
 }(jQuery)); // End of use strict

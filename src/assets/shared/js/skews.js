@@ -1,6 +1,42 @@
 // window.addEventListener("DOMContentLoaded", () => {
 // Create svg files that dynamically change with the image size
 // svgDrawer Draws using body width
+
+// Adding SVG Elements to the DOM
+const createSvgDomElements = () => {
+    const mainInner = document.querySelector(".main-section > .container");
+    const pro = document.querySelector(".projekte");
+
+    // Main Section SVG Element
+    mainInner.insertAdjacentHTML("beforebegin", "<svg class='bottom-left-skew'><svg>");
+
+    // Index Pages Projekte Sections SVG elements
+    if (pro != null) {
+        // Creates first svg element for the first projekte section
+        const firstPro = document.querySelector(".projekte:nth-child(4)"); 
+        firstPro.querySelector(".container").insertAdjacentHTML("beforebegin", "<svg class='top-left-skew'><svg>");
+        // Creates svg elements for first projekte image
+        firstPro.querySelector(".projekte-wrapper .row .col-lg-6#projekte-slide-1").innerHTML = "<svg class='projekte-bottom-left-skew'></svg>";
+
+        // Creates svg elements for the last projekte section
+        const lastPro = document.querySelector(".projekte:nth-child(14)");
+        lastPro.querySelector(".row .col-lg-6#projekte-slide-11").innerHTML = "<svg class='projekte-top-left-skew'>";
+        lastPro.querySelector(".row").insertAdjacentHTML("beforebegin", "<svg class='bottom-left-skew'><svg>");
+
+        // Creates SVG elements excluding the first and last projekte section
+        for (let i = 2; i < 11; i += 1) {
+            let selector = `.projekte > .row > .col-lg-6#projekte-slide-${i}`;
+            let el = document.querySelector(selector);
+            if (i % 2 === 0) { // Check if even numbered to have right sided angled skews
+                el.innerHTML = "<svg class='projekte-top-right-skew'></svg><svg class='projekte-bottom-right-skew'></svg>";
+            } else {
+                el.innerHTML = "<svg class='projekte-top-left-skew'></svg><svg class='projekte-bottom-left-skew'></svg>";
+            }
+        }
+    }
+}
+
+// Assign skews
 const svgDrawer = () => {
     try {
         // Retrieving DOM elements that will have skews added
@@ -9,6 +45,9 @@ const svgDrawer = () => {
         const projekteBtmLeft = document.querySelector(".projekte > .bottom-left-skew");
         const body = document.querySelector("body");
         const wh = [body.getBoundingClientRect().width, body.getBoundingClientRect().height]; // An array of both width and height of the body
+        
+        
+        
         // height of the slant 12% of total height
         const ch = 60 + 2;
         const svgBottomLeft = `<path d="M0 ${wh[1] - (ch / 2)} L0 ${wh[1] + 2} L${wh[0]} ${wh[1] + 2} L${wh[0]} ${wh[1] - 1}Z" fill="white" />`;
@@ -62,19 +101,25 @@ const svgProjekteDrawer = () => {
     }
 };
 
+console.log(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"));
 // Run the functions at first launch
-svgDrawer();
-// Check to see if the projekte sections are present in the current viewed page
-if (document.querySelector(".projekte") != null) {
-    svgProjekteDrawer();
+if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) { // Test if clip-path is supported
+    createSvgDomElements();
+    svgDrawer();
+    // Check to see if the projekte sections are present in the current viewed page
+    if (document.querySelector(".projekte") != null) {
+        svgProjekteDrawer();
+    }
 }
-
 // Run the functions when the windows are resized
 window.addEventListener("resize", () => {
     try {
-        svgDrawer();
-        if (document.querySelector(".projekte") != null) {
-            svgProjekteDrawer();
+        if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) {
+            svgDrawer();
+            // Check to see if the projekte sections are present in the current viewed page
+            if (document.querySelector(".projekte") != null) {
+                svgProjekteDrawer();
+            }
         }
     } catch (err) {
         console.log(err);

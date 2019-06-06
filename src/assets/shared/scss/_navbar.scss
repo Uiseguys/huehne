@@ -25,6 +25,7 @@
 
         li.nav-item {
             a.nav-link {
+                font-weight: 400;
                 color: #EBEBEB;
 
                 &:hover,
@@ -34,7 +35,7 @@
             }
 
             .btn-group {
-                margin-top: 14px;
+                margin-top: 8px;
 
                 a.nav-link {
                     &:hover,
@@ -58,7 +59,7 @@
         }
 
         .btn-group {
-            margin-top: 7px;
+            margin-top: 12px;
         }
     }
 
@@ -86,18 +87,6 @@
 
         .navbar-nav {
             margin-top: 0;
-        }
-
-        .navbar-nav > li.nav-item > a.nav-link.active {
-            color: white;
-            background: $primary;
-
-            &:active,
-            &:focus,
-            &:hover {
-                color: $white;
-                background: $primary;
-            }
         }
     }
 

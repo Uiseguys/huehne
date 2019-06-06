@@ -1,5 +1,6 @@
 @import "../../shared/scss/mixins";
 @import "../../shared/scss/global";
+@import "../../shared/scss/navbar";
 @import "../../shared/scss/skews";
 @import "../../shared/scss/main-section";
 @import "../../shared/scss/footer";
@@ -15,11 +16,12 @@
 .mission {
     b {
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 20px;
     }
+
     p {
         color: #5b5d5e;
-        font-weight: 100 !important;
+        font-weight: 100;
         font-size: 2.2rem;
         line-height: 1.275;
     }
@@ -27,8 +29,10 @@
 
 .custom-gray-bg {
     background: #f5f5f5;
+
     p {
         font-size: 60px;
+        font-weight: 100;
         line-height: 1.275;
 
         a {

@@ -3,6 +3,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     background: transparent;
+    font-family: "Fira Sans", sans-serif;
 
     .navbar-brand {
         svg {
@@ -35,7 +36,7 @@
             }
 
             .btn-group {
-                margin-top: 8px;
+                margin-top: 12px;
 
                 a.nav-link {
                     &:hover,

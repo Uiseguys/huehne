@@ -4,8 +4,9 @@
 
 // Adding SVG Elements to the DOM
 const createSvgDomElements = () => {
-    const mainInner = document.querySelector(".main-section > .container");
+    const mainInner = document.querySelector(".main-section > .container"); // Main Section bottom left skew
     const pro = document.querySelector(".projekte");
+    let slide = document.querySelector(".section-slide-1");
 
     // Main Section SVG Element
     mainInner.insertAdjacentHTML("beforebegin", "<svg class='bottom-left-skew'><svg>");
@@ -24,7 +25,7 @@ const createSvgDomElements = () => {
         lastPro.querySelector(".row").insertAdjacentHTML("beforebegin", "<svg class='bottom-left-skew'><svg>");
 
         // Creates SVG elements excluding the first and last projekte section
-        for (let i = 2; i < 11; i += 1) {
+        for (let i = 2; i < 12; i += 1) {
             let selector = `.projekte > .row > .col-lg-6#projekte-slide-${i}`;
             let el = document.querySelector(selector);
             if (i % 2 === 0) { // Check if even numbered to have right sided angled skews
@@ -33,6 +34,18 @@ const createSvgDomElements = () => {
                 el.innerHTML = "<svg class='projekte-top-left-skew'></svg><svg class='projekte-bottom-left-skew'></svg>";
             }
         }
+    }
+
+    // Check if projekte product classes exist and create svg clip elements
+    if (slide != null) {
+        // Retrieve the other two sections
+        const slideTwo = document.querySelector(".section-slide-2");
+        const slideThree = document.querySelector(".section-slide-3");
+
+        slide.innerHTML = "<svg class='top-left-skew'></svg>"
+        slideThree.innerHTML = "<svg class='bottom-left-skew'></svg>";
+        slideTwo.style.marginTop = "0";
+        slideThree.style.marginTop = "0";
     }
 }
 
@@ -44,9 +57,8 @@ const svgDrawer = () => {
         const projekte = document.querySelector(".projekte");
         const projekteBtmLeft = document.querySelector(".projekte > .bottom-left-skew");
         const body = document.querySelector("body");
+        const slide = body.querySelector(".section-slide-3 svg");
         const wh = [body.getBoundingClientRect().width, body.getBoundingClientRect().height]; // An array of both width and height of the body
-        
-        
         
         // height of the slant 12% of total height
         const ch = 60 + 2;
@@ -68,6 +80,9 @@ const svgDrawer = () => {
         }
         if (body.querySelector(".top-left-skew") != null) { // Check if class even exists
             body.querySelector(".top-left-skew").innerHTML = svgTopLeft;
+        }
+        if (slide != null) { // Check if class even exists
+            slide.innerHTML = svgBottomLeft;
         }
     } catch (err) {
         console.log(err);
@@ -101,7 +116,6 @@ const svgProjekteDrawer = () => {
     }
 };
 
-console.log(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"));
 // Run the functions at first launch
 if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) { // Test if clip-path is supported
     createSvgDomElements();
@@ -110,19 +124,20 @@ if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) { /
     if (document.querySelector(".projekte") != null) {
         svgProjekteDrawer();
     }
-}
-// Run the functions when the windows are resized
-window.addEventListener("resize", () => {
-    try {
-        if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) {
-            svgDrawer();
-            // Check to see if the projekte sections are present in the current viewed page
-            if (document.querySelector(".projekte") != null) {
-                svgProjekteDrawer();
+
+    // Run the functions when the windows are resized
+    window.addEventListener("resize", () => {
+        try {
+            if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) {
+                svgDrawer();
+                // Check to see if the projekte sections are present in the current viewed page
+                if (document.querySelector(".projekte") != null) {
+                    svgProjekteDrawer();
+                }
             }
+        } catch (err) {
+            console.log(err);
         }
-    } catch (err) {
-        console.log(err);
-    }
-});
+    });
+}
 // });

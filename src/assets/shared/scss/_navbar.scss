@@ -23,6 +23,7 @@
     .navbar-nav {
         margin-top: 1rem;
         letter-spacing: 0.0625rem;
+        font-size: 16px;
 
         li.nav-item {
             a.nav-link {
@@ -39,7 +40,6 @@
                 margin-top: 12px;
 
                 a.nav-link {
-                    font-family: "Fira Sans", sans-serif;
                     &:hover,
                     &:active {
                         color: #fff;

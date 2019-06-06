@@ -222,3 +222,12 @@
         }
     }
 }
+
+@media (max-width: 320px) {
+    #mainNav {
+        .navbar-brand {
+            height: 60% !important;
+            width: 60%;
+        }
+    }
+}

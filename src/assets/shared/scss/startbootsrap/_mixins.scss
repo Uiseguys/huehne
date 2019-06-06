@@ -1,15 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans&display=swap);
 
 @mixin body-font() {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 100;
-  font-size: 20px;
-  color: #6A7171;
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 100 !important;
+    font-size: 20px;
+    color: #6A7171;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 @mixin heading-font() {
   font-weight: 400;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }

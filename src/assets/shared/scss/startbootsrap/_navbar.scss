@@ -4,8 +4,6 @@
     padding-bottom: 1rem;
     background: transparent;
 
-    @include heading-font;
-
     .navbar-brand {
         svg {
             &#logo:hover,

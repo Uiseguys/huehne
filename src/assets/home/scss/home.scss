@@ -8,15 +8,19 @@
     background: url(../img/1.jpg);
 
     .main-head {
-        padding-top: 15%;
-        padding-bottom: 15%;
+        padding-top: 10rem;
     }
 }
 
 .mission {
+    b {
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
     p {
         color: #5b5d5e;
-        font-size: 60px;
+        font-weight: 100 !important;
+        font-size: 2.2rem;
         line-height: 1.275;
     }
 }
@@ -172,22 +176,12 @@
     }
 }
 
-@media (min-width: 991px) {
-    .mission {
-        .container {
-            margin-right: 0;
-            margin-left: 15%;
-        }
-    }
-}
-
 // Setting generic mobile Viewport Settings
 @media (max-width: 991px) {
     .main-section {
         .main-head {
             p {
                 padding-top:35%;
-                padding-bottom:35%;
             }
         }
     }

@@ -39,20 +39,26 @@
                 margin-top: 12px;
 
                 a.nav-link {
+                    font-family: "Fira Sans", sans-serif;
                     &:hover,
                     &:active {
                         color: #fff;
                     }
 
+                    &:first-child {
+                        margin-right: 2px;
+                    }
+
                     &:last-child {
                         margin-left: 2px;
                     }
+
                     color: #B4B4B4;
                 }
                 div {
                     display: inline-flex;
                     background: #B4B4B4;
-                    margin-top: 8px;
+                    margin-top: 7px;
                     height: 20px;
                     width: 1px;
                 }

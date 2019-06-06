@@ -3,6 +3,7 @@
 .main-section {
     @include bg-image;
     font-family: "Fira Sans", sans-serif;
+    font-weight: 100;
     clip-path: polygon(0 0, 0 95%, 100% 100%, 100% 0);
 
 

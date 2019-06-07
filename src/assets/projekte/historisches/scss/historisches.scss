@@ -2,6 +2,7 @@
 @import "../../../shared/scss/global";
 @import "../../../shared/scss/navbar";
 @import "../../../shared/scss/skews";
+@import "../../../shared/scss/projekte_showcase";
 @import "../../../shared/scss/text-column";
 @import "../../../shared/scss/main-section";
 @import "../../../shared/scss/footer";
@@ -12,18 +13,25 @@
 
 .section-slide-1 {
 	@include bg-image;
-    @include slide-1-clip;
 	background: url("../img/10_3_lg.jpg");
 }
 
 .section-slide-2 {
 	@include bg-image;
-    @include slide-2-clip;
 	background: url("../img/10_2_lg.jpg");
 }
 
 .section-slide-3 {
 	@include bg-image;
-    @include slide-3-clip;
 	background: url("../img/10_1_lg.jpg");
+}
+
+@media (max-width: 414px) {
+    .main-section {
+        .main-head {
+            p {
+                font-size: 49px;
+            }
+        }
+    }
 }

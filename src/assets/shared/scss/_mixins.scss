@@ -26,6 +26,40 @@
     z-index: 10;
 }
 
+// Full Section Page Clips
+@mixin bottom-left-clip() {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
+@mixin bottom-left-clip-mobile() {
+    clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+}
+
+// Projekte section Clips
+@mixin projekte-right-clip() {
+    clip-path: polygon(0 0, 100% 10%, 100% 95%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 10%, 100% 95%, 0 100%);
+}
+
+@mixin projekte-left-clip() {
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 90%);
+    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 90%);
+}
+
+// Projekte clips for mobile
+@mixin projekte-left-mobile-clip() {
+    clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 97%);
+    -webkit-clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 97%);
+}
+
+@mixin projekte-right-mobile-clip() {
+    clip-path: polygon(0 0, 100% 5%, 100% 97%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 5%, 100% 97%, 0 100%);
+}
+
+// Projekte showcase pages clips
 @mixin slide-1-clip() {
     clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 95%);
     -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 95%);
@@ -43,17 +77,20 @@
     -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 95%);
 }
 
-@mixin bottom-left-clip() {
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+// Mobile Projekte Schowcase Pages Clips
+@mixin slide-1-mobile-clip() {
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 97%);
+    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 97%);
 }
 
-@mixin projekte-right-clip() {
-    clip-path: polygon(0 0, 100% 10%, 100% 95%, 0 100%);
-    -webkit-clip-path: polygon(0 0, 100% 10%, 100% 95%, 0 100%);
+@mixin slide-2-mobile-clip() {
+    margin-top: -7%;
+    clip-path: polygon(0 0, 100% 3%, 100% 95%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 3%, 100% 95%, 0 100%);
 }
 
-@mixin projekte-left-clip() {
-    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 90%);
-    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 90%);
+@mixin slide-3-mobile-clip() {
+    margin-top: -9%;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 97%);
+    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 97%);
 }

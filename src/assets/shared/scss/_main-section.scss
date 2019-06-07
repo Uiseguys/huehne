@@ -54,6 +54,8 @@
         }
     }
 }
+
+// Generic Mobile Viewport Settings
 @media (max-width: 991px) {
     .main-section {
         .main-head {
@@ -63,24 +65,59 @@
     }
 }
 
-@media (max-width: 320px) {
+// Galaxy S5 viewport Settings
+@media (max-width: 414px) {
     .main-section {
         .main-head {
-            p {
-                font-size: 2.2rem;
-            }
+            padding-top: 100% !important;
         }
     }
 }
 
-// Galaxy S5 viewport Settings
+// iPhone X Viewport Settings
+@media (max-width: 375px) and (min-height: 812px) {
+    .main-section {
+        .main-head {
+            padding-top: 120% !important;
+        }
+    }
+}
+
+// Galaxy S5 Viewport Settings
 @media (max-width: 360px) {
     .main-section {
         .main-head {
             padding-top: 25%;
             p {
-                font-size: 40px;
+                font-size: 43px !important;
             }
+        }
+    }
+}
+
+// Galaxy S5 Viewport Settings
+@media (max-width: 320px) {
+    .main-section {
+        .main-head {
+            padding-top: 100% !important;
+        }
+    }
+}
+
+// iPad
+@media (max-width: 768px) and (min-width: 768px) and (min-height: 1024px) and (max-height: 1024px) {
+    .main-section {
+        .main-head {
+            padding-top: 80% !important;
+        }
+    }
+}
+
+// iPad Pro
+@media (max-width: 1024px) and (min-width: 1024px) and (min-height: 1366px) and (max-height: 1366px) {
+    .main-section {
+        .main-head {
+            padding-top: 100% !important;
         }
     }
 }

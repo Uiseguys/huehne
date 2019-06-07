@@ -23,7 +23,7 @@
 
     p {
         color: #5b5d5e;
-        font-weight: 200;
+        font-weight: 100;
         font-size: 2.2rem;
         line-height: 1.275;
     }
@@ -228,6 +228,13 @@
     // for the extra height provided by the collapsed row
     .projekte {
         height: 50rem;
+        
+        & > .container {
+            b {
+                margin-top: 0 !important;
+                margin-top: -18px !important;
+            }
+        }
 
         .row {
             height: 100%;
@@ -253,14 +260,44 @@
                     }
                 }
 
+                &#projekte-slide-2 {
+                    @include projekte-right-mobile-clip;
+                }
+                &#projekte-slide-3 {
+                    @include projekte-left-mobile-clip;
+                }
+                &#projekte-slide-4 {
+                    @include projekte-right-mobile-clip;
+                }
+                &#projekte-slide-5 {
+                    @include projekte-left-mobile-clip;
+                }
+                &#projekte-slide-6 {
+                    @include projekte-right-mobile-clip;
+                }
+                &#projekte-slide-7 {
+                    @include projekte-left-mobile-clip;
+                }
+                &#projekte-slide-8 {
+                    @include projekte-right-mobile-clip;
+                }
                 &#projekte-slide-9 {
                     background-size: 135% !important;
+                    @include projekte-left-mobile-clip;
+                }
+                &#projekte-slide-10 {
+                    @include projekte-right-mobile-clip;
+                }
+                &#projekte-slide-11 {
+                    @include projekte-right-mobile-clip;
                 }
             }
         }
 
-        #projekte-slide-11 {
-            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 90%) !important;
+        &:nth-child(4) {
+            .projekte-wrapper {
+                clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+            }
         }
 
         // Manual reordering of projektes
@@ -390,7 +427,7 @@
     .main-section {
         .container {
             .main-head {
-                padding-top: 90% !important;
+                padding-top: 100% !important;
                 p {
                     font-size: 40px !important;
                 }
@@ -412,6 +449,16 @@
     }
 }
 
+// iPhone X Viewport Settings
+@media (max-width: 375px) and (min-width: 375px) and (min-height: 812px) and (max-height: 812px){
+    .main-section {
+        .container {
+            .main-head {
+                padding-top: 120% !important;
+            }
+        }
+    }
+}
 // Galaxy S5 viewport Settings
 @media (max-width: 360px) {
     .main-section {
@@ -437,6 +484,7 @@
     .projekte {
         & > .container b {
             font-size: 15px;
+            margin-top: -10px !important;
         }
 
         .row {
@@ -471,13 +519,14 @@
     .main-section {
         .container {
             .main-head {
+                padding-top: 100% !important;
                 p {
                     font-size: 35px !important;
                 }
             }
         }
     }
-    
+
     .mission {
         .container {
             p {
@@ -485,26 +534,34 @@
             }
         }
     }
+
     .projekte {
+        .container {
+            b {
+                margin-top: -9px !important;
+            }
+        }
+
         .row {
             .col-lg-6.custom-gray-bg {
                 p {
                     font-size: 35px !important;
+
                     span {
                         font-size: 35px !important;
                     }
                 }
             }
+
             & > .col-lg-6#projekte-slide-9 {
                 background-size: 165% !important;
             }
         }
-
     }
 }
 
 // iPad Viewport Settings
-@media (max-width: 1024px) and (min-width: 1024px) and (max-height: 768px) and (min-height: 768px) {
+@media (max-height: 1024px) and (min-height: 1024px) and (max-width: 768px) and (min-width: 768px) {
     .projekte {
         &:nth-child(4) {
             .row {
@@ -527,6 +584,13 @@
             .col-lg-6 {
                 &.custom-gray-bg {
                     padding: 4rem 3rem !important;
+
+                    p {
+                        span {
+                            display: inline-block !important;
+                            margin-bottom: 2rem !important;
+                        }
+                    }
                 }
             }
         }
@@ -535,6 +599,12 @@
 
 // iPad Pro Viewport Settings
 @media (max-width: 1024px) and (min-width: 1024px) and (max-height: 1366px) and (min-height: 1366px) {
+    .main-section {
+        .main-head {
+            padding-top: 80% !important;
+        }
+    }
+
     .projekte {
         & > .container {
             margin-top: 7%;

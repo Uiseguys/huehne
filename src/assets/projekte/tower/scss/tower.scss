@@ -1,6 +1,7 @@
 @import "../../../shared/scss/mixins";
 @import "../../../shared/scss/global";
 @import "../../../shared/scss/skews";
+@import "../../../shared/scss/projekte_showcase";
 @import "../../../shared/scss/navbar";
 @import "../../../shared/scss/text-column";
 @import "../../../shared/scss/main-section";
@@ -12,18 +13,15 @@
 
 .section-slide-1 {
 	@include bg-image;
-    @include slide-1-clip;
 	background: url("../img/5_3_lg.jpg");
 }
 
 .section-slide-2 {
 	@include bg-image;
-    @include slide-2-clip;
 	background: url("../img/5_2_lg.jpg");
 }
 
 .section-slide-3 {
 	@include bg-image;
-    @include slide-3-clip;
 	background: url("../img/5_4_lg.jpg");
 }

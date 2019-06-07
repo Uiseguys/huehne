@@ -39,6 +39,21 @@
     }
 }
 
+@media (min-height: 800px) {
+    .main-section {
+        .main-head {
+            padding-top: 45% !important;
+        }
+    }
+}
+
+@media (min-height: 900px) {
+    .main-section {
+        .main-head {
+            padding-top: 55% !important;
+        }
+    }
+}
 @media (max-width: 991px) {
     .main-section {
         .main-head {

@@ -52,6 +52,8 @@
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 
+    // Adds event listener to check if the navbar is at the top of
+    // a mobile device
     if ($(window).width() < 992) {
         let clickCount = 0;
         $("button.navbar-toggler.navbar-toggler-right").click(
@@ -74,8 +76,6 @@
     $(window).resize(() => {
         $(window).scroll(navbarCollapse);
 
-        // Adds event listener to check if the navbar is at the top of
-        // a mobile device
         if ($(window).width() < 992) {
             let clickCount = 0;
             $("button.navbar-toggler.navbar-toggler-right").click(

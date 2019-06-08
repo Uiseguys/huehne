@@ -159,35 +159,12 @@
 
 @media (max-width: 991px) {
     #mainNav {
-        background: white !important;
+        transition: height 0.5s ease;
+        -moz-transition: height 0.5s ease;
+        -webkit-transition: height 0.5s ease;
 
-        .navbar-brand {
-            font-size: 1.5em;
-            svg#logo {
-                polygon {
-                    fill: #BC0D3B;
-                }
-
-                path {
-                    fill: #BC0D3B;
-                    &:last-child {
-                        fill: #6A7171;
-                    }
-                }
-
-                &:hover,
-                &:active {
-                    polygon {
-                        fill: #BC0D3B;
-                    }
-                    path {
-                        fill: #BC0D3B;
-                        &:last-child {
-                            fill: #6A7171;
-                        }
-                    }
-                }
-            }
+        .fa-bars {
+            color: #EBEBEB;
         }
 
         .navbar-nav {
@@ -216,6 +193,46 @@
                     a.nav-link.active {
                         color: $white !important;
                         background: #000 !important;
+                    }
+                }
+            }
+        }
+
+        &.navbar-shrink {
+            transition: height 0.5s ease;
+            -moz-transition: height 0.5s ease;
+            -webkit-transition: height 0.5s ease;
+            background: #fff;
+
+            .fa-bars {
+                color: #6A7171;
+            }
+
+            .navbar-brand {
+                font-size: 1.5em;
+                svg#logo {
+                    polygon {
+                        fill: #BC0D3B;
+                    }
+
+                    path {
+                        fill: #BC0D3B;
+                        &:last-child {
+                            fill: #6A7171;
+                        }
+                    }
+
+                    &:hover,
+                    &:active {
+                        polygon {
+                            fill: #BC0D3B;
+                        }
+                        path {
+                            fill: #BC0D3B;
+                            &:last-child {
+                                fill: #6A7171;
+                            }
+                        }
                     }
                 }
             }

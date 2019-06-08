@@ -50,19 +50,50 @@
     // Collapse now if page is not at top
     // Check window width and render the navbar accordingly
     // Collapse the navbar when page is scrolled
-    const collapseNow = () => {
-        if ($(window).width() >= 992) {
-            $(window).scroll(navbarCollapse);
-        }
-    };
-    collapseNow();
+    $(window).scroll(navbarCollapse);
+
+    if ($(window).width() < 992) {
+        let clickCount = 0;
+        $("button.navbar-toggler.navbar-toggler-right").click(
+            () => {
+                if ((clickCount % 2) === 0) {
+                    if ($("#mainNav").offset().top < 100) {
+                        $("#mainNav").addClass("navbar-shrink");
+                    }
+                } else {
+                    if ($("#mainNav").offset().top < 100) {
+                        $("#mainNav").removeClass("navbar-shrink");
+                    }
+                }
+                clickCount += 1;
+            }
+        )
+    }
 
     // A couple of functions for when the window resizes
     $(window).resize(() => {
-        collapseNow();
+        $(window).scroll(navbarCollapse);
+
+        // Adds event listener to check if the navbar is at the top of
+        // a mobile device
+        if ($(window).width() < 992) {
+            let clickCount = 0;
+            $("button.navbar-toggler.navbar-toggler-right").click(
+                () => {
+                    if ((clickCount % 2) == 0) {
+                        if ($("#mainNav").offset().top < 100) {
+                            $("#mainNav").addClass("navbar-shrink");
+                        }
+                    } else {
+                        if ($("#mainNav").offset().top < 100) {
+                            $("#mainNav").removeClass("navbar-shrink");
+                        }
+                    }
+                    clickCount += 1;
+                }
+            )
+        }
     });
-
-
     // Modal popup$(function () {
     //$(".portfolio-item").magnificPopup({
         //type: "inline",

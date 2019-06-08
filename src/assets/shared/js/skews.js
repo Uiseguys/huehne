@@ -21,8 +21,8 @@ const createSvgDomElements = () => {
             firstPro.querySelector(".projekte-wrapper .row .col-lg-6#projekte-slide-1").innerHTML = "<svg class='projekte-bottom-left-skew'></svg>";
 
             // Creates svg elements for the last projekte section
-            const lastPro = document.querySelector(".projekte:nth-child(14)");
-            lastPro.querySelector(".row").insertAdjacentHTML("beforebegin", "<svg class='bottom-left-skew'><svg>");
+            const lastPro = document.querySelector(".projekte:nth-child(14) > .container");
+            lastPro.insertAdjacentHTML("beforebegin", "<svg class='bottom-left-skew'><svg>");
 
             // Creates SVG elements excluding the first projekte section
             let selector;
@@ -60,7 +60,7 @@ const svgDrawer = () => {
         // Retrieving DOM elements that will have skews added
         const main = document.querySelector(".main-section");
         const projekte = document.querySelector(".projekte");
-        const projekteBtmLeft = document.querySelector(".projekte > .bottom-left-skew");
+        const projekteBtmLeft = document.querySelector(".projekte:nth-child(14) > .bottom-left-skew");
         const body = document.querySelector("body");
         const slide = body.querySelector(".section-slide-3 svg");
         const wh = [body.getBoundingClientRect().width, body.getBoundingClientRect().height]; // An array of both width and height of the body

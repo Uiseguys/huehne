@@ -64,6 +64,10 @@
     -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 90%);
 }
 
+@mixin projekte-bottom-left-clip() {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+}
 // Projekte clips for mobile
 @mixin projekte-left-mobile-clip() {
     clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 97%);

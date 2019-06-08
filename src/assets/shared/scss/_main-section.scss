@@ -3,7 +3,7 @@
     @include bottom-left-clip;
 
     svg {
-        display:none;
+        display: none;
         @include svg-skews;
         z-index: 5 !important;
         &.bottom-left-skew {
@@ -115,6 +115,19 @@
     .main-section {
         .main-head {
             padding-top: 100% !important;
+        }
+    }
+    .projekte {
+        & > .container {
+            margin-top: 0 !important;
+        }
+
+        .row {
+            .col-lg-6.custom-gray-bg {
+                p {
+                    font-size: 53px !important;
+                }
+            }
         }
     }
 }

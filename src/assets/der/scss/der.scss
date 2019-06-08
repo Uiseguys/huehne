@@ -33,3 +33,10 @@
         }
     }
 }
+
+// iPad Pro Viewport Settings
+@media (max-width: 1024px) and (min-width: 1024px) and (max-height: 1366px) and (min-height: 1366px) {
+    .main-section {
+        background-position: 75% 0 !important;
+    }
+}

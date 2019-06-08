@@ -18,6 +18,7 @@
     background-repeat: no-repeat !important;
 }
 
+// Styling for SVG elements for non supporting browsers
 @mixin svg-skews() {
     display: block;
     position: absolute;
@@ -27,14 +28,29 @@
 }
 
 // Full Section Page Clips
+@mixin top-left-clip() {
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+}
+
+@mixin top-left-clip-mobile() {
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+}
+
 @mixin bottom-left-clip() {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+}
+
+@mixin bottom-right-clip-mobile() {
     clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
 }
 
 @mixin bottom-left-clip-mobile() {
-    clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 97%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 97%);
 }
 
 // Projekte section Clips

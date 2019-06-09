@@ -223,15 +223,23 @@
         &:nth-child(14) {
             & > .container > .row .col-lg-6 {
                 &:nth-child(2) {
-                    padding-top: 0.5rem;
-                    padding-bottom: 0.5rem;
+                    padding-top: 2rem;
+                    padding-bottom: 2rem;
                     padding-left: 3rem;
                 }
             }
         }
 
         &:nth-child(5),
-        &:nth-child(7),
+        &:nth-child(7) {
+            & > .container > .row .col-lg-6 {
+                &:nth-child(1) {
+                    padding-top: 2rem;
+                    padding-bottom: 2rem;
+                    padding-right: 3rem;
+                }
+            }
+        }
         &:nth-child(9),
         &:nth-child(11),
         &:nth-child(13) {

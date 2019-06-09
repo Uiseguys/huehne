@@ -48,6 +48,7 @@
 
         & > .container > b {
             position: absolute;
+            margin-top: -10px;
         }
 
         .projekte-wrapper {
@@ -212,6 +213,7 @@
     }
 }
 
+// Padding for regular to large screens
 @media (min-width: 992px) {
     .projekte {
         // Projekete Text Columns Padding
@@ -240,6 +242,7 @@
                 }
             }
         }
+
         &:nth-child(9),
         &:nth-child(11),
         &:nth-child(13) {
@@ -332,6 +335,10 @@
         &:nth-child(4) {
             .projekte-wrapper {
                 @include top-left-clip-mobile;
+
+                #projekte-slide-1 {
+                    @include projekte-bottom-left-clip;
+                }
             }
         }
 

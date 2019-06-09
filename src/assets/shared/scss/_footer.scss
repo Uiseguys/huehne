@@ -8,24 +8,32 @@ footer {
     .container {
         margin-bottom: 0;
 
-        p {
-            margin-bottom: 0;
+        .row {
+            .col-lg-6 {
+                &:last-child {
+                    margin-bottom: 0;
 
-            a {
-                &:nth-child(2) {
-                    margin-left: 10rem;
-                }
-                &:link {
-                    color: #ebebeb;
-                }
+                    a {
+                        &:nth-child(1) {
+                            margin-left: 5rem;
+                        }
+                        &:nth-child(2),
+                        &:nth-child(3) {
+                            margin-left: 1rem;
+                        }
+                        &:link {
+                            color: #ebebeb;
+                        }
 
-                &:visited {
-                    color: #ebebeb;
-                }
+                        &:visited {
+                            color: #ebebeb;
+                        }
 
-                &:hover {
-                    color: #fff;
-                    text-decoration: none;
+                        &:hover {
+                            color: #fff;
+                            text-decoration: none;
+                        }
+                    }
                 }
             }
         }
@@ -35,11 +43,11 @@ footer {
 @media (max-width: 991px) {
     footer {
         .container {
-            b,
-            p {
-                text-align: left !important;
-                a:nth-child(2) {
-                    margin-left: 0;
+            .row {
+                .col-lg-6 {
+                    a {
+                        margin-left: 0 !important;
+                    }
                 }
             }
         }

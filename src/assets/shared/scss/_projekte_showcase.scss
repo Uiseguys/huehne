@@ -15,14 +15,17 @@ section:nth-child(6) {
 @media (max-width: 991px) {
     section:nth-child(4) {
         @include slide-1-mobile-clip;
+        height: 20rem;
     }
 
     section:nth-child(5) {
         @include slide-2-mobile-clip;
+        height: 20rem;
     }
 
     section:nth-child(6) {
         @include slide-3-mobile-clip;
+        height: 20rem;
     }
 
     section:nth-child(3) {

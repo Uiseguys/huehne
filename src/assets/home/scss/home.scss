@@ -389,7 +389,6 @@
                     background: transparent;
                     height: 12rem !important;
                     overflow: hidden !important;
-                    padding-top: 0.5rem;
 
                     b {
                         font-size: 15px;
@@ -401,6 +400,11 @@
                         span {
                             margin-bottom: 1rem;
                             font-size: 39px;
+                        }
+                        small {
+                            a {
+                                padding-top: 0.5rem;
+                            }
                         }
                     }
                 }
@@ -426,7 +430,6 @@
                     background: transparent;
                     height: 12rem !important;
                     overflow: hidden !important;
-                    padding-top: 0.5rem;
 
                     b {
                         font-size: 15px;
@@ -437,6 +440,12 @@
 
                         span {
                             margin-bottom: 1rem;
+                        }
+
+                        small {
+                            a {
+                                padding-top: 0.5rem;
+                            }
                         }
                     }
                 }

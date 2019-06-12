@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Fira+Sans:100,200,200i,300,400,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:100,200,200i,300,400,500&display=swap);
 
 @mixin body-font() {
     font-family: "Fira Sans", sans-serif;
@@ -12,8 +12,8 @@
 
 @mixin bg-image() {
     height: 100%;
-	padding: 0;
-  	background-position: center !important; 
+    padding: 0;
+    background-position: center !important; 
     background-size: cover !important;
     background-repeat: no-repeat !important;
 }
@@ -22,7 +22,7 @@
 @mixin svg-skews() {
     display: block;
     position: absolute;
-    height: 101% !important;
+    height: 102% !important;
     width: 100% !important;
     z-index: 10;
 }
@@ -55,13 +55,13 @@
 
 // Projekte section Clips
 @mixin projekte-right-clip() {
-    clip-path: polygon(0 0, 100% 10%, 100% 95%, 0 100%);
-    -webkit-clip-path: polygon(0 0, 100% 10%, 100% 95%, 0 100%);
+    clip-path: polygon(0 0, 100% 5%, 100% 90%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 5%, 100% 90%, 0 100%);
 }
 
 @mixin projekte-left-clip() {
-    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 90%);
-    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 90%);
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 95%);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 95%);
 }
 
 @mixin projekte-bottom-left-clip() {

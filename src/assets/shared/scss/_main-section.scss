@@ -11,6 +11,41 @@
         }
     }
 
+    .projekte-nav {
+        position: absolute;
+        top: 51%;
+        left: 0;
+        right: 0;
+        z-index: 5;
+
+        a {
+            display: inline-block;
+            position: absolute;
+            height: 65px;
+            width: 65px;
+            opacity: 0.5;
+
+            &:nth-child(1) {
+                left: 2%;
+            }
+
+            &:nth-child(2),
+            &.projekte-right-nav {
+                right: 2%;
+                left: auto;
+            }
+
+            &:focus,
+            &:hover {
+                opacity: 1;
+            }
+            svg {
+                display: inline;
+                color: #fff;
+            }
+        }
+    }
+
     .main-head {
         padding-top: 30%;
         color: #EBEBEB;
@@ -19,11 +54,12 @@
         p {
             font-weight: 200 !important;
             line-height: 1.275;
-            font-size: 60px;
+            font-size: 65px;
         }
 
         b {
-            font-size: 20px; 
+            font-weight: 500;
+            font-size: 16px; 
         }
 
         p,
@@ -117,6 +153,7 @@
             padding-top: 100% !important;
         }
     }
+
     .projekte {
         & > .container {
             margin-top: 0 !important;

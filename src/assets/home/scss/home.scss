@@ -196,7 +196,7 @@
             &#projekte-slide-11 {
                 background: url(../img/11_1.jpg);
                 @include bg-image;
-                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+                @include projekte-top-left-clip;
             }
         }
     }

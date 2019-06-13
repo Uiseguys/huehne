@@ -265,14 +265,6 @@
 
 // Setting generic mobile Viewport Settings
 @media (max-width: 991px) {
-    .main-section {
-        .main-head {
-            p {
-                font-size: 40 !important;
-            }
-        }
-    }
-
     .mission {
         p {
             font-size: 45px;
@@ -452,14 +444,6 @@
 
 // iPhone 6/7/8 Plus Viewport Settings
 @media (max-width: 414px) {
-    .main-section {
-        .main-head {
-            p {
-                font-size: 45px !important;
-            }
-        }
-    }
-
     .mission {
         p {
             font-size: 33px;
@@ -533,14 +517,6 @@
 
 // Pixel 2 viewport settings
 @media (max-width: 411px) {
-    .main-section {
-        .main-head {
-            p {
-                font-size: 44px !important;
-            }
-        }
-    }
-
     .mission {
         p {
             font-size: 33px;
@@ -548,31 +524,8 @@
     }
 }
 
-// iPhone 6/7/8 Viewport Settings
-@media (max-width: 375px) {
-    .main-section {
-        .container {
-            .main-head {
-                p {
-                    font-size: 40px !important;
-                }
-            }
-        }
-    }
-}
-
 // Galaxy S5 viewport Settings
 @media (max-width: 360px) {
-    .main-section {
-        .container {
-            .main-head {
-                p {
-                    font-size: 38px !important;
-                }
-            }
-        }
-    }
-
     .mission {
         b {
             font-size: 15px;
@@ -636,16 +589,6 @@
 
 // iPhone 5 SE viewport settings
 @media (max-width: 320px) {
-    .main-section {
-        .container {
-            .main-head {
-                p {
-                    font-size: 34px !important;
-                }
-            }
-        }
-    }
-
     .mission {
         .container {
             p {

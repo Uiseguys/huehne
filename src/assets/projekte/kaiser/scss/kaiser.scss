@@ -25,20 +25,3 @@
 	@include bg-image;
 	background: url("../img/6_3_lg.jpg");
 }
-
-@media (max-width: 991px) {
-    .main-section {
-        .main-head {
-            padding-top: 80% !important;
-        }
-    }
-}
-
-// iPad Pro Settings
-@media (max-width: 1024px) and (min-width: 1024px) and (min-height: 1366px) and (max-height: 1366px) {
-    .main-section {
-        .main-head {
-            padding-top: 90% !important;
-        }
-    }
-}

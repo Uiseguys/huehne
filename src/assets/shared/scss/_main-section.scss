@@ -74,10 +74,6 @@
 // Generic Mobile Viewport Settings
 @media (max-width: 991px) {
     .main-section {
-        .main-head {
-            font-size: 45px;
-            word-wrap: break-word;
-        }
         .projekte-nav {
             visibility: hidden;
             opacity: 0;
@@ -85,12 +81,21 @@
     }
 }
 
-// Galaxy S5 Viewport Settings
 @media (max-width: 360px) {
     .main-section {
-        .main-head {
+        .container {
             p {
-                font-size: 43px !important;
+                font-size: 56px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .main-section {
+        .container {
+            p {
+                font-size: 50px !important;
             }
         }
     }

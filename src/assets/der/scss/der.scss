@@ -15,22 +15,6 @@
 @media (max-width: 991px) {
     .main-section {
         background-position: 75% 0 !important;
-
-        .main-head {
-            p {
-                font-size: 46px;
-            }
-        }
-    }
-}
-// iPhone 5SE Settings
-@media (max-width: 320px) {
-    .main-section {
-        .main-head {
-            p {
-                font-size: 38px !important;
-            }
-        }
     }
 }
 

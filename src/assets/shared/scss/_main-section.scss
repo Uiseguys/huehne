@@ -46,38 +46,26 @@
         }
     }
 
-    .main-head {
-        padding-top: 30%;
-        color: #EBEBEB;
-        height: 100%;
+    .container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        color: #ebebeb;
 
-        p {
-            line-height: 1;
-            font-size: 65px;
-        }
-
-        p,
-        b {
-            &:hover,
-            &:active {
-                color: #fff;
+        .main-head {
+            p {
+                line-height: 1;
+                font-size: 65px;
             }
-        }
-    }
-}
 
-@media (min-height: 800px) {
-    .main-section {
-        .main-head {
-            padding-top: 45% !important;
-        }
-    }
-}
-
-@media (min-height: 900px) {
-    .main-section {
-        .main-head {
-            padding-top: 55% !important;
+            p,
+            b {
+                &:hover,
+                &:active {
+                    color: #fff;
+                }
+            }
         }
     }
 }
@@ -86,30 +74,11 @@
 @media (max-width: 991px) {
     .main-section {
         .main-head {
-            padding-top: 120% !important;
             font-size: 45px;
         }
         .projekte-nav {
             visibility: hidden;
             opacity: 0;
-        }
-    }
-}
-
-// Galaxy S5 viewport Settings
-@media (max-width: 414px) {
-    .main-section {
-        .main-head {
-            padding-top: 100% !important;
-        }
-    }
-}
-
-// iPhone X Viewport Settings
-@media (max-width: 375px) and (min-height: 812px) {
-    .main-section {
-        .main-head {
-            padding-top: 120% !important;
         }
     }
 }
@@ -126,32 +95,8 @@
     }
 }
 
-// Galaxy S5 Viewport Settings
-@media (max-width: 320px) {
-    .main-section {
-        .main-head {
-            padding-top: 100% !important;
-        }
-    }
-}
-
-// iPad
-@media (max-width: 768px) and (min-width: 768px) and (min-height: 1024px) and (max-height: 1024px) {
-    .main-section {
-        .main-head {
-            padding-top: 80% !important;
-        }
-    }
-}
-
 // iPad Pro
 @media (max-width: 1024px) and (min-width: 1024px) and (min-height: 1366px) and (max-height: 1366px) {
-    .main-section {
-        .main-head {
-            padding-top: 100% !important;
-        }
-    }
-
     .projekte {
         & > .container {
             margin-top: 0 !important;

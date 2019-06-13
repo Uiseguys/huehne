@@ -7,11 +7,8 @@
 
 .main-section {
     background: url(../img/1.jpg);
-
     .container {
-        .main-head {
-            padding-top: 25%;
-        }
+        top: 40%;
     }
 }
 
@@ -205,22 +202,6 @@
     }
 }
 
-@media (min-height: 800px) {
-    .main-section {
-        .main-head {
-            padding-top: 40% !important;
-        }
-    }
-}
-
-@media (min-height: 900px) {
-    .main-section {
-        .main-head {
-            padding-top: 50% !important;
-        }
-    }
-}
-
 // Padding for regular to large screens
 @media (min-width: 992px) {
     .projekte {
@@ -261,7 +242,6 @@
     .main-section {
         .container {
             .main-head {
-                padding-top: 20% !important; 
                 p {
                     font-size: 44px;
                 }
@@ -275,7 +255,6 @@
     .main-section {
         .container {
             .main-head {
-                padding-top: 20% !important; 
                 p {
                     font-size: 35px;
                 }
@@ -288,7 +267,6 @@
 @media (max-width: 991px) {
     .main-section {
         .main-head {
-            padding-top: 70% !important;
             p {
                 font-size: 40 !important;
             }
@@ -309,7 +287,6 @@
         
         & > .container {
             & > b {
-                margin-top: 0 !important;
                 margin-top: -28px !important;
             }
         }
@@ -477,7 +454,6 @@
 @media (max-width: 414px) {
     .main-section {
         .main-head {
-            padding-top: 70% !important;
             p {
                 font-size: 45px !important;
             }
@@ -559,7 +535,6 @@
 @media (max-width: 411px) {
     .main-section {
         .main-head {
-            padding-top: 70% !important;
             p {
                 font-size: 44px !important;
             }
@@ -578,7 +553,6 @@
     .main-section {
         .container {
             .main-head {
-                padding-top: 70% !important;
                 p {
                     font-size: 40px !important;
                 }
@@ -587,22 +561,11 @@
     }
 }
 
-// iPhone X Viewport Settings
-@media (max-width: 375px) and (min-width: 375px) and (min-height: 812px) and (max-height: 812px){
-    .main-section {
-        .container {
-            .main-head {
-                padding-top: 90% !important;
-            }
-        }
-    }
-}
 // Galaxy S5 viewport Settings
 @media (max-width: 360px) {
     .main-section {
         .container {
             .main-head {
-                padding-top: 70% !important;
                 p {
                     font-size: 38px !important;
                 }
@@ -676,7 +639,6 @@
     .main-section {
         .container {
             .main-head {
-                padding-top: 100% !important;
                 p {
                     font-size: 34px !important;
                 }
@@ -741,15 +703,6 @@
                     }
                 }
             }
-        }
-    }
-}
-
-// iPad Pro Viewport Settings
-@media (max-width: 1024px) and (min-width: 1024px) and (max-height: 1366px) and (min-height: 1366px) {
-    .main-section {
-        .main-head {
-            padding-top: 80% !important;
         }
     }
 }

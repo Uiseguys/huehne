@@ -5,16 +5,17 @@ html,
 body {
     @include body-font;
     height: 100%;
+
+    b {
+        font-size: 16px;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 40px;
+        line-height: 1.2;
+        font-weight: 200;
+    }
 }
 
-b {
-    font-size: 16px !important;
-    letter-spacing: 1px !important;
-    font-weight: 500 !important;
-}
-
-p {
-    font-size: 40px !important;
-    line-height: 1.2 !important;
-    font-weight: 200 !important;
-}

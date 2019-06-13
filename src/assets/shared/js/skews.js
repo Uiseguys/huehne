@@ -8,6 +8,10 @@ const createSvgDomElements = () => {
         const mainInner = document.querySelector(".main-section > .container"); // Main Section bottom left skew
         const pro = document.querySelector(".projekte");
         const slide = document.querySelector(".section-slide-1");
+        const footer = document.querySelector("footer");
+
+        // Ensure the footer is never at the top;
+        footer.setAttribute("class", "no-top");
 
         // Main Section SVG Element
         mainInner.insertAdjacentHTML("beforebegin", "<svg class='bottom-left-skew'><svg>");
@@ -43,11 +47,31 @@ const createSvgDomElements = () => {
             // Retrieve the other two sections
             const slideTwo = document.querySelector(".section-slide-2");
             const slideThree = document.querySelector(".section-slide-3");
+            const slideFour = document.querySelector(".section-slide-4");
 
-            slide.innerHTML = "<svg class='top-left-skew'></svg>";
-            slideThree.innerHTML = "<svg class='bottom-left-skew'></svg>";
-            slideTwo.style.marginTop = "0";
-            slideThree.style.marginTop = "0";
+            slide.setAttribute("class", "section-slide-1 no-top");
+
+            if (slideTwo != null) {
+                if (slide.querySelector(".row") == null) {
+                    slide.innerHTML = "<svg class='top-left-skew'></svg>";
+                } else {
+                    slide.querySelector(".row").insertAdjacentHTML("beforebegin", "<svg class='top-left-skew'></svg>");
+                }
+                slideTwo.setAttribute("class", "section-slide-2 no-top");
+                if (slideThree != null) {
+                    slideThree.setAttribute("class", "section-slide-3 no-top");
+                    if (slideFour != null) {
+                        slideFour.setAttribute("class", "section-slide-4 no-top");
+                        slideFour.innerHTML = "<svg class='projekte-page-bottom-left-skew'></svg>";
+                    } else {
+                        slideThree.innerHTML = "<svg class='projekte-page-bottom-left-skew'></svg>";
+                    }
+                } else {
+                    slideTwo.innerHTML = "<svg class='projekte-page-bottom-left-skew'></svg>";
+                }
+            } else {
+                slide.innerHTML = "<svg class='top-left-skew'></svg><svg class='projekte-page-bottom-left-skew'></svg>";
+            }
         }
     } catch (err) {
         console.log(err);
@@ -62,16 +86,16 @@ const svgDrawer = () => {
         const projekte = document.querySelector(".projekte");
         const projekteBtmLeft = document.querySelector(".projekte:nth-child(14) > .bottom-left-skew");
         const body = document.querySelector("body");
-        const slide = body.querySelector(".section-slide-3 svg");
+        const slide = body.querySelector(".section-slide-1");
         const wh = [body.getBoundingClientRect().width, body.getBoundingClientRect().height]; // An array of both width and height of the body
 
         // height of the slant 60px + 4 adjusting for margins
         const ch = 60 + 4;
 
         // Paths to be added to SVG elements
-        const svgBottomLeft = `<path d="M0 ${wh[1] - (ch / 2)} L0 ${wh[1] + 4} L${wh[0]} ${wh[1] + 4} L${wh[0]} ${wh[1] - 1}Z" fill="white" />`;
+        const svgBottomLeft = `<path d="M0 ${wh[1] - (ch / 2)} L0 ${wh[1] + 4} L${wh[0]} ${wh[1] + 4} L${wh[0]} ${wh[1]}Z" fill="white" />`;
         const svgBottomRight = `<path d="M0 ${wh[1]} L0 ${wh[1] + 4} L${wh[0]} ${wh[1] + 4} L${wh[0]} ${wh[1] - (ch / 2)}Z" fill="white" />`;
-        const svgTopLeft = `<path d="M0 0 L0 ${ch + 2} L${wh[0]} 2 L${wh[0]} 0Z" fill="white" />`;
+        const svgTopLeft = `<path d="M0 0 L0 ${ch + 4} L${wh[0]} 4 L${wh[0]} 0Z" fill="white" />`;
 
         // Change svg elements inner HTML with Path Strings
         main.querySelector(".bottom-left-skew").innerHTML = svgBottomLeft;
@@ -89,7 +113,18 @@ const svgDrawer = () => {
             body.querySelector(".top-left-skew").innerHTML = svgTopLeft;
         }
         if (slide != null) { // Check if class even exists
-            slide.innerHTML = svgBottomLeft;
+            const ss = slide.getBoundingClientRect().height; // Slide section height
+            const slideSvgBtmLeft = `<path d="M0 ${ss - (ch / 2)} L0 ${ss + 2} L${wh[0]} ${ss + 2} L${wh[0]} ${ss}Z" fill="white" />`;
+            let ctr = 4;
+            for (let i = 0; i < 4; i += 1) {
+                let sl = `.section-slide-${ctr} > svg.projekte-page-bottom-left-skew`;
+                let el = document.querySelector(sl);
+                if (el != null) {
+                    el.innerHTML = slideSvgBtmLeft;
+                    break;
+                }
+                ctr -= 1;
+            }
         }
     } catch (err) {
         console.log(err);

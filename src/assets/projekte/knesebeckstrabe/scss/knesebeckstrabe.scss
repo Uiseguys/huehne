@@ -8,20 +8,42 @@
 @import "../../../shared/scss/footer";
 
 .main-section {
-    background: url("../img/3_2_lg.jpg");
+    background: url("../img/3_1_lg.jpg");
 }
 
 .section-slide-1 {
-	@include bg-image;
-	background: url("../img/3_1_lg.jpg");
+    height: 100%;
+
+    .top-left-skew {
+        @include svg-skews;
+    }
+    
+    .row {
+        height: 100%;
+        .col-lg-6 {
+            @include bg-image;
+            &:first-child {
+                background: url("../img/3_2_lg.jpg");
+            }
+
+            &:last-child {
+                background: url("../img/3_3_lg.jpg");
+            }
+        }
+    }
 }
 
 .section-slide-2 {
 	@include bg-image;
-	background: url("../img/3_3_lg.jpg");
+	background: url("../img/3_4_lg.jpg");
 }
 
 .section-slide-3 {
 	@include bg-image;
-	background: url("../img/3_4_lg.jpg");
+	background: url("../img/3_5_lg.jpg");
+}
+
+.section-slide-4 {
+	@include bg-image;
+	background: url("../img/3_6_lg.jpg");
 }

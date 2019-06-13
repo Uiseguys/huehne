@@ -6,6 +6,9 @@
     margin-top: -4px;
 }
 
-.bottom-left-skew {
+.bottom-left-skew,
+.projekte-page-bottom-left-skew {
+    top: 0;
+    position: absolute;
     @include svg-skews;
 }

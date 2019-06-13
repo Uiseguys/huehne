@@ -3,12 +3,8 @@
     @include bottom-left-clip;
 
     svg {
-        display: none;
         @include svg-skews;
         z-index: 5 !important;
-        &.bottom-left-skew {
-            margin-top: 1px;
-        }
     }
 
     .projekte-nav {

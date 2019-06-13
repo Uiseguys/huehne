@@ -14,22 +14,15 @@
 
 .section-slide-1 {
 	@include bg-image;
-	background: url("../img/9_3_lg.jpg");
+	background: url("../img/9_2_lg.jpg");
 	background-size: 126% !important;
 }
 
 .section-slide-2 {
 	@include bg-image;
-	background: url("../img/9_2_lg.jpg");
-	background-size: 126% !important;
-}
-
-.section-slide-3 {
-	@include bg-image;
 	background: url("../img/9_3_lg.jpg");
 	background-size: 126% !important;
 }
-
 
 // Pixel and Pixel XL viewport settings
 @media (max-width: 991px) {

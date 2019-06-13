@@ -8,7 +8,7 @@
 @import "../../../shared/scss/footer";
 
 .main-section {
-    background: url("../img/2_3_lg.jpg");
+    background: url("../img/2_1_lg.jpg");
 }
 
 .section-slide-1 {
@@ -18,10 +18,15 @@
 
 .section-slide-2 {
 	@include bg-image;
-	background: url("../img/2_1_lg.jpg");
+	background: url("../img/2_3_lg.jpg");
 }
 
 .section-slide-3 {
 	@include bg-image;
 	background: url("../img/2_4_lg.jpg");
+}
+
+.section-slide-4 {
+	@include bg-image;
+	background: url("../img/2_5_lg.jpg");
 }

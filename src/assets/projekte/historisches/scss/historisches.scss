@@ -8,22 +8,42 @@
 @import "../../../shared/scss/footer";
 
 .main-section {
-    background: url("../img/10_4_lg.jpg");
+    background: url("../img/10_1_lg.jpg");
 }
 
 .section-slide-1 {
 	@include bg-image;
-	background: url("../img/10_3_lg.jpg");
+	background: url("../img/10_2_lg.jpg");
 }
 
 .section-slide-2 {
 	@include bg-image;
-	background: url("../img/10_2_lg.jpg");
+	background: url("../img/10_3_lg.jpg");
 }
 
 .section-slide-3 {
+    height: 100%;
+
+    .row {
+        height: 100%;
+
+        .col-sm-6 {
+            @include bg-image;
+
+            &:first-child {
+                background: url("../img/10_4_lg.jpg");
+            }
+
+            &:last-child {
+                background: url("../img/10_5_lg.jpg");
+            }
+        }
+    }
+}
+
+.section-slide-4 {
 	@include bg-image;
-	background: url("../img/10_1_lg.jpg");
+	background: url("../img/10_6_lg.jpg");
 }
 
 @media (max-width: 414px) {

@@ -13,15 +13,10 @@
 
 .section-slide-1 {
 	@include bg-image;
-	background: url("../img/6_2_lg.jpg");
+	background: url("../img/6_3_lg.jpg");
 }
 
 .section-slide-2 {
 	@include bg-image;
-	background: url("../img/6_1_lg.jpg");
-}
-
-.section-slide-3 {
-	@include bg-image;
-	background: url("../img/6_3_lg.jpg");
+	background: url("../img/6_2_lg.jpg");
 }

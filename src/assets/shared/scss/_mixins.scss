@@ -96,31 +96,11 @@
 }
 
 @mixin slide-2-clip() {
-    margin-top: -5%;
     clip-path: polygon(0 0, 100% 5%, 100% 90%, 0 100%);
     -webkit-clip-path: polygon(0 0, 100% 5%, 100% 90%, 0 100%);
 }
 
 @mixin slide-3-clip() {
-    margin-top: -10%;
     clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 95%);
     -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 95%);
-}
-
-// Mobile Projekte Schowcase Pages Clips
-@mixin slide-1-mobile-clip() {
-    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 97%);
-    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 97%);
-}
-
-@mixin slide-2-mobile-clip() {
-    margin-top: -7%;
-    clip-path: polygon(0 0, 100% 3%, 100% 95%, 0 100%);
-    -webkit-clip-path: polygon(0 0, 100% 3%, 100% 95%, 0 100%);
-}
-
-@mixin slide-3-mobile-clip() {
-    margin-top: -9%;
-    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 97%);
-    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 97%);
 }

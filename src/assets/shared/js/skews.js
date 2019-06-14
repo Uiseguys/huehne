@@ -166,7 +166,7 @@ const checkClipPath = () => {
 };
 
 // Run the functions at first launch
-if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)")) || !(checkClipPath())) { // Test if clip-path is supported
+if (checkClipPath() === false) { // Test if clip-path is supported
     createSvgDomElements();
     svgDrawer();
     // Check to see if the projekte sections are present in the current viewed page

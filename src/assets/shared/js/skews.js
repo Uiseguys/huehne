@@ -44,12 +44,16 @@ const createSvgDomElements = () => {
 
         // Check if projekte product classes exist and create svg elements
         if (slide != null) {
-            // Retrieve the other two sections
+            // Retrieve parent section for the first slide
+            const slideParent = document.querySelector("section:nth-child(4)");
+            
+            // Retrieve the other sections
             const slideTwo = document.querySelector(".section-slide-2");
             const slideThree = document.querySelector(".section-slide-3");
             const slideFour = document.querySelector(".section-slide-4");
 
-            slide.setAttribute("class", "section-slide-1 no-top");
+            slide.setAttribute("class", "section-slide-1 no-top height-100");
+            slideParent.setAttribute("class", "height-100");
 
             if (slideTwo != null) {
                 if (slide.querySelector(".row") == null) {
@@ -158,15 +162,8 @@ const svgProjekteDrawer = () => {
     }
 };
 
-const checkClipPath = () => {
-    if ("clipPath" in document.body.style) {
-        return true;
-    }
-    return false;
-};
-
 // Run the functions at first launch
-if (checkClipPath() === false) { // Test if clip-path is supported
+if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) { // Test if clip-path is supported
     createSvgDomElements();
     svgDrawer();
     // Check to see if the projekte sections are present in the current viewed page
@@ -177,7 +174,7 @@ if (checkClipPath() === false) { // Test if clip-path is supported
     // Run the functions when the windows are resized
     window.addEventListener("resize", () => {
         try {
-            if (checkClipPath() === false) {
+            if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) {
                 svgDrawer();
                 // Check to see if the projekte sections are present in the current viewed page
                 if (document.querySelector(".projekte") != null) {

@@ -1,35 +1,55 @@
 section {
-    position: relative;
-
     &:nth-child(4) {
         @include slide-1-clip;
+
+        height: 100%;
+        width: 100%;
     }
 
     &:nth-child(5) {
-        top: -5%;
-        @include slide-2-clip;
-        & + footer {
-            position: relative;
-            top: -5%;
+        position: relative;
+        height: 95%;
+        width: 100%;
+
+        & > div {
+            @include slide-2-clip;
+            top: -5.4%;
+            position: absolute;
+            width: 100%;
+            height: (100%/95%) * 100%;
         }
     }
 
     &:nth-child(6) {
-        top: -15%;
-        @include slide-3-clip;
-        & + footer {
-            position: relative;
-            top: -15%;
+        position: relative;
+        height: 90%;
+        width: 100%;
+
+        & > div {
+            @include slide-3-clip;
+            top: -11.4%;
+            position: absolute;
+            height: (100%/90%) * 100%;
+            width: 100%;
         }
     }
 
     &:nth-child(7) {
-        top: -20%;
-        @include slide-2-clip;
-        & + footer {
-            position: relative;
-            top: -20%;
+        position: relative;
+        height: 95%;
+        width: 100%;
+
+        & > div {
+            @include slide-2-clip;
+            top: -5.7%;
+            position: absolute;
+            height: (100%/95%) * 100%;
+            width: 100%;
         }
+    }
+
+    &:nth-last-child(2) {
+        position: absolute;
     }
 
     &.no-top {
@@ -44,7 +64,7 @@ section {
         &:nth-child(5),
         &:nth-child(6),
         &:nth-child(7) {
-            height: 20rem;
+            height: 50%;
 
             .row {
                 height: 20rem;

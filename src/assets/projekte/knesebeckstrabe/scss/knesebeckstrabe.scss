@@ -20,7 +20,7 @@
     
     .row {
         height: 100%;
-        .col-lg-6 {
+        .col-sm-6 {
             @include bg-image;
             &:first-child {
                 background: url("../img/3_2_lg.jpg");

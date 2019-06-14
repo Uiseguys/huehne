@@ -177,7 +177,7 @@ if (checkClipPath() === false) { // Test if clip-path is supported
     // Run the functions when the windows are resized
     window.addEventListener("resize", () => {
         try {
-            if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) {
+            if (checkClipPath() === false) {
                 svgDrawer();
                 // Check to see if the projekte sections are present in the current viewed page
                 if (document.querySelector(".projekte") != null) {

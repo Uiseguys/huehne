@@ -162,8 +162,20 @@ const svgProjekteDrawer = () => {
     }
 };
 
+const clipPathChecker = () => {
+    document.body.style.clipPath = "polygon(0 0, 0 100%, 100% 100%, 0 100%)";
+    if (document.body.style.clipPath) {
+        document.body.style.clipPath = "";
+        return true;
+    }
+    document.body.style.clipPath = "";
+    return false;
+};
+
+console.log(clipPathChecker());
+
 // Run the functions at first launch
-if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) { // Test if clip-path is supported
+if (!(clipPathChecker())) { // Test if clip-path is supported
     createSvgDomElements();
     svgDrawer();
     // Check to see if the projekte sections are present in the current viewed page
@@ -174,7 +186,7 @@ if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) { /
     // Run the functions when the windows are resized
     window.addEventListener("resize", () => {
         try {
-            if (!(CSS.supports("clip-path", "polygon(0 0, 0 100%, 100% 100%, 0 100%)"))) {
+            if (!(clipPathChecker())) {
                 svgDrawer();
                 // Check to see if the projekte sections are present in the current viewed page
                 if (document.querySelector(".projekte") != null) {

@@ -148,11 +148,21 @@ const svgProjekteDrawer = () => {
         const svgTopRight = `<path d="M0 0 L0 4 L${wh[0]} ${ch / 2} L${wh[0]} 0Z" fill="#f5f5f5" />`;
 
         // Add SVG path to class
-        body.querySelectorAll(".projekte-top-left-skew").forEach((item) => { item.innerHTML = svgTopLeft; });
-        body.querySelectorAll(".projekte-bottom-left-skew").forEach((item) => { item.innerHTML = svgBottomLeft; });
-        body.querySelectorAll(".projekte-top-right-skew").forEach((item) => { item.innerHTML = svgTopRight; });
-        body.querySelectorAll(".projekte-bottom-right-skew").forEach((item) => { item.innerHTML = svgBottomRight; });
-        body.querySelectorAll(".projekte-right-skews").forEach((item) => { item.innerHTML = svgTopLeft + svgBottomLeft; });
+        body.querySelectorAll(".projekte-top-left-skew").forEach((item) => {
+            item.innerHTML = svgTopLeft;
+        });
+        body.querySelectorAll(".projekte-bottom-left-skew").forEach((item) => {
+            item.innerHTML = svgBottomLeft;
+        });
+        body.querySelectorAll(".projekte-top-right-skew").forEach((item) => {
+            item.innerHTML = svgTopRight;
+        });
+        body.querySelectorAll(".projekte-bottom-right-skew").forEach((item) => {
+            item.innerHTML = svgBottomRight;
+        });
+        body.querySelectorAll(".projekte-right-skews").forEach((item) => {
+            item.innerHTML = svgTopLeft + svgBottomLeft;
+        });
     } catch (err) {
         console.log(err);
     }
@@ -167,6 +177,49 @@ const clipPathChecker = () => {
     return false;
 };
 
+function get_browser_info() {
+    var ua = navigator.userAgent,
+        tem,
+        M = ua.match(/(opera|chrome|safari|firefox|msie|trident|edge(?=\/))\/?\s*(\d+)(\.\d+)+/i) || [];
+    if (/trident/i.test(M[1])) {
+        tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+        return {
+            name: "IE",
+            version: (tem[1] || "")
+        };
+    }
+    if (M[1] === "Chrome") {
+        tem = ua.match(/\bOPR\/(\d+)/);
+        if (tem != null) {
+            return {
+                name: "Opera",
+                version: tem[1]
+            };
+        }
+
+        tem = ua.match(/\bEdge\/(\d+(.\d+)+)/i);
+        if (tem != null) {
+            return {
+                name: "Microsoft Edge",
+                version: tem[1]
+            };
+        }
+    }
+    M = M[2] ? [M[1], M[0].substring(M[0].indexOf("/") + 1)] : [navigator.appName, navigator.appVersion, "-?"];
+    if ((tem = ua.match(/version\/(\d+)/i)) != null) {
+        M.splice(1, 1, tem[1]);
+    }
+    return {
+        name: M[0],
+        version: M[1]
+    };
+}
+
+const ua = navigator.userAgent;
+const safariRegex = /chrome?(\s|\/)(\d+)/i.test(ua);
+
+console.log(ua);
+console.log(get_browser_info());
 // Run the functions at first launch
 if (!(clipPathChecker())) { // Test if clip-path is supported
     createSvgDomElements();

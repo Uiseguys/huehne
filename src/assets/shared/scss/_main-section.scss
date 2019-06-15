@@ -9,7 +9,7 @@
 
     .projekte-nav {
         position: absolute;
-        top: 51%;
+        top: 52%;
         left: 0;
         right: 0;
         z-index: 10;
@@ -22,12 +22,12 @@
             opacity: 0.5;
 
             &:nth-child(1) {
-                left: 2%;
+                left: 0;
             }
 
             &:nth-child(2),
             &.projekte-right-nav {
-                right: 2%;
+                right: 0;
                 left: auto;
             }
 

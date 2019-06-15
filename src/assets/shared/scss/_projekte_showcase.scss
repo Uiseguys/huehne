@@ -1,5 +1,6 @@
 section {
     &:nth-child(4) {
+        position: relative;
         @include slide-1-clip;
 
         height: 100%;

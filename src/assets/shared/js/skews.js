@@ -44,20 +44,18 @@ const createSvgDomElements = () => {
 
         // Check if projekte product classes exist and create svg elements
         if (slide != null) {
-            // Retrieve parent section for the first slide
-            const slideParent = document.querySelector("section:nth-child(4)");
-            
             // Retrieve the other sections
             const slideTwo = document.querySelector(".section-slide-2");
             const slideThree = document.querySelector(".section-slide-3");
             const slideFour = document.querySelector(".section-slide-4");
 
             slide.setAttribute("class", "section-slide-1 no-top height-100");
-            slideParent.setAttribute("class", "height-100");
+            document.querySelector("section:nth-child(4)").setAttribute("class", "height-100");
 
             if (slideTwo != null) {
+                document.querySelector("section:nth-child(5)").setAttribute("class", "height-100");
                 if (slide.querySelector(".row") == null) {
-                    slide.innerHTML = "<svg class='top-left-skew'></svg>";
+                    slide.insertAdjacentHTML("beforebegin", "<svg class='top-left-skew'></svg>");
                 } else {
                     slide.querySelector(".row").insertAdjacentHTML("beforebegin", "<svg class='top-left-skew'></svg>");
                 }

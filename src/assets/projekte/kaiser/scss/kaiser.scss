@@ -20,3 +20,14 @@
 	@include bg-image;
 	background: url("../img/6_2_lg.jpg");
 }
+
+//
+@media (max-width: 375px) {
+    .main-section {
+        .container {
+            p {
+                font-size: 60px !important;
+            }
+        }
+    }
+}

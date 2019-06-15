@@ -210,7 +210,7 @@ const checkBrowserRender = () => {
         M = ua.match(/(opera|chrome|safari|firefox|msie|trident|edge(?=\/))\/?\s*(\d+)(\.\d+)+/i) || [];
     if (/trident/i.test(M[1])) {
         tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
-        return runSvgAlt(); // Internet Explorer test
+        return runSvgAlt(); // Internet Explorer present
     }
     if (M[1] === "Chrome") {
         if (ua.match(/\bEdge\/(\d+?(.\d+)+)/i) != null) {

@@ -8,6 +8,8 @@
     }
 
     .projekte-nav {
+        visibility: visible !important;
+        opacity: 1 !important;
         position: absolute;
         top: 52%;
         left: 0;
@@ -67,7 +69,15 @@
     }
 }
 
-// Generic Mobile Viewport Settings
+@media (min-width: 992px) {
+    .main-section {
+        .projekte-nav {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
 @media (min-width: 1441px) {
     .main-section {
         .projekte-nav {

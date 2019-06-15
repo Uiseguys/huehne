@@ -172,8 +172,6 @@ const clipPathChecker = () => {
     return false;
 };
 
-console.log(clipPathChecker());
-
 // Run the functions at first launch
 if (!(clipPathChecker())) { // Test if clip-path is supported
     createSvgDomElements();

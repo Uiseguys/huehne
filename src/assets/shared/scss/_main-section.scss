@@ -68,6 +68,24 @@
 }
 
 // Generic Mobile Viewport Settings
+@media (min-width: 1441px) {
+    .main-section {
+        .projekte-nav {
+            a {
+                &:nth-child(1) {
+                    left: 5%;
+                }
+
+                &:nth-child(2),
+                &.projekte-right-nav {
+                    right: 5%;
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+// Generic Mobile Viewport Settings
 @media (max-width: 991px) {
     .main-section {
         .projekte-nav {

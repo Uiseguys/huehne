@@ -164,7 +164,6 @@ const clipPathChecker = () => {
         document.body.style.clipPath = "";
         return true;
     }
-    document.body.style.clipPath = "";
     return false;
 };
 

@@ -524,6 +524,16 @@
     }
 }
 
+// Pixel 2 viewport settings
+@media (max-width: 375px) {
+    .main-section {
+        .main-head {
+            p {
+                font-size: 55px !important;
+            }
+        }
+    }
+}
 // Galaxy S5 viewport Settings
 @media (max-width: 360px) {
     .mission {
@@ -589,6 +599,15 @@
 
 // iPhone 5 SE viewport settings
 @media (max-width: 320px) {
+    .main-section {
+        .container {
+            .main-head {
+                p {
+                    font-size: 45px !important;
+                }
+            }
+        }
+    }
     .mission {
         .container {
             p {

@@ -168,15 +168,6 @@ const svgProjekteDrawer = () => {
     }
 };
 
-const clipPathChecker = () => {
-    document.body.style.clipPath = "polygon(0 0, 0 100%, 100% 100%, 0 100%)";
-    if (document.body.style.clipPath) {
-        document.body.style.clipPath = "";
-        return true;
-    }
-    return false;
-};
-
 // Run the functions at first launch
 const runSvgAlt = () => {
     try {
@@ -213,45 +204,56 @@ const checkBrowserRender = () => {
         return runSvgAlt(); // Internet Explorer present
     }
     if (M[1] === "Chrome") {
-        if (ua.match(/\bEdge\/(\d+?(.\d+)+)/i) != null) {
-            // Edge present
-            if (ua.match(/\bOPR\/(\d+?(.\d+)+)/i) != null) {
-                // Opera present
-                if (ua.match(/\bSafari\/(\d+?(.\d+)+)/i) != null) {
-                    // Safari present
-                    tem = ua.match(/\bSafari\/(\d+?(.\d+)+)/i);
-                    if (parseFloat(tem[1]) < 537.71) {
-                        return runSvgAlt();
-                    }
-                }
-                tem = ua.match(/\bOPR\/(\d+?(.\d+)+)/i);
-                if (parseFloat(tem[1]) < 45) {
+        const chrome = ua.match(/\bChrome\/(\d+?(.\d+)+)/i);
+        const opera = ua.match(/\bOPR\/(\d+?(.\d+)+)/i);
+        const edge = ua.match(/\bEdge\/(\d+?(.\d+)+)/i);
+        const safari = ua.match(/\bSafari\/(\d+?(.\d+)+)/i);
+        const ios = ua.match(/\bAppleWebKit\/(\d+?(.\d+)+)/i);
+
+        if (edge != null) {
+            if (parseFloat(edge[1]) < 75) {
+                return runSvgAlt();
+            }
+            return null;
+        }
+        if (opera != null) {
+            if (parseFloat(opera[1]) < 45) {
+                return runSvgAlt();
+            }
+            return null;
+        }
+        if (safari != null) {
+            if (parseFloat(safari[1]) < 537.71) {
+                if (chrome[1] < 24) {
                     return runSvgAlt();
                 }
             }
-            tem = ua.match(/\bEdge\/(\d+(.\d+)+)/i);
-            if (parseFloat(tem[1]) < 75) {
-                return runSvgAlt();
+        }
+        if (ios != null) {
+            if (parseFloat(ios[1]) < 45) {
+                if (chrome[1] < 24) {
+                    return runSvgAlt();
+                }
             }
         }
-        tem = ua.match(/\bChrome\/(\d+(.\d+)+)/i);
-        if (parseFloat(tem[1]) < 24) {
-            return runSvgAlt();
+        if (chrome != null) {
+            if (parseFloat(chrome[1]) < 45) {
+                if (ios[1] < 537.71) {
+                    return runSvgAlt();
+                }
+            }
         }
     }
     M = M[2] ? [M[1], M[0].substring(M[0].indexOf("/") + 1)] : [navigator.appName, navigator.appVersion, "-?"];
-    if ((tem = ua.match(/version\/(\d+)/i)) != null) {
+    if (ua.match(/version\/(\d+)/i) != null) {
         M.splice(1, 1, tem[1]);
     }
     if (M[0] === "Firefox") {
         if (parseFloat(M[1]) < 54) {
             return runSvgAlt();
         }
+        return null;
     }
-    //return {
-        //name: M[0],
-        //version: M[1]
-    //};
 }
 
 checkBrowserRender();

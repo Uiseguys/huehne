@@ -177,71 +177,83 @@ const clipPathChecker = () => {
     return false;
 };
 
-function get_browser_info() {
-    var ua = navigator.userAgent,
-        tem,
+// Run the functions at first launch
+const runSvgAlt = () => {
+    try {
+        createSvgDomElements();
+        svgDrawer();
+        // Check to see if the projekte sections are present in the current viewed page
+        if (document.querySelector(".projekte") != null) {
+            svgProjekteDrawer();
+        }
+
+        // Run the functions when the windows are resized
+        window.addEventListener("resize", () => {
+            try {
+                svgDrawer();
+                // Check to see if the projekte sections are present in the current viewed page
+                if (document.querySelector(".projekte") != null) {
+                    svgProjekteDrawer();
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+const checkBrowserRender = () => {
+    let ua = navigator.userAgent;
+    let tem,
         M = ua.match(/(opera|chrome|safari|firefox|msie|trident|edge(?=\/))\/?\s*(\d+)(\.\d+)+/i) || [];
     if (/trident/i.test(M[1])) {
         tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
-        return {
-            name: "IE",
-            version: (tem[1] || "")
-        };
+        return runSvgAlt(); // Internet Explorer test
     }
     if (M[1] === "Chrome") {
-        tem = ua.match(/\bOPR\/(\d+)/);
-        if (tem != null) {
-            return {
-                name: "Opera",
-                version: tem[1]
-            };
+        if (ua.match(/\bEdge\/(\d+?(.\d+)+)/i) != null) {
+            // Edge present
+            if (ua.match(/\bOPR\/(\d+?(.\d+)+)/i) != null) {
+                // Opera present
+                if (ua.match(/\bSafari\/(\d+?(.\d+)+)/i) != null) {
+                    // Safari present
+                    tem = ua.match(/\bSafari\/(\d+?(.\d+)+)/i);
+                    if (parseFloat(tem[1]) < 537.71) {
+                        return runSvgAlt();
+                    }
+                }
+                tem = ua.match(/\bOPR\/(\d+?(.\d+)+)/i);
+                if (parseFloat(tem[1]) < 45) {
+                    return runSvgAlt();
+                }
+            }
+            tem = ua.match(/\bEdge\/(\d+(.\d+)+)/i);
+            if (parseFloat(tem[1]) < 75) {
+                return runSvgAlt();
+            }
         }
-
-        tem = ua.match(/\bEdge\/(\d+(.\d+)+)/i);
-        if (tem != null) {
-            return {
-                name: "Microsoft Edge",
-                version: tem[1]
-            };
+        tem = ua.match(/\bChrome\/(\d+(.\d+)+)/i);
+        if (parseFloat(tem[1]) < 24) {
+            return runSvgAlt();
         }
     }
     M = M[2] ? [M[1], M[0].substring(M[0].indexOf("/") + 1)] : [navigator.appName, navigator.appVersion, "-?"];
     if ((tem = ua.match(/version\/(\d+)/i)) != null) {
         M.splice(1, 1, tem[1]);
     }
-    return {
-        name: M[0],
-        version: M[1]
-    };
-}
-
-const ua = navigator.userAgent;
-const safariRegex = /chrome?(\s|\/)(\d+)/i.test(ua);
-
-console.log(ua);
-console.log(get_browser_info());
-// Run the functions at first launch
-if (!(clipPathChecker())) { // Test if clip-path is supported
-    createSvgDomElements();
-    svgDrawer();
-    // Check to see if the projekte sections are present in the current viewed page
-    if (document.querySelector(".projekte") != null) {
-        svgProjekteDrawer();
-    }
-
-    // Run the functions when the windows are resized
-    window.addEventListener("resize", () => {
-        try {
-            if (!(clipPathChecker())) {
-                svgDrawer();
-                // Check to see if the projekte sections are present in the current viewed page
-                if (document.querySelector(".projekte") != null) {
-                    svgProjekteDrawer();
-                }
-            }
-        } catch (err) {
-            console.log(err);
+    if (M[0] === "Firefox") {
+        if (parseFloat(M[1]) < 54) {
+            return runSvgAlt();
         }
-    });
+    }
+    //return {
+        //name: M[0],
+        //version: M[1]
+    //};
 }
+
+checkBrowserRender();
+
 // });

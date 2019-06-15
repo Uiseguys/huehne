@@ -42,7 +42,7 @@
     const navbarCollapse = () => {
         if ($("#mainNav").offset().top > 100) {
             $("#mainNav").addClass("navbar-shrink");
-        } else {
+        } else if ($("#mainNav button.navbar-toggler").hasClass("collapsed")) {
             $("#mainNav").removeClass("navbar-shrink");
         }
     };

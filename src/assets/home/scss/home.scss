@@ -68,6 +68,48 @@
         }
     }
 
+    &:nth-child(4),
+    &:nth-child(6),
+    &:nth-child(8),
+    &:nth-child(10),
+    &:nth-child(12),
+    &:nth-child(14) {
+        & > .container {
+            pointer-events: none;
+            .row {
+                pointer-events: none;
+                .col-lg-6 {
+                    &:first-child {
+                        pointer-events: none;
+                    }
+                    &:last-child {
+                        pointer-events: fill;
+                    }
+                }
+            }
+        }
+    }
+
+    &:nth-child(5),
+    &:nth-child(7),
+    &:nth-child(9),
+    &:nth-child(11),
+    &:nth-child(13) {
+        & > .container {
+            pointer-events: none;
+            .row {
+                pointer-events: none;
+                .col-lg-6 {
+                    &:first-child {
+                        pointer-events: fill;
+                    }
+                    &:last-child {
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
     &:nth-child(14) {
         @include bottom-left-clip;
 
@@ -135,6 +177,26 @@
             &.custom-gray-bg {
                 background: #f5f5f5;
                 border: none;
+            }
+
+            &#projekte-slide-1,
+            &#projekte-slide-2,
+            &#projekte-slide-3,
+            &#projekte-slide-4,
+            &#projekte-slide-5,
+            &#projekte-slide-6,
+            &#projekte-slide-7,
+            &#projekte-slide-8,
+            &#projekte-slide-9,
+            &#projekte-slide-10,
+            &#projekte-slide-11 {
+                & > a {
+                    display: block;
+                    z-index: 50;
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                }
             }
 
             &#projekte-slide-2 {

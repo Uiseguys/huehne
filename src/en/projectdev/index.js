@@ -1,1 +1,1 @@
-import "../../assets/der/scss/der.scss";
+import "../../assets/management/scss/management.scss";

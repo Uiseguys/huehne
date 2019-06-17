@@ -57,7 +57,17 @@ const createRerenderSvgDomElements = () => {
             }
 
             // Creates svg elements for first projekte image
-            firstPro.querySelector(".projekte-wrapper .row .col-lg-6#projekte-slide-1").innerHTML = `<svg class='projekte-bottom-left-skew'>${svgProjekteBottomLeft}</svg>`;
+            // Find first projekte section link
+            let tmp;
+            el = firstPro.querySelector(".projekte-wrapper .row .col-lg-6#projekte-slide-1").innerHTML;
+            tmp = /href\=\"\/projekte\/\w+\"/.test(el);
+            if (tmp != null) {
+                tmp = /href\=\"\/projekte\/\w+\"/.exec(el);
+            }
+            if (tmp == null){
+                tmp = /href\=\"\/en\/projects\/\w+\"/.exec(el);
+            }
+            firstPro.querySelector(".projekte-wrapper .row .col-lg-6#projekte-slide-1").innerHTML = `<svg class='projekte-bottom-left-skew'>${svgProjekteBottomLeft}</svg><a ${tmp}></a>`;
 
             // Creates svg elements for the last projekte section
             const lastPro = document.querySelector(".projekte:nth-child(14)");
@@ -71,15 +81,33 @@ const createRerenderSvgDomElements = () => {
                 lastPro.removeChild(el);
                 lastPro.insertAdjacentHTML("afterbegin", `<svg class='bottom-left-skew'>${svgBtmLeft}</svg>`);
             }
+
             // Creates SVG elements excluding the first projekte section
+            // Create an array that stores image links
+            let links = [];
             let selector;
+
+            // Find links and store them
+            for (let i = 2; i < 12; i += 1) {
+                selector = `.projekte > .row > .col-lg-6#projekte-slide-${i}`;
+                el = document.querySelector(selector).innerHTML;
+                tmp = /href\=\"\/projekte\/\w+\"/.test(el);
+                if (tmp != null) {
+                    links[i] = /href\=\"?(\/)projekte\/\w+\"/.exec(el);
+                } 
+                tmp = /href\=\"?(\/)en\/projects\/\w+\"/.test(el);
+                if (tmp != null) {
+                    links[i] = /href\=\"?(\/)en\/projects\/\w+\"/.exec(el);
+                }
+            }
+
             for (let i = 2; i < 12; i += 1) {
                 selector = `.projekte > .row > .col-lg-6#projekte-slide-${i}`;
                 el = document.querySelector(selector);
                 if (i % 2 === 0) { // Check if even numbered to have right sided angled skews
-                    el.innerHTML = `<svg class='projekte-top-right-skew'>${svgProjekteTopRight}</svg><svg class='projekte-bottom-right-skew'>${svgProjekteBottomRight}</svg>`;
+                    el.innerHTML = `<svg class='projekte-top-right-skew'>${svgProjekteTopRight}</svg><svg class='projekte-bottom-right-skew'>${svgProjekteBottomRight}</svg><a ${links[i]}></a>`;
                 } else { // If not will have left sided angled skews
-                    el.innerHTML = `<svg class='projekte-top-left-skew'>${svgProjekteTopLeft}</svg><svg class='projekte-bottom-left-skew'>${svgProjekteBottomLeft}</svg>`;
+                    el.innerHTML = `<svg class='projekte-top-left-skew'>${svgProjekteTopLeft}</svg><svg class='projekte-bottom-left-skew'>${svgProjekteBottomLeft}</svg><a ${links[i]}></a>`;
                 }
             }
         }

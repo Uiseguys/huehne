@@ -20,7 +20,7 @@ module.exports = {
         knesebeckstrasse: "./src/projekte/knesebeckstrasse/index.js",
         city_light_house: "./src/projekte/city-light-house/index.js",
         tower: "./src/projekte/tower1/index.js",
-        gedachtniskirche: "./src/projekte/gedachtniskirche/index.js",
+        gedaechtniskirche: "./src/projekte/gedaechtniskirche/index.js",
         bellevue: "./src/projekte/haus-bellevue/index.js",
         lehrter: "./src/projekte/lehrter-bahnhof/index.js",
         shopping: "./src/projekte/shopping-center/index.js",
@@ -37,7 +37,7 @@ module.exports = {
         knesebeckstrasse_en: "./src/en/projects/knesebeckstrasse/index.js",
         city_light_house_en: "./src/en/projects/city-light-house/index.js",
         tower_en: "./src/en/projects/tower1/index.js",
-        gedachtniskirche_en: "./src/en/projects/gedachtniskirche/index.js",
+        gedaechtniskirche_en: "./src/en/projects/gedaechtniskirche/index.js",
         bellevue_en: "./src/en/projects/haus-bellevue/index.js",
         lehrter_en: "./src/en/projects/lehrter-bahnhof/index.js",
         shopping_en: "./src/en/projects/shopping-center/index.js",
@@ -202,9 +202,9 @@ module.exports = {
             chunks: ["commons", "tower"],
         }),
         new HtmlWebpackPlugin({
-            template: "src/projekte/gedachtniskirche/index.html",
-            filename: "projekte/gedachtniskirche/index.html",
-            chunks: ["commons", "gedachtniskirche"],
+            template: "src/projekte/gedaechtniskirche/index.html",
+            filename: "projekte/gedaechtniskirche/index.html",
+            chunks: ["commons", "gedaechtniskirche"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/haus-bellevue/index.html",
@@ -287,9 +287,9 @@ module.exports = {
             chunks: ["commons", "tower_en"],
         }),
         new HtmlWebpackPlugin({
-            template: "src/en/projects/gedachtniskirche/index.html",
-            filename: "en/projects/gedachtniskirche/index.html",
-            chunks: ["commons", "gedachtniskirche_en"],
+            template: "src/en/projects/gedaechtniskirche/index.html",
+            filename: "en/projects/gedaechtniskirche/index.html",
+            chunks: ["commons", "gedaechtniskirche_en"],
         }),
         new HtmlWebpackPlugin({
             template: "src/en/projects/haus-bellevue/index.html",

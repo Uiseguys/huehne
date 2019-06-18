@@ -37,7 +37,7 @@
             }
 
 			&:last-child {
-				padding-left: 10px;
+				padding-left: 30px;
 			}
 
             .btn-group {
@@ -184,6 +184,10 @@
                         color: $black;
                     }
                 }
+
+				&:last-child {
+					padding-left: 0;
+				}
 
 
                 .btn-group {

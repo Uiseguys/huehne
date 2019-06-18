@@ -194,7 +194,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "src/projekte/city-light-house/index.html",
             filename: "projekte/city-light-house/index.html",
-            chunks: ["commons", "city-light-house"],
+            chunks: ["commons", "city"],
         }),
         new HtmlWebpackPlugin({
             template: "src/projekte/tower1/index.html",

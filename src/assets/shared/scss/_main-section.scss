@@ -35,9 +35,11 @@
             &:hover {
                 opacity: 1;
             }
-            svg {
+
+            & > svg {
                 display: inline;
-                color: #fff;
+                fill: #fff;
+
             }
         }
     }

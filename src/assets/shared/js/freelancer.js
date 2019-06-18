@@ -40,10 +40,18 @@
 
     // Collapse Navbar
     const navbarCollapse = () => {
-        if ($("#mainNav").offset().top > 100) {
-            $("#mainNav").addClass("navbar-shrink");
-        } else if ($("#mainNav button.navbar-toggler").hasClass("collapsed")) {
-            $("#mainNav").removeClass("navbar-shrink");
+        if ($(window).width() < 992) {
+            if ($("#mainNav").offset().top > 100) {
+                $("#mainNav").addClass("navbar-shrink");
+            } else if ($("#mainNav button.navbar-toggler").hasClass("collapsed")) {
+                $("#mainNav").removeClass("navbar-shrink");
+            }
+        } else if ($(window).width() > 992) {
+            if ($("#mainNav").offset().top > 100) {
+                $("#mainNav").addClass("navbar-shrink");
+            } else {
+                $("#mainNav").removeClass("navbar-shrink");
+            }
         }
     };
 

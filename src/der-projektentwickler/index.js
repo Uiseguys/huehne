@@ -1,1 +1,1 @@
-import "../assets/unser/scss/unser.scss";
+import "../assets/der-projektenwickler/scss/der-projektenwickler.scss";

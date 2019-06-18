@@ -12,25 +12,8 @@
 }
 
 .section-slide-1 {
-    height: 100%;
-
-    .top-left-skew {
-        @include svg-skews;
-    }
-    
-    .row {
-        height: 100%;
-        .col-sm-6 {
-            @include bg-image;
-            &:first-child {
-                background: url("../img/3_2_lg.jpg");
-            }
-
-            &:last-child {
-                background: url("../img/3_3_lg.jpg");
-            }
-        }
-    }
+	@include bg-image;
+    background: url("../img/3_2_lg.jpg");
 }
 
 .section-slide-2 {

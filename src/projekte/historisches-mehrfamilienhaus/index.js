@@ -1,1 +1,1 @@
-import "../../assets/projekte/historisches-mehrfamilienhaus/scss/historisches.scss";
+import "../../assets/projekte/historisches-mehrfamilienhaus/scss/historisches-mehrfamilienhaus.scss";

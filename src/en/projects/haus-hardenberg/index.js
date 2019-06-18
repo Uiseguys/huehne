@@ -1,1 +1,1 @@
-import "../../../assets/projekte/haus-hardenberg/scss/hardenberg.scss";
+import "../../../assets/projekte/haus-hardenberg/scss/haus-hardenberg.scss";

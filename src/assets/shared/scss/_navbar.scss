@@ -47,11 +47,6 @@
                     font-family: "Fira Sans", sans-serif;
                     font-size: 16px;
 
-                    &:hover,
-                    &:active {
-                        color: #fff;
-                    }
-
                     &:first-child {
                         margin-right: 2px;
                     }
@@ -60,8 +55,8 @@
                         margin-left: 2px;
                     }
 
-                    color: #B4B4B4;
                 }
+
                 div {
                     display: inline-flex;
                     background: #B4B4B4;

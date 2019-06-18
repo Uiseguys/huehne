@@ -34,12 +34,17 @@
             &:focus,
             &:hover {
                 opacity: 1;
+                fill: #fff;
             }
 
             & > svg {
                 display: inline;
                 fill: #fff;
-
+                &:focus,
+                &:hover {
+                    opacity: 1;
+                    fill: #fff;
+                }
             }
         }
     }
@@ -56,14 +61,6 @@
             p {
                 line-height: 1;
                 font-size: 65px;
-            }
-
-            p,
-            b {
-                &:hover,
-                &:active {
-                    color: #fff;
-                }
             }
         }
     }

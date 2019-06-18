@@ -158,7 +158,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: "src/der-projektentwickler/index.html",
-            filename: "der/index.html",
+            filename: "der-projektentwickler/index.html",
             chunks: ["commons", "der"],
         }),
         new HtmlWebpackPlugin({

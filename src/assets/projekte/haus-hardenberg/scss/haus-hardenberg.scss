@@ -32,5 +32,12 @@
 }
 
 .main-section, .main-section * {
-	color: #6a7171!important;
+	color: #4a5050!important;
+}
+
+li.nav-item a.link {
+	color: #4a5050!important;
+}
+li.nav-item a.link:hover {
+	color: #000!important;
 }

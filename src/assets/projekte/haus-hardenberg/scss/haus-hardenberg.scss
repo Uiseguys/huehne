@@ -42,3 +42,8 @@
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
 	color: #4a5050!important;
 }
+
+#mainNav .navbar-nav li.nav-item .btn-group div {
+	display: inline-flex;
+	background: #4a5050!important;
+}

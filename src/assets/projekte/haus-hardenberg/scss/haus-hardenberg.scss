@@ -35,9 +35,10 @@
 	color: #4a5050!important;
 }
 
-li.nav-item a.link {
+#mainNav .navbar-nav li.nav-item a.nav-link {
 	color: #4a5050!important;
 }
-li.nav-item a.link:hover {
-	color: #000!important;
+
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+	color: #4a5050!important;
 }

@@ -30,3 +30,7 @@
 	@include bg-image;
 	background: url("../img/2_5_lg.jpg");
 }
+
+.main-section, .main-section * {
+	color: #6a7171!important;
+}

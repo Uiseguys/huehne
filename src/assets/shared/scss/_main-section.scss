@@ -2,6 +2,8 @@
     @include bg-image;
     @include bottom-left-clip;
 
+
+
     svg {
         @include svg-skews;
         z-index: 5 !important;
@@ -59,8 +61,14 @@
 
         .main-head {
             p {
+                position: fixed;
                 line-height: 1;
                 font-size: 65px;
+
+                &.no-fixed {
+                    position: inherit;
+                    margin-top: 65px;
+                }
             }
         }
     }

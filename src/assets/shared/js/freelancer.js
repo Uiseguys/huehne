@@ -52,6 +52,12 @@
             } else {
                 $("#mainNav").removeClass("navbar-shrink");
             }
+            if ($(".main-section > .container > .main-head > p").offset().top > 400) {
+                $(".main-section > .container > .main-head > p").addClass("no-fixed");
+            } else if ($(".main-section > .container > .main-head > p").offset().top < 0) {
+                $(".main-section > .container > .main-head > p").removeClass("no-fixed");
+            }
+
         }
     };
 

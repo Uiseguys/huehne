@@ -8,12 +8,14 @@
 
                 &.no-fixed {
                     position: static;
-                    padding-top: 20vh;
+                    margin-top: 23vh;
+                    padding-bottom: 1vh;
                 }
             }
 
             p {
-                padding-top: 2vh;
+                padding-top: 3vh;
+
                 &.no-fixed {
                     padding-top: 0;
                     margin-top: 0 !important;

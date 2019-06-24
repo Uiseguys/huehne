@@ -52,12 +52,16 @@
             } else {
                 $("#mainNav").removeClass("navbar-shrink");
             }
-            if ($(".main-section > .container > .main-head > p").offset().top > 400) {
-                $(".main-section > .container > .main-head > p").addClass("no-fixed");
-            } else if ($(".main-section > .container > .main-head > p").offset().top < 0) {
-                $(".main-section > .container > .main-head > p").removeClass("no-fixed");
-            }
-
+            $(window).scroll(() => {
+                if ($(window).scrollTop() > 170) {
+                    $(".main-section > .container > .main-head > b").addClass("no-fixed");
+                    $(".main-section > .container > .main-head > p").addClass("no-fixed");
+                } else {
+                    $(".main-section > .container > .main-head > b").removeClass("no-fixed");
+                    $(".main-section > .container > .main-head > p").removeClass("no-fixed");
+                } 
+                console.log($(window).scrollTop());
+            });
         }
     };
 

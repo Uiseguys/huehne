@@ -52,12 +52,31 @@
             } else {
                 $("#mainNav").removeClass("navbar-shrink");
             }
-            $(window).scroll(() => {
-                if ($(window).scrollTop() < 300) {
-                    $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 4}px`);
-                    $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 4}px`);
+            if ($(window).height() < 992) {
+                const regex = /\/$/.test(document.location.href); // Test if we are at the home screen
+                if (regex) {
+                    $(window).scroll(() => {
+                        if ($(window).scrollTop() < 400) {
+                            $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 4}px`);
+                            $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 4}px`);
+                        }
+                    });
+                } else {
+                    $(window).scroll(() => {
+                        if ($(window).scrollTop() < 700) {
+                            $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 4}px`);
+                            $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 4}px`);
+                        }
+                    });
                 }
-            });
+            } else if ($(window).height() >= 992) {
+                $(window).scroll(() => {
+                    if ($(window).scrollTop() < 1200) {
+                        $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 4}px`);
+                        $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 4}px`);
+                    }
+                });
+            }
         }
     };
 

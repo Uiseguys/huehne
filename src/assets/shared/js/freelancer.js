@@ -52,29 +52,19 @@
             } else {
                 $("#mainNav").removeClass("navbar-shrink");
             }
-            if ($(window).height() < 992) {
-                const regex = /\/$/.test(document.location.href); // Test if we are at the home screen
-                if (regex) {
-                    $(window).scroll(() => {
-                        if ($(window).scrollTop() < 400) {
-                            $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 4}px`);
-                            $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 4}px`);
-                        }
-                    });
-                } else {
-                    $(window).scroll(() => {
-                        if ($(window).scrollTop() < 1000) {
-                            $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 4}px`);
-                            $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 4}px`);
-                        }
-                    });
-                }
-            } else if ($(window).height() >= 992) {
+            const regex = /\/$/.test(document.location.href); // Test if we are at the home screen
+            if (regex) {
                 $(window).scroll(() => {
-                    if ($(window).scrollTop() < 4000) {
-                        console.log("It's working")
-                        $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 4}px`);
-                        $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 4}px`);
+                    if ($(window).scrollTop() < 400) {
+                        $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 3}px`);
+                        $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 3}px`);
+                    }
+                });
+            } else {
+                $(window).scroll(() => {
+                    if ($(window).scrollTop() < ($(window).height() * 0.75)) {
+                        $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 3}px`);
+                        $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 3}px`);
                     }
                 });
             }

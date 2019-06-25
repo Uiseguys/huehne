@@ -71,7 +71,8 @@
                 }
             } else if ($(window).height() >= 992) {
                 $(window).scroll(() => {
-                    if ($(window).scrollTop() < 1500) {
+                    if ($(window).scrollTop() < 4000) {
+                        console.log("It's working")
                         $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 4}px`);
                         $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 4}px`);
                     }

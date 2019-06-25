@@ -52,7 +52,10 @@
             } else {
                 $("#mainNav").removeClass("navbar-shrink");
             }
+            
+            // Slow scroll sttings
             let regex = /\/$/.test(document.location.href); // Test if we are at the home screen
+            const arr = ["/projekte/historiches-mehrfamilienhaus", "/projekte/haus-hardenberg", "/projekte/haus-bellevue", "/en/projects/historiches-mehrfamilienhaus", "/en/projects/haus-hardenberg", "/en/projects/haus-bellevue"];
             if ($(window).height() < 992) {
                 if (regex) {
                     $(window).scroll(() => {
@@ -62,17 +65,16 @@
                         }
                     });
                 } else {
-                    console.log(document.location.href);
                     regex = /\/projekte\/\w+(\-\w+)?$/.test(document.location.href);
                     if (regex != null) {
                         regex = /\/projekte\/\w+(\-\w+)?$/.exec(document.location.href);
                     } else {
-                        regex = /\/en\/projects\/\w+(\-\w+)?$/.exec(document.location.href).typeOf;
+                        regex = /\/en\/projects\/\w+(\-\w+)?$/.exec(document.location.href);
                     }
-                    const linksArr = ["/projekte/historiches-mehrfamilienhaus", "/projekte/haus-hardenberg", "/projekte/haus-bellevue", "/en/projects/historiches-mehrfamilienhaus", "/en/projects/haus-hardenberg", "/en/projects/haus-bellevue"];
-                    if (linksArr.indexOf(regex[0]) >= 0) {
+                    if (arr.indexOf(regex[0]) >= 0) {
                         $(window).scroll(() => {
-                            if ($(window).scrollTop() < ($(window).height() * 0.6)) {
+                            if ($(window).scrollTop() < ($(window).height() * 0.7)) {
+                                console.log("It's working");
                                 $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 3}px`);
                                 $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 3}px`);
                             }
@@ -88,6 +90,7 @@
                 }
             }
             if ($(window).height() >= 992) {
+                regex = /\/$/.test(document.location.href)
                 if (regex) {
                     $(window).scroll(() => {
                         if ($(window).scrollTop() < ($(window).height() * 0.82)) {
@@ -96,12 +99,27 @@
                         }
                     });
                 } else {
-                    $(window).scroll(() => {
-                        if ($(window).scrollTop() < ($(window).height() * 0.95)) {
-                            $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 2.5}px`);
-                            $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 2.5}px`);
-                        }
-                    });
+                    regex = /\/projekte\/\w+(\-\w+)?(\-\w+)?$/.test(document.location.href);
+                    if (regex != null) {
+                        regex = /\/projekte\/\w+(\-\w+)?(\-\w+)?$/.exec(document.location.href);
+                    } else {
+                        regex = /\/en\/projects\/\w+(\-\w+)?(\-\w+)?$/.exec(document.location.href);
+                    }
+                    if (arr.indexOf(regex[0]) >= 0) {
+                        $(window).scroll(() => {
+                            if ($(window).scrollTop() < ($(window).height() * 0.7)) {
+                                $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 3}px`);
+                                $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 3}px`);
+                            }
+                        });
+                    } else {
+                        $(window).scroll(() => {
+                            if ($(window).scrollTop() < ($(window).height() * 0.95)) {
+                                $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 3}px`);
+                                $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 3}px`);
+                            }
+                        });
+                    }
                 }
             }
         }

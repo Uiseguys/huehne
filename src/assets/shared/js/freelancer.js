@@ -53,20 +53,39 @@
                 $("#mainNav").removeClass("navbar-shrink");
             }
             const regex = /\/$/.test(document.location.href); // Test if we are at the home screen
-            if (regex) {
-                $(window).scroll(() => {
-                    if ($(window).scrollTop() < 400) {
-                        $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 3}px`);
-                        $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 3}px`);
-                    }
-                });
-            } else {
-                $(window).scroll(() => {
-                    if ($(window).scrollTop() < ($(window).height() * 0.75)) {
-                        $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 3}px`);
-                        $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 3}px`);
-                    }
-                });
+            if ($(window).height() < 992) {
+                if (regex) {
+                    $(window).scroll(() => {
+                        if ($(window).scrollTop() < ($(window).height() * 0.47)) {
+                            $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 3}px`);
+                            $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 3}px`);
+                        }
+                    });
+                } else {
+                    $(window).scroll(() => {
+                        if ($(window).scrollTop() < ($(window).height() * 0.75)) {
+                            $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 3}px`);
+                            $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 3}px`);
+                        }
+                    });
+                }
+            }
+            if ($(window).height() >= 992) {
+                if (regex) {
+                    $(window).scroll(() => {
+                        if ($(window).scrollTop() < ($(window).height() * 0.85)) {
+                            $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 2.5}px`);
+                            $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 2.5}px`);
+                        }
+                    });
+                } else {
+                    $(window).scroll(() => {
+                        if ($(window).scrollTop() < ($(window).height() * 0.95)) {
+                            $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 2.5}px`);
+                            $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 2.5}px`);
+                        }
+                    });
+                }
             }
         }
     };

@@ -13,12 +13,14 @@
 
 .section-slide-1 {
 	@include bg-image;
-    background: url("../img/3_2_lg.jpg");
+	background: url("../img/3_4_lg.jpg");
+    background-position: 50% 5% !important;
 }
 
 .section-slide-2 {
 	@include bg-image;
-	background: url("../img/3_4_lg.jpg");
+    background: url("../img/3_2_lg.jpg") #1a1d26;
+    background-size: 25% !important;
 }
 
 .section-slide-3 {
@@ -29,4 +31,28 @@
 .section-slide-4 {
 	@include bg-image;
 	background: url("../img/3_6_lg.jpg");
+}
+
+@media (max-width: 991px) {
+    .section-slide-2 {
+        background-size: 50% !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .section-slide-2 {
+        background-size: 35% !important;
+    }
+}
+
+@media (max-width: 1440px) {
+    .section-slide-2 {
+        background-size: 30% !important;
+    }
+}
+
+@media (max-width: 1366px) {
+    .section-slide-2 {
+        background-size: 25% !important;
+    }
 }

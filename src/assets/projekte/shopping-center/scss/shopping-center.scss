@@ -8,14 +8,14 @@
 @import "../../../shared/scss/footer";
 
 .main-section {
-    background: url("../img/9_1_lg.jpg");
-    background-size: 120% !important;
+    background: url("../img/9_2_lg.jpg");
+    background-size: 155% !important;
 }
 
 .section-slide-1 {
 	@include bg-image;
-	background: url("../img/9_2_lg.jpg");
-	background-size: 155% !important;
+	background: url("../img/9_1_lg.jpg");
+	background-size: 120% !important;
 }
 
 .section-slide-2 {
@@ -26,25 +26,25 @@
 
 // Pixel and Pixel XL viewport settings
 @media (max-width: 991px) {
-    .main-section {
-        background-size: 315% !important;
-    }
-
-    .section-slide-1,
+    .main-section,
     .section-slide-2 {
         background-size: 365% !important;
+    }
+
+    .section-slide-1, {
+        background-size: 315% !important;
     }
 }
 
 // Ipad viewport Settings
 @media (max-width: 768px) and (min-height: 1024px) {
-    .main-section {
-        background-size: 380% !important;
-    }
-
-    .section-slide-1,
+    .main-section,
     .section-slide-2 {
         background-size: 280% !important;
+    }
+
+    .section-slide-1 {
+        background-size: 380% !important;
     }
 }
 

@@ -59,7 +59,7 @@
             if ($(window).height() < 992) {
                 if (regex) {
                     $(window).scroll(() => {
-                        if ($(window).scrollTop() < ($(window).height() * 0.47)) {
+                        if ($(window).scrollTop() < ($(window).height() * 0.4)) {
                             $(".main-section > .container > .main-head > b").css("top", `${$(window).scrollTop() / 3}px`);
                             $(".main-section > .container > .main-head > p").css("top", `${$(window).scrollTop() / 3}px`);
                         }

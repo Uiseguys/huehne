@@ -83,6 +83,20 @@ section {
     }
 }
 
+@media (min-width: 2200px) {
+    .main-section {
+        .container {
+            .main-head {
+                b {
+                    margin-left: 0;
+                }
+                p {
+                    padding-top: 100px;
+                }
+            }
+        }
+    }
+}
 // Generic Mobile Viewport Settings
 @media (max-width: 991px) {
     section {

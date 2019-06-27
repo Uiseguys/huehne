@@ -64,7 +64,7 @@ const createRerenderSvgDomElements = () => {
             if (tmp != null) {
                 tmp = /href\=\"\/projekte\/\w+\"/.exec(el);
             }
-            if (tmp == null){
+            if (tmp == null) {
                 tmp = /href\=\"\/en\/projects\/\w+\"/.exec(el);
             }
             firstPro.querySelector(".projekte-wrapper .row .col-lg-6#projekte-slide-1").innerHTML = `<svg class='projekte-bottom-left-skew'>${svgProjekteBottomLeft}</svg><a ${tmp}></a>`;

@@ -19,40 +19,28 @@
 
 .section-slide-2 {
 	@include bg-image;
-    background: url("../img/3_2_lg.jpg") #1a1d26;
-    background-size: 25% !important;
+    background: url("../img/3_2_lg.jpg");
 }
 
 .section-slide-3 {
 	@include bg-image;
-	background: url("../img/3_5_lg.jpg");
+	background: url("../img/3_3_lg.jpg");
 }
 
 .section-slide-4 {
 	@include bg-image;
+	background: url("../img/3_5_lg.jpg");
+}
+
+.section-slide-5 {
+	@include bg-image;
 	background: url("../img/3_6_lg.jpg");
 }
 
-@media (max-width: 991px) {
-    .section-slide-2 {
-        background-size: 50% !important;
-    }
-}
-
-@media (max-width: 1024px) {
-    .section-slide-2 {
-        background-size: 35% !important;
-    }
-}
-
-@media (max-width: 1440px) {
-    .section-slide-2 {
-        background-size: 30% !important;
-    }
-}
-
-@media (max-width: 1366px) {
-    .section-slide-2 {
-        background-size: 25% !important;
+@media (max-width: 992px) {
+    section {
+        &:nth-child(6) {
+            margin-top: -4.6%;
+        }
     }
 }

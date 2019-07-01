@@ -8,12 +8,12 @@
 @import "../../../shared/scss/footer";
 
 .main-section {
-    background: url("../img/8_3_lg.jpg");
+    background: url("../img/8_2_lg.jpg");
 }
 
 .section-slide-1 {
 	@include bg-image;
-	background: url("../img/8_2_lg.jpg");
+	background: url("../img/8_3_lg.jpg");
 }
 
 .section-slide-2 {

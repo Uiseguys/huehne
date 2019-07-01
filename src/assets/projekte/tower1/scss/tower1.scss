@@ -8,7 +8,7 @@
 @import "../../../shared/scss/footer";
 
 .main-section {
-    background: url("../img/5_4_lg.jpg");
+    background: url("../img/5_1_lg.jpg");
 }
 
 .section-slide-1 {
@@ -18,22 +18,23 @@
 
 .section-slide-2 {
     @include bg-image;
-    background: url("../img/5_5_lg.jpg") #5c67a9;
-    background-size: 60% !important;
+    background: url("../img/5_5_lg.jpg");
 }
 
 .section-slide-3 {
     @include bg-image;
-    background: url("../img/5_2_lg.jpg") #d78a6c;
-    background-size: 60% !important;
+    background: url("../img/5_2_lg.jpg");
 }
 
-@media (max-width: 991px) {
-    .section-slide-2 {
-        background-size: 100% !important;
-    }
+.section-slide-4 {
+    @include bg-image;
+    background: url("../img/5_4_lg.jpg");
+}
 
-    .section-slide-3 {
-        background-size: 100% !important;
+@media (max-width: 992px) {
+    section {
+        &:nth-child(6) {
+            margin-top: -4.6%;
+        }
     }
 }

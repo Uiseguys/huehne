@@ -139,7 +139,7 @@
     // Header text for Webkit Browsers
     // Since ScrollTop jQuery property cannot be used with window or
     // html tags, it can only be used with the body tags
-    const parallaxTextSafari = () => {
+    const parallaxTextWebkit = () => {
         if ($("body").width() >= 992) {
             // Slowed Down Text for Main Header Settings based on height
             // Check location specifically for the landing page as it text
@@ -181,10 +181,10 @@
                         // in the arr array thus adjust the scroll so as to ensure it does
                         // not cross over to the next section
                         $(window).scroll(() => {
-                            if ($("html").scrollTop() < ($("body").height() * 0.7)) {
+                            if ($("body").scrollTop() < ($("body").height() * 0.7)) {
                                 // Using 70% of viewport height
-                                $(".main-section > .container > .main-head > b").css("top", `${$("html").scrollTop() / 3}px`);
-                                $(".main-section > .container > .main-head > p").css("top", `${$("html").scrollTop() / 3}px`);
+                                $(".main-section > .container > .main-head > b").css("top", `${$("body").scrollTop() / 3}px`);
+                                $(".main-section > .container > .main-head > p").css("top", `${$("body").scrollTop() / 3}px`);
                             }
                         });
                     } else {
@@ -192,8 +192,8 @@
                         $(window).scroll(() => {
                             if ($("html").scrollTop() < ($("body").height() * 0.75)) {
                                 // Using 75% of the viewport height
-                                $(".main-section > .container > .main-head > b").css("top", `${$("html").scrollTop() / 3}px`);
-                                $(".main-section > .container > .main-head > p").css("top", `${$("html").scrollTop() / 3}px`);
+                                $(".main-section > .container > .main-head > b").css("top", `${$("body").scrollTop() / 3}px`);
+                                $(".main-section > .container > .main-head > p").css("top", `${$("body").scrollTop() / 3}px`);
                             }
                         });
                     }
@@ -303,7 +303,7 @@
             console.log("We're in Chrome")
             return $(window).scroll(() => {
                 navbarCollapse();
-                parallaxText();
+                parallaxTextWebkit();
             });
         }
         if (M[1] === "Firefox") {

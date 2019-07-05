@@ -2,21 +2,27 @@
     "use strict";
 
     // Collapse Navbar + Slow Down Text for Main Header (quasi-parallax text)
-    const navbarCollapseParallaxText = () => {
+    const navbarCollapse = () => {
         // Navbar Collapse
         if ($(window).width() < 992) { // Settings for mobile devices
             if ($("#mainNav").offset().top > 100) {
-                $("#mainNav").addClass("navbar-shrink");
-            } else if ($("#mainNav button.navbar-toggler").hasClass("collapsed")) {
-                $("#mainNav").removeClass("navbar-shrink");
+                return $("#mainNav").addClass("navbar-shrink");
             }
-        } else { // Settings for Large Screen Devices
-            if ($("#mainNav").offset().top > 100) {
-                $("#mainNav").addClass("navbar-shrink");
-            } else {
-                $("#mainNav").removeClass("navbar-shrink");
+            if ($("#mainNav button.navbar-toggler").hasClass("collapsed")) {
+                return $("#mainNav").removeClass("navbar-shrink");
             }
+        }
+        // Settings for Large Screen Devices
+        if ($("#mainNav").offset().top > 100) {
+            return $("#mainNav").addClass("navbar-shrink");
+        } else {
+            return $("#mainNav").removeClass("navbar-shrink");
+        }
+    };
 
+    // parallax text effect 
+    const parallaxText = () => {
+        if ($(window).width() >= 992) {
             // Slowed Down Text for Main Header Settings based on height
             // Check location specifically for the landing page as it text
             let regex = /\/$/.test(document.location.href);
@@ -126,12 +132,15 @@
                 }
             }
         }
-    };
+    }
 
     // Collapse now if page is not at top
     // Check window width and render the navbar accordingly
     // Collapse the navbar when page is scrolled
-    $(window).scroll(() => navbarCollapseParallaxText());
+    $(window).scroll(() => {
+        navbarCollapse();
+        parallaxText();
+    });
 
     // Adds event listener to check if the navbar is at the top of
     // a mobile device
@@ -155,7 +164,10 @@
 
     // A couple of functions for when the window resizes
     $(window).resize(() => {
-        $(window).scroll(() => navbarCollapseParallaxText());
+        $(window).scroll(() => {
+            navbarCollapse();
+            parallaxText();
+        });
 
         if ($(window).width() < 992) {
             let clickCount = 0;

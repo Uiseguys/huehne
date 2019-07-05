@@ -102,7 +102,7 @@
     #mainNav.navbar-shrink {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        background: $white !important;
+        background: #fff !important;
         transition: .6s ease;
 
         .navbar-brand {
@@ -205,7 +205,7 @@
             transition: height 0.5s ease;
             -moz-transition: height 0.5s ease;
             -webkit-transition: height 0.5s ease;
-            background: #fff;
+            background: #fff !important;
 
             .fa-bars {
                 color: #6A7171;

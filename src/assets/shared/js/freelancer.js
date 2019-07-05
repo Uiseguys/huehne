@@ -15,12 +15,11 @@
         // Settings for Large Screen Devices
         if ($("#mainNav").offset().top > 100) {
             return $("#mainNav").addClass("navbar-shrink");
-        } else {
-            return $("#mainNav").removeClass("navbar-shrink");
         }
+        return $("#mainNav").removeClass("navbar-shrink");
     };
 
-    // parallax text effect 
+    // Parallax Text Effect
     const parallaxText = () => {
         if ($(window).width() >= 992) {
             // Slowed Down Text for Main Header Settings based on height
@@ -132,14 +131,14 @@
                 }
             }
         }
-    }
+    };
 
     // Collapse now if page is not at top
     // Check window width and render the navbar accordingly
     // Collapse the navbar when page is scrolled
     $(window).scroll(() => {
         navbarCollapse();
-        parallaxText();
+        //parallaxText();
     });
 
     // Adds event listener to check if the navbar is at the top of
@@ -159,14 +158,14 @@
                 }
                 clickCount += 1;
             }
-        )
+        );
     }
 
     // A couple of functions for when the window resizes
     $(window).resize(() => {
         $(window).scroll(() => {
             navbarCollapse();
-            parallaxText();
+            //parallaxText();
         });
 
         if ($(window).width() < 992) {

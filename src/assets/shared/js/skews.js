@@ -212,8 +212,6 @@ const checkBrowserRender = () => {
         const chrome = ua.match(/\bChrome\/(\d+?(.\d+)+)/i);
         const opera = ua.match(/\bOPR\/(\d+?(.\d+)+)/i);
         const edge = ua.match(/\bEdge\/(\d+?(.\d+)+)/i);
-        const safari = ua.match(/\bSafari\/(\d+?(.\d+)+)/i);
-        const ios = ua.match(/\bAppleWebKit\/(\d+?(.\d+)+)/i);
 
         if (edge != null) {
             if (parseFloat(edge[1]) < 75) {
@@ -227,20 +225,6 @@ const checkBrowserRender = () => {
             }
             return null;
         }
-        if (safari != null) {
-            if (parseFloat(safari[1]) < 537.71) {
-                if (chrome[1] < 24) {
-                    return runSvgAlt();
-                }
-            }
-        }
-        if (ios != null) {
-            if (parseFloat(ios[1]) < 45) {
-                if (chrome[1] < 24) {
-                    return runSvgAlt();
-                }
-            }
-        }
         if (chrome != null) {
             if (parseFloat(chrome[1]) < 45) {
                 if (ios[1] < 537.71) {
@@ -249,8 +233,13 @@ const checkBrowserRender = () => {
             }
         }
     }
+    if (M[1] === ("Safari" || "AppleWebkit")) {
+        if (parseFloat(M[0]) < 537.71) {
+            return runSvgAlt();
+        }
+    }
     if (M[1] === "Firefox") {
-        if (parseFloat(M[1]) < 54) {
+        if (parseFloat(M[0]) < 54) {
             return runSvgAlt();
         }
     }

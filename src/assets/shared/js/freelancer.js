@@ -139,7 +139,7 @@
     // Header text for Webkit Browsers
     // Since ScrollTop jQuery property cannot be used with window or
     // html tags, it can only be used with the body tags
-    const parallaxTextWebkit = () => {
+    const parallaxTextSafari = () => {
         if ($("body").width() >= 992) {
             // Slowed Down Text for Main Header Settings based on height
             // Check location specifically for the landing page as it text
@@ -253,7 +253,6 @@
         }
     }
 
-
     // Adds event listener to check if the navbar is at the top of
     // a mobile device, where it checks to see if the menu button has been clicked
     // and regulates if the white background should appear or not
@@ -293,32 +292,20 @@
     const checkBrowserRender = () => {
         const ua = navigator.userAgent;
         let M = ua.match(/(opera|chrome|safari|firefox|msie|trident|edge(?=\/))\/?\s*(\d+)(\.\d+)+/i) || [];
-        if (/trident/i.test(M[1])) {
-            return runSvgAlt(); // Internet Explorer present
-        }
-        if (M[1] === "Chrome") {
-            // Collapse now if page is not at top
-            // Check window width and render the navbar accordingly
-            // Collapse the navbar when page is scrolled
-            console.log("We're in Chrome")
-            return $(window).scroll(() => {
-                navbarCollapse();
-                parallaxTextWebkit();
-            });
-        }
         if (M[1] === "Safari") {
             console.log("We're in Safari")
             return $(window).scroll(() => {
                 navbarCollapse();
-                parallaxTextWebkit();
+                parallaxTextSafari();
             });
         }
-        if (M[1] === "Firefox") {
-            return $(window).scroll(() => {
-                navbarCollapse();
-                parallaxText();
-            });
-        }
+        // Collapse now if page is not at top
+        // Check window width and render the navbar accordingly
+        // Collapse the navbar when page is scrolled
+        return $(window).scroll(() => {
+            navbarCollapse();
+            parallaxText();
+        });
     };
     checkBrowserRender();
 } (jQuery)); // End of use strict

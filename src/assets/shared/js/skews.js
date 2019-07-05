@@ -252,7 +252,6 @@ const checkBrowserRender = () => {
         if (parseFloat(M[1]) < 54) {
             return runSvgAlt();
         }
-        return null;
     }
 };
 

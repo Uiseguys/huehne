@@ -142,7 +142,7 @@
     $(window).scroll(() => {
         navbarCollapse();
         parallaxText();
-        console.log(`The body's scrollTop postion is ${$("html").scrollTop()}`);
+        console.log(`The body's scrollTop postion is ${$("body").scrollTop()}`);
     });
 
     // Adds event listener to check if the navbar is at the top of

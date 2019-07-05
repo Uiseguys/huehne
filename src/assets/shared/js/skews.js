@@ -205,8 +205,6 @@ const checkBrowserRender = () => {
     let tem,
         M = ua.match(/(opera|chrome|safari|firefox|msie|trident|edge(?=\/))\/?\s*(\d+)(\.\d+)+/i) || [];
     if (/trident/i.test(M[1])) {
-
-        console.log("This is Internet Explorer");
         return runSvgAlt(); // Internet Explorer present
     }
     if (M[1] === "Chrome") {
@@ -250,11 +248,7 @@ const checkBrowserRender = () => {
             }
         }
     }
-    M = M[2] ? [M[1], M[0].substring(M[0].indexOf("/") + 1)] : [navigator.appName, navigator.appVersion, "-?"];
-    if (ua.match(/version\/(\d+)/i) != null) {
-        M.splice(1, 1, tem[1]);
-    }
-    if (M[0] === "Firefox") {
+    if (M[1] === "Firefox") {
         if (parseFloat(M[1]) < 54) {
             return runSvgAlt();
         }

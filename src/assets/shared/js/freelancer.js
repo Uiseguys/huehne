@@ -131,7 +131,7 @@
     // Collapse now if page is not at top
     // Check window width and render the navbar accordingly
     // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapseParallaxText);
+    $(window).scroll(() => navbarCollapseParallaxText());
 
     // Adds event listener to check if the navbar is at the top of
     // a mobile device
@@ -155,7 +155,7 @@
 
     // A couple of functions for when the window resizes
     $(window).resize(() => {
-        $(window).scroll(navbarCollapseParallaxText);
+        $(window).scroll(() => navbarCollapseParallaxText());
 
         if ($(window).width() < 992) {
             let clickCount = 0;
@@ -171,7 +171,7 @@
                         }
                     }
                     clickCount += 1;
-                }
+                },
             );
         }
     });

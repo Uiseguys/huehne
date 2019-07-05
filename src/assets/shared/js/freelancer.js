@@ -10,7 +10,7 @@
             } else if ($("#mainNav button.navbar-toggler").hasClass("collapsed")) {
                 $("#mainNav").removeClass("navbar-shrink");
             }
-        } else if ($(window).width() > 992) { // Settings for Large Screen Devices
+        } else { // Settings for Large Screen Devices
             if ($("#mainNav").offset().top > 100) {
                 $("#mainNav").addClass("navbar-shrink");
             } else {
@@ -161,7 +161,7 @@
             let clickCount = 0;
             $("button.navbar-toggler.navbar-toggler-right").click(
                 () => {
-                    if ((clickCount % 2) == 0) {
+                    if ((clickCount % 2) === 0) {
                         if ($("#mainNav").offset().top < 100) {
                             $("#mainNav").addClass("navbar-shrink");
                         }
@@ -172,7 +172,7 @@
                     }
                     clickCount += 1;
                 }
-            )
+            );
         }
     });
 

@@ -306,6 +306,13 @@
                 parallaxTextWebkit();
             });
         }
+        if (M[1] === "Safari") {
+            console.log("We're in Safari")
+            return $(window).scroll(() => {
+                navbarCollapse();
+                parallaxTextWebkit();
+            });
+        }
         if (M[1] === "Firefox") {
             return $(window).scroll(() => {
                 navbarCollapse();

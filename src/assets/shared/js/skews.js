@@ -201,10 +201,8 @@ const runSvgAlt = () => {
 };
 
 const checkBrowserRender = () => {
-    let ua = navigator.userAgent;
-    console.log(ua);
-    let tem,
-        M = ua.match(/(opera|chrome|safari|firefox|msie|trident|edge(?=\/))\/?\s*(\d+)(\.\d+)+/i) || [];
+    const ua = navigator.userAgent;
+    const M = ua.match(/(opera|chrome|safari|firefox|msie|trident|edge(?=\/))\/?\s*(\d+)(\.\d+)+/i) || [];
     if (/trident/i.test(M[1])) {
         return runSvgAlt(); // Internet Explorer present
     }

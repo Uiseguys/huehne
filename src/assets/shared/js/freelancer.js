@@ -1,25 +1,45 @@
 (function ($) {
     "use strict";
-
-    // Collapse Navbar + Slow Down Text for Main Header (quasi-parallax text)
+    // Collapse Navbar
     const navbarCollapse = () => {
         // Navbar Collapse
         if (($("body").width() < 992)) { // Settings for mobile devices
             if ($("#mainNav").offset().top > 100) {
                 return $("#mainNav").addClass("navbar-shrink");
             }
-            if ($("#mainNav button.navbar-toggler").hasClass("collapsed")) {
-                return $("#mainNav").removeClass("navbar-shrink");
-            }
-        } else {
-            // Settings for Large Screen Devices
-            if ($("#mainNav").offset().top > 100) {
-                return $("#mainNav").addClass("navbar-shrink");
-            }
-            return $("#mainNav").removeClass("navbar-shrink");
         }
-        return null;
+        // Settings for Large Screen Devices
+        if ($("#mainNav").offset().top > 100) {
+            return $("#mainNav").addClass("navbar-shrink");
+        }
+        return $("#mainNav").removeClass("navbar-shrink");
     };
+
+    // Keeps count of the clicks made on the navbar-toggler
+    // and adjusts the appearance of the navbar accordingly
+    const mobileTop = () => {
+        let counter = 0;
+        if (($("body").width() < 992)) { // Settings for mobile devices
+            if ($("#mainNav").offset().top < 100) {
+                $("#mainNav button.navbar-toggler").click(() => {
+                    counter += 1;
+                    if (counter % 2 === 0) {
+                        $("#mainNav").removeClass("navbar-shrink");
+                    } else {
+                        $("#mainNav").addClass("navbar-shrink");
+                    }
+                });
+                // Else check Offset is lesser than 100 and counter is either
+                // an odd or even number upon which add a navbar-shrink class
+                if (counter % 2 === 0) {
+                    $("#mainNav").removeClass("navbar-shrink");
+                } else {
+                    $("#mainNav").addClass("navbar-shrink");
+                }
+            }
+        }
+    }
+    mobileTop();
 
     // Parallax Text Effect
     const parallaxText = () => {
@@ -137,9 +157,9 @@
     };
 
     // Header text for Webkit Browsers
-    // Since ScrollTop jQuery property cannot be used with window or
-    // html tags, it can only be used with the body tags
-    const parallaxTextWebkit = () => {
+    // Since ScrollTop jQuery property cannot be used with window element or
+    // html tags, it can only be used with body tags
+    const parallaxTextSafari = () => {
         if ($("body").width() >= 992) {
             // Slowed Down Text for Main Header Settings based on height
             // Check location specifically for the landing page as it text
@@ -253,72 +273,33 @@
         }
     }
 
-
-    // Adds event listener to check if the navbar is at the top of
-    // a mobile device, where it checks to see if the menu button has been clicked
-    // and regulates if the white background should appear or not
-    const mobileNavbarTop = () => {
-        if ($("body").width() < 992) {
-            let clickCount = 0;
-            $("button.navbar-toggler.navbar-toggler-right").click(
-                () => {
-                    clickCount += 1;
-                    console.log(`You have clicked ${clickCount} times`);
-                    if ((clickCount % 2) === 0) {
-                        if ($("#mainNav").offset().top < 100) {
-                            $("#mainNav").removeClass("navbar-shrink");
-                        }
-                    } else {
-                        if ($("#mainNav").offset().top < 100) {
-                            $("#mainNav").addClass("navbar-shrink");
-                        }
-                    }
-                }
-            );
-        }
-    }
-    mobileNavbarTop();
-
     // A couple of functions for when the window resizes
     $(window).resize(() => {
         $(window).scroll(() => {
             navbarCollapse();
             parallaxText();
+            mobileTop();
         });
-
-        mobileNavbarTop();
     });
 
-    // Makinng considerations according to the browser
+    // Making considerations according to the browser specifically
+    // Safari browser
     const checkBrowserRender = () => {
         const ua = navigator.userAgent;
-        let M = ua.match(/(opera|chrome|safari|firefox|msie|trident|edge(?=\/))\/?\s*(\d+)(\.\d+)+/i) || [];
-        if (/trident/i.test(M[1])) {
-            return runSvgAlt(); // Internet Explorer present
-        }
-        if (M[1] === "Chrome") {
-            // Collapse now if page is not at top
-            // Check window width and render the navbar accordingly
-            // Collapse the navbar when page is scrolled
-            console.log("We're in Chrome")
-            return $(window).scroll(() => {
-                navbarCollapse();
-                parallaxTextWebkit();
-            });
-        }
+        const M = ua.match(/(opera|chrome|safari|firefox|msie|trident|edge(?=\/))\/?\s*(\d+)(\.\d+)+/i) || [];
         if (M[1] === "Safari") {
-            console.log("We're in Safari")
             return $(window).scroll(() => {
                 navbarCollapse();
-                parallaxTextWebkit();
+                parallaxTextSafari();
             });
         }
-        if (M[1] === "Firefox") {
-            return $(window).scroll(() => {
-                navbarCollapse();
-                parallaxText();
-            });
-        }
+        // Collapse now if page is not at top
+        // Check window width and render the navbar accordingly
+        // Collapse the navbar when page is scrolled
+        return $(window).scroll(() => {
+            navbarCollapse();
+            parallaxText();
+        });
     };
     checkBrowserRender();
 } (jQuery)); // End of use strict

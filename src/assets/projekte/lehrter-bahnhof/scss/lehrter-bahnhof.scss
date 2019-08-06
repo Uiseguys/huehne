@@ -12,19 +12,22 @@
 }
 
 .section-slide-1 {
-	@include bg-image;
-	background: url("../img/8_3_lg.jpg");
+    @include bg-image;
+
+    background: url("../img/8_3_lg.jpg");
 }
 
 .section-slide-2 {
-	@include bg-image;
-	background: url("../img/8_1_lg.jpg");
-	background-size: 110% !important;
+    @include bg-image;
+
+    background: url("../img/8_1_lg.jpg");
+    background-size: 115% !important;
 }
 
 .section-slide-3 {
-	@include bg-image;
-	background: url("../img/8_3_lg.jpg");
+    @include bg-image;
+
+    background: url("../img/8_3_lg.jpg");
 }
 
 @media (max-width: 414px) {
@@ -35,7 +38,7 @@
 }
 
 // iPad Viewport Settings
-@media (max-width: 768px) and (min-height: 1024px) and (min-width: 768px) and (max-height: 1024px) {
+@media (max-width: 768px) and (min-width: 768px) and (min-height: 1024px) and (max-height: 1024px) {
     .section-slide-2 {
         background-size: 230% !important;
     }

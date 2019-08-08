@@ -228,14 +228,60 @@ const createRerenderSvgDomElements = () => {
                         );
                     }
                     if (slideFour != null) {
-                        document
-                            .querySelector("section:nth-child(7)")
-                            .setAttribute("class", "height-100");
+                        if (
+                            document.querySelector("section:nth-child(7)") !=
+                            null
+                        ) {
+                            document
+                                .querySelector("section:nth-child(7)")
+                                .setAttribute("class", "height-100");
+                        } else {
+                            document
+                                .querySelector("section:nth-child(6)")
+                                .setAttribute("class", "height-100");
+                        }
                         slideFour.setAttribute(
                             "class",
                             "section-slide-4 no-top"
                         );
-                        if (slideFive == null) {
+                        if (slideFive != null) {
+                            if (
+                                document.querySelector(
+                                    "section:nth-child(7)"
+                                ) != null
+                            ) {
+                                document
+                                    .querySelector("section:nth-child(7)")
+                                    .setAttribute("class", "height-100");
+                            } else {
+                                document
+                                    .querySelector("section:nth-child(6)")
+                                    .setAttribute("class", "height-100");
+                            }
+                            slideFive.setAttribute(
+                                "class",
+                                "section-slide-5 no-top"
+                            );
+                            if (
+                                slideFive.parentNode.querySelector(
+                                    ".projekte-page-bottom-left-skew"
+                                ) == null
+                            ) {
+                                slideFive.insertAdjacentHTML(
+                                    "beforebegin",
+                                    `<svg class='projekte-page-bottom-left-skew'>${svgSlideBtmLeft}</svg>`
+                                );
+                            } else {
+                                el = slideFive.parentNode.querySelector(
+                                    ".projekte-page-bottom-left-skew"
+                                );
+                                slideFive.parentNode.removeChild(el);
+                                slideFive.insertAdjacentHTML(
+                                    "beforebegin",
+                                    `<svg class='projekte-page-bottom-left-skew'>${svgSlideBtmLeft}</svg>`
+                                );
+                            }
+                        } else {
                             if (
                                 slideFour.parentNode.querySelector(
                                     ".projekte-page-bottom-left-skew"
@@ -251,25 +297,6 @@ const createRerenderSvgDomElements = () => {
                                 );
                                 slideFour.parentNode.removeChild(el);
                                 slideFour.insertAdjacentHTML(
-                                    "beforebegin",
-                                    `<svg class='projekte-page-bottom-left-skew'>${svgSlideBtmLeft}</svg>`
-                                );
-                            }
-                        }
-                        if (slideFive != null) {
-                            document
-                                .querySelector("section:nth-child(7)")
-                                .setAttribute("class", "height-100");
-                            slideFive.setAttribute(
-                                "class",
-                                "section-slide-4 no-top"
-                            );
-                            if (
-                                slideFive.parentNode.querySelector(
-                                    ".projekte-page-bottom-left-skew"
-                                ) == null
-                            ) {
-                                slideFive.insertAdjacentHTML(
                                     "beforebegin",
                                     `<svg class='projekte-page-bottom-left-skew'>${svgSlideBtmLeft}</svg>`
                                 );

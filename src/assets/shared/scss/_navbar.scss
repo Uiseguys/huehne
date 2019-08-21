@@ -102,6 +102,22 @@
         }
     }
 
+	#mainNav:not(.navbar-shrink) {
+		.navbar-brand {
+			svg#logo {
+				polygon {
+					fill: #DDDDDD;
+				}
+				path {
+					fill: #DDDDDD;
+					&:last-child {
+						fill: #DDDDDD;
+					}
+				}
+			}
+		}
+	}
+
     #mainNav.navbar-shrink {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
@@ -110,17 +126,6 @@
 
         .navbar-brand {
             font-size: 1.5em;
-            svg#logo {
-                polygon {
-                    fill: #BC0D3B;
-                }
-                path {
-                    fill: #BC0D3B;
-                    &:last-child {
-                        fill: #6A7171;
-                    }
-                }
-            }
         }
 
         .nav-item {

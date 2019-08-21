@@ -1,68 +1,63 @@
 footer {
 	margin-top: 40px;
-    font-size: 16px;
-    color: #ebebeb;
-    background: #6A7171;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+	font-size: 16px;
+	color: #ebebeb;
+	background: #6A7171;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 
-    &.no-top {
-        top: 0 !important;
-    }
+	&.no-top {
+		top: 0 !important;
+	}
 
 	b {
 		font-weight: 400;
 	}
 
-    .container {
-        margin-bottom: 0;
+	.container {
+		margin-bottom: 0;
 
-        .row {
-            .col-lg-6 {
-                &:last-child {
-                    margin-bottom: 0;
+		.row {
+			margin-bottom: 0;
 
-                    b {
-                        font-weight: 500;
-                    }
+			div {
+				text-align: center;
+			}
 
-                    a {
-                        &:nth-child(1) {
-                            margin-left: 5rem;
-                        }
-                        &:nth-child(2),
-                        &:nth-child(3) {
-                            margin-left: 1rem;
-                        }
-                        &:link {
-                            color: #ebebeb;
-                        }
+			b {
+				font-weight: 500;
+			}
 
-                        &:visited {
-                            color: #ebebeb;
-                        }
+			a {
 
-                        &:hover {
-                            color: #fff;
-                            text-decoration: none;
-                        }
-                    }
-                }
-            }
-        }
-    }
+				&:link {
+					color: #ebebeb;
+				}
+
+				&:visited {
+					color: #ebebeb;
+				}
+
+				&:hover {
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+
+		}
+	}
 }
 
 @media (max-width: 991px) {
-    footer {
-        .container {
-            .row {
-                .col-lg-6 {
-                    a {
-                        margin-left: 0 !important;
-                    }
-                }
-            }
-        }
-    }
+	footer {
+		.container {
+			.row {
+				.col-lg-6 {
+					a {
+						margin-left: 0 !important;
+					}
+				}
+			}
+		}
+	}
 }

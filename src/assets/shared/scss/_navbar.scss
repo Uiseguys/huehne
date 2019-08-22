@@ -214,6 +214,22 @@
             }
         }
 
+		:not(.navbar-shrink) {
+			.navbar-brand {
+				svg#logo {
+					polygon {
+						fill: #EBEBEB;
+					}
+					path {
+						fill: #EBEBEB;
+						&:last-child {
+							fill: #EBEBEB;
+						}
+					}
+				}
+			}
+		}
+
         &.navbar-shrink {
             transition: height 0.5s ease;
             -moz-transition: height 0.5s ease;
@@ -226,31 +242,6 @@
 
             .navbar-brand {
                 font-size: 1.5em;
-                svg#logo {
-                    polygon {
-                        fill: #BC0D3B;
-                    }
-
-                    path {
-                        fill: #BC0D3B;
-                        &:last-child {
-                            fill: #6A7171;
-                        }
-                    }
-
-                    &:hover,
-                    &:active {
-                        polygon {
-                            fill: #BC0D3B;
-                        }
-                        path {
-                            fill: #BC0D3B;
-                            &:last-child {
-                                fill: #6A7171;
-                            }
-                        }
-                    }
-                }
             }
         }
     }

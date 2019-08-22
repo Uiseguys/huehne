@@ -214,7 +214,7 @@
             }
         }
 
-		:not(.navbar-shrink) {
+		&:not(.navbar-shrink) {
 			.navbar-brand {
 				svg#logo {
 					polygon {

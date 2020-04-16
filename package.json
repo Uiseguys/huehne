@@ -1,7 +1,7 @@
 {
-  "name": "huehne-website-redisgn",
-  "version": "12.14.17",
-  "description": "Huehne Website Redesign Bootstrap Template",
+  "name": "huehne-website",
+  "version": "12.15.0",
+  "description": "Huehne Website",
   "main": "index.js",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
@@ -59,19 +59,15 @@
     "served": "webpack-dev-server --mode development --open",
     "servep": "webpack-dev-server --mode production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cmshaki/huehne.git"
-  },
   "keywords": [
     "ui",
     "bootstrap",
     "social-media"
   ],
-  "author": "Cris Shaki",
+  "author": "Felix Toth",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cmshaki/huehne/issues"
+    "url": "http://www.huehne.com"
   },
-  "homepage": "https://github.com/cmshaki/huehne#readme"
+  "homepage": "http://www.huehne.com"
 }
